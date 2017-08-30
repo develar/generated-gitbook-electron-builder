@@ -1,0 +1,690 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Squirrel.Windows · electron-builder</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="linux.html" />
+    
+    
+    <link rel="prev" href="appx.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"electron-userland/electron-builder","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="configuration.html">
+            
+                <a href="configuration.html">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../file-patterns.html">
+            
+                <a href="../file-patterns.html">
+            
+                    
+                    File Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="mac.html">
+            
+                <a href="mac.html">
+            
+                    
+                    macOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="dmg.html">
+            
+                <a href="dmg.html">
+            
+                    
+                    DMG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="mas.html">
+            
+                <a href="mas.html">
+            
+                    
+                    MAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="pkg.html">
+            
+                <a href="pkg.html">
+            
+                    
+                    PKG
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="win.html">
+            
+                <a href="win.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="nsis.html">
+            
+                <a href="nsis.html">
+            
+                    
+                    NSIS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="appx.html">
+            
+                <a href="appx.html">
+            
+                    
+                    AppX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3.3" data-path="squirrel-windows.html">
+            
+                <a href="squirrel-windows.html">
+            
+                    
+                    Squirrel.Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="linux.html">
+            
+                <a href="linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="deb.html">
+            
+                <a href="deb.html">
+            
+                    
+                    Debian Package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="snap.html">
+            
+                <a href="snap.html">
+            
+                    
+                    Snap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="linux-other.html">
+            
+                <a href="linux-other.html">
+            
+                    
+                    Other
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="target.html">
+            
+                <a href="target.html">
+            
+                    
+                    Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../icons.html">
+            
+                <a href="../icons.html">
+            
+                    
+                    Icons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../auto-update.html">
+            
+                <a href="../auto-update.html">
+            
+                    
+                    Auto Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../code-signing.html">
+            
+                <a href="../code-signing.html">
+            
+                    
+                    Code Signing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../publishing-artifacts.html">
+            
+                <a href="../publishing-artifacts.html">
+            
+                    
+                    Publishing Artifacts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../multi-platform-build.html">
+            
+                <a href="../multi-platform-build.html">
+            
+                    
+                    Multi Platform Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../docker.html">
+            
+                <a href="../docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../donate.html">
+            
+                <a href="../donate.html">
+            
+                    
+                    Donate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../tutorials/loading-app-dependencies-manually.html">
+            
+                <a href="../tutorials/loading-app-dependencies-manually.html">
+            
+                    
+                    Loading App Dependencies Manually
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../tutorials/two-package-structure.html">
+            
+                <a href="../tutorials/two-package-structure.html">
+            
+                    
+                    Two package.json Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../tutorials/macos-kernel-extensions.html">
+            
+                <a href="../tutorials/macos-kernel-extensions.html">
+            
+                    
+                    macOS Kernel Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Programmatic API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../api/electron-builder.html">
+            
+                <a href="../api/electron-builder.html">
+            
+                    
+                    electron-builder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../api/electron-publish.html">
+            
+                <a href="../api/electron-publish.html">
+            
+                    
+                    electron-publish
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Squirrel.Windows</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>The top-level <code>squirrelWindows</code> key contains set of options instructing electron-builder on how it should build Squirrel.Windows.</p>
+<p>Squirrel.Windows target is maintained, but deprecated. Please use <a href="nsis.html">nsis</a> instead.</p>
+<p>To use Squirrel.Windows please install <code>electron-builder-squirrel-windows</code> dependency.
+To build for Squirrel.Windows on macOS, please install <code>mono</code> (<code>brew install mono</code>).</p>
+<!-- do not edit. start of generated block -->
+<ul>
+<li><p><code id="SquirrelWindowsOptions-iconUrl">iconUrl</code> String - A URL to an ICO file to use as the application icon (displayed in Control Panel &gt; Programs and Features). Defaults to the Electron icon.</p>
+<p>Please note &#x2014; <a href="https://github.com/atom/grunt-electron-installer/issues/73" target="_blank">local icon file url is not accepted</a>, must be https/http.</p>
+<p>If you don&apos;t plan to build windows installer, you can omit it. If your project repository is public on GitHub, it will be <code>https://github.com/${u}/${p}/blob/master/build/icon.ico?raw=true</code> by default.</p>
+</li>
+<li><code id="SquirrelWindowsOptions-loadingGif">loadingGif</code> String - The path to a .gif file to display during install. <code>build/install-spinner.gif</code> will be used if exists (it is a recommended way to set) (otherwise <a href="https://github.com/electron/windows-installer/blob/master/resources/install-spinner.gif" target="_blank">default</a>).</li>
+<li><code id="SquirrelWindowsOptions-msi">msi</code> Boolean - Whether to create an MSI installer. Defaults to <code>false</code> (MSI is not created).</li>
+<li><code id="SquirrelWindowsOptions-remoteReleases">remoteReleases</code> String | Boolean - A URL to your existing updates. Or <code>true</code> to automatically set to your GitHub repository. If given, these will be downloaded to create delta updates.</li>
+<li><code id="SquirrelWindowsOptions-remoteToken">remoteToken</code> String - Authentication token for remote updates</li>
+<li><code id="SquirrelWindowsOptions-useAppIdAsId">useAppIdAsId</code> Boolean - Use <code>appId</code> to identify package instead of <code>name</code>.</li>
+</ul>
+<p>Inherited from <code>TargetSpecificOptions</code>:</p>
+<ul>
+<li><code id="SquirrelWindowsOptions-artifactName">artifactName</code> String - The <a href="configuration.html#artifact-file-name-template">artifact file name template</a>.</li>
+<li><p><code id="SquirrelWindowsOptions-publish">publish</code> - The <a href="../publishing-artifacts.html#publish-options">publish configuration</a>. Order is important &#x2014; first item will be used as a default auto-update server.</p>
+<p>If <code>GH_TOKEN</code> is set &#x2014; defaults to <code>[{provider: &quot;github&quot;}]</code>.</p>
+<p>If <code>BT_TOKEN</code> is set and <code>GH_TOKEN</code> is not set &#x2014; defaults to <code>[{provider: &quot;bintray&quot;}]</code>.</p>
+<!-- end of generated block --></li>
+</ul>
+<script src="../_gitbook_plugin_analytics.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="appx.html" class="navigation navigation-prev " aria-label="Previous page: AppX">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="linux.html" class="navigation navigation-next " aria-label="Next page: Linux">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Squirrel.Windows","level":"1.2.3.3","depth":3,"next":{"title":"Linux","level":"1.2.4","depth":2,"path":"configuration/linux.md","ref":"configuration/linux.md","articles":[{"title":"Debian Package","level":"1.2.4.1","depth":3,"path":"configuration/deb.md","ref":"configuration/deb.md","articles":[]},{"title":"Snap","level":"1.2.4.2","depth":3,"path":"configuration/snap.md","ref":"configuration/snap.md","articles":[]},{"title":"Other","level":"1.2.4.3","depth":3,"path":"configuration/linux-other.md","ref":"configuration/linux-other.md","articles":[]}]},"previous":{"title":"AppX","level":"1.2.3.2","depth":3,"path":"configuration/appx.md","ref":"configuration/appx.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":true}},"gitbook":"*"},"file":{"path":"configuration/squirrel-windows.md","mtime":"2017-08-30T08:52:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-30T08:53:12.939Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

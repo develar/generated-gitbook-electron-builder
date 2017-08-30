@@ -1,0 +1,753 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>NSIS · electron-builder</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="appx.html" />
+    
+    
+    <link rel="prev" href="win.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"electron-userland/electron-builder","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="configuration.html">
+            
+                <a href="configuration.html">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../file-patterns.html">
+            
+                <a href="../file-patterns.html">
+            
+                    
+                    File Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="mac.html">
+            
+                <a href="mac.html">
+            
+                    
+                    macOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="dmg.html">
+            
+                <a href="dmg.html">
+            
+                    
+                    DMG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="mas.html">
+            
+                <a href="mas.html">
+            
+                    
+                    MAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="pkg.html">
+            
+                <a href="pkg.html">
+            
+                    
+                    PKG
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="win.html">
+            
+                <a href="win.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.3.1" data-path="nsis.html">
+            
+                <a href="nsis.html">
+            
+                    
+                    NSIS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="appx.html">
+            
+                <a href="appx.html">
+            
+                    
+                    AppX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="squirrel-windows.html">
+            
+                <a href="squirrel-windows.html">
+            
+                    
+                    Squirrel.Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="linux.html">
+            
+                <a href="linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="deb.html">
+            
+                <a href="deb.html">
+            
+                    
+                    Debian Package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="snap.html">
+            
+                <a href="snap.html">
+            
+                    
+                    Snap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="linux-other.html">
+            
+                <a href="linux-other.html">
+            
+                    
+                    Other
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="target.html">
+            
+                <a href="target.html">
+            
+                    
+                    Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../icons.html">
+            
+                <a href="../icons.html">
+            
+                    
+                    Icons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../auto-update.html">
+            
+                <a href="../auto-update.html">
+            
+                    
+                    Auto Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../code-signing.html">
+            
+                <a href="../code-signing.html">
+            
+                    
+                    Code Signing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../publishing-artifacts.html">
+            
+                <a href="../publishing-artifacts.html">
+            
+                    
+                    Publishing Artifacts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../multi-platform-build.html">
+            
+                <a href="../multi-platform-build.html">
+            
+                    
+                    Multi Platform Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../docker.html">
+            
+                <a href="../docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../donate.html">
+            
+                <a href="../donate.html">
+            
+                    
+                    Donate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../tutorials/loading-app-dependencies-manually.html">
+            
+                <a href="../tutorials/loading-app-dependencies-manually.html">
+            
+                    
+                    Loading App Dependencies Manually
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../tutorials/two-package-structure.html">
+            
+                <a href="../tutorials/two-package-structure.html">
+            
+                    
+                    Two package.json Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../tutorials/macos-kernel-extensions.html">
+            
+                <a href="../tutorials/macos-kernel-extensions.html">
+            
+                    
+                    macOS Kernel Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Programmatic API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../api/electron-builder.html">
+            
+                <a href="../api/electron-builder.html">
+            
+                    
+                    electron-builder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../api/electron-publish.html">
+            
+                <a href="../api/electron-publish.html">
+            
+                    
+                    electron-publish
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >NSIS</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>The top-level <code>nsis</code> key contains set of options instructing electron-builder on how it should build NSIS target (default target for Windows).</p>
+<!-- do not edit. start of generated block -->
+<ul>
+<li><code id="NsisOptions-oneClick">oneClick</code> = <code>true</code> Boolean - One-click installation.</li>
+<li><p><code id="NsisOptions-perMachine">perMachine</code> = <code>false</code> Boolean - If <code>oneClick</code> is <code>true</code> (default): Install per all users (per-machine).</p>
+<p>If <code>oneClick</code> is <code>false</code>: no install mode installer page (choice per-machine or per-user), always install per-machine.</p>
+</li>
+<li><code id="NsisOptions-allowElevation">allowElevation</code> = <code>true</code> Boolean - <em>assisted installer only.</em> Allow requesting for elevation. If false, user will have to restart installer with elevated permissions.</li>
+<li><code id="NsisOptions-allowToChangeInstallationDirectory">allowToChangeInstallationDirectory</code> = <code>false</code> Boolean - <em>assisted installer only.</em> Whether to allow user to change installation directory.</li>
+<li><code id="NsisOptions-createDesktopShortcut">createDesktopShortcut</code> = <code>true</code> Boolean - Whether to create desktop shortcut.</li>
+<li><code id="NsisOptions-runAfterFinish">runAfterFinish</code> = <code>true</code> Boolean - <em>one-click installer only.</em> Run application after finish.</li>
+<li><code id="NsisOptions-installerIcon">installerIcon</code> String - The path to installer icon, relative to the the <a href="configuration.html#MetadataDirectories-buildResources">build resources</a> or to the project directory. Defaults to <code>build/installerIcon.ico</code> or application icon.</li>
+<li><code id="NsisOptions-uninstallerIcon">uninstallerIcon</code> String - The path to uninstaller icon, relative to the the <a href="configuration.html#MetadataDirectories-buildResources">build resources</a> or to the project directory. Defaults to <code>build/uninstallerIcon.ico</code> or application icon.</li>
+<li><code id="NsisOptions-installerHeader">installerHeader</code> = <code>build/installerHeader.bmp</code> String - <em>assisted installer only.</em> <code>MUI_HEADERIMAGE</code>, relative to the the <a href="configuration.html#MetadataDirectories-buildResources">build resources</a> or to the project directory.</li>
+<li><code id="NsisOptions-installerSidebar">installerSidebar</code> String - <em>assisted installer only.</em> <code>MUI_WELCOMEFINISHPAGE_BITMAP</code>, relative to the the <a href="configuration.html#MetadataDirectories-buildResources">build resources</a> or to the project directory. Defaults to <code>build/installerSidebar.bmp</code> or <code>${NSISDIR}\\Contrib\\Graphics\\Wizard\\nsis3-metro.bmp</code></li>
+<li><code id="NsisOptions-uninstallerSidebar">uninstallerSidebar</code> String - <em>assisted installer only.</em> <code>MUI_UNWELCOMEFINISHPAGE_BITMAP</code>, relative to the the <a href="configuration.html#MetadataDirectories-buildResources">build resources</a> or to the project directory. Defaults to <code>installerSidebar</code> option or <code>build/uninstallerSidebar.bmp</code> or <code>build/installerSidebar.bmp</code> or <code>${NSISDIR}\\Contrib\\Graphics\\Wizard\\nsis3-metro.bmp</code></li>
+<li><code id="NsisOptions-installerHeaderIcon">installerHeaderIcon</code> String - <em>one-click installer only.</em> The path to header icon (above the progress bar), relative to the the <a href="configuration.html#MetadataDirectories-buildResources">build resources</a> or to the project directory. Defaults to <code>build/installerHeaderIcon.ico</code> or application icon.</li>
+<li><code id="NsisOptions-installerLanguages">installerLanguages</code> Array&lt;String&gt; | String - The installer languages (e.g. <code>en_US</code>, <code>de_DE</code>). Change only if you understand what do you do and for what.</li>
+<li><code id="NsisOptions-displayLanguageSelector">displayLanguageSelector</code> = <code>false</code> Boolean - Whether to display a language selection dialog. Not recommended (by default will be detected using OS language).</li>
+<li><code id="NsisOptions-include">include</code> String - The path to NSIS include script to customize installer. Defaults to <code>build/installer.nsh</code>. See <a href="#custom-nsis-script">Custom NSIS script</a>.</li>
+<li><code id="NsisOptions-script">script</code> String - The path to NSIS script to customize installer. Defaults to <code>build/installer.nsi</code>. See <a href="#custom-nsis-script">Custom NSIS script</a>.</li>
+<li><p><code id="NsisOptions-license">license</code> String - The path to EULA license file. Defaults to <code>license.txt</code> or <code>eula.txt</code> (or uppercase variants). In addition to <code>txt,</code>rtf<code>and</code>html<code>supported (don&apos;t forget to use</code>target=&quot;_blank&quot;` for links).</p>
+<p>Multiple license files in different languages are supported &#x2014; use lang postfix (e.g. <code>_de</code>, <code>_ru</code>)). For example, create files <code>license_de.txt</code> and <code>license_en.txt</code> in the build resources. If OS language is german, <code>license_de.txt</code> will be displayed. See map of <a href="https://github.com/meikidd/iso-639-1/blob/master/src/data.js" target="_blank">language code to name</a>.</p>
+<p>Appropriate license file will be selected by user OS language.</p>
+</li>
+<li><code id="NsisOptions-language">language</code> String - <a href="https://msdn.microsoft.com/en-au/goglobal/bb964664.aspx" target="_blank">LCID Dec</a>, defaults to <code>1033</code>(<code>English - United States</code>).</li>
+<li><code id="NsisOptions-multiLanguageInstaller">multiLanguageInstaller</code> Boolean - Whether to create multi-language installer. Defaults to <code>unicode</code> option value.</li>
+<li><code id="NsisOptions-menuCategory">menuCategory</code> = <code>false</code> Boolean | String - Whether to create submenu for start menu shortcut and program files directory. If <code>true</code>, company name will be used. Or string value.</li>
+<li><code id="NsisOptions-uninstallDisplayName">uninstallDisplayName</code> = <code>${productName} ${version}</code> String - The uninstaller display name in the control panel.</li>
+<li><code id="NsisOptions-artifactName">artifactName</code> String - The <a href="configuration.html#artifact-file-name-template">artifact file name template</a>. Defaults to <code>${productName} Setup ${version}.${ext}</code>.</li>
+<li><code id="NsisOptions-deleteAppDataOnUninstall">deleteAppDataOnUninstall</code> = <code>false</code> Boolean - <em>one-click installer only.</em> Whether to delete app data on uninstall.</li>
+<li><code id="NsisOptions-packElevateHelper">packElevateHelper</code> = <code>true</code> Boolean - Whether to pack the elevate executable (required for electron-updater if per-machine installer used or can be used in the future). Ignored if <code>perMachine</code> is set to <code>true</code>.</li>
+<li><code id="NsisOptions-shortcutName">shortcutName</code> String - The name that will be used for all shortcuts. Defaults to the application name.</li>
+<li><code id="NsisOptions-unicode">unicode</code> = <code>true</code> Boolean - Whether to create <a href="http://nsis.sourceforge.net/Docs/Chapter1.html#intro-unicode" target="_blank">Unicode installer</a>.</li>
+<li><code id="NsisOptions-guid">guid</code> String - See <a href="nsis.html#guid-vs-application-name">GUID vs Application Name</a>.</li>
+<li><code id="NsisOptions-warningsAsErrors">warningsAsErrors</code> = <code>true</code> Boolean - If <code>warningsAsErrors</code> is <code>true</code> (default): NSIS will treat warnings as errors. If <code>warningsAsErrors</code> is <code>false</code>: NSIS will allow warnings.</li>
+</ul>
+<p>Inherited from <code>TargetSpecificOptions</code>:</p>
+<ul>
+<li><p><code id="NsisOptions-publish">publish</code> - The <a href="../publishing-artifacts.html#publish-options">publish configuration</a>. Order is important &#x2014; first item will be used as a default auto-update server.</p>
+<p>If <code>GH_TOKEN</code> is set &#x2014; defaults to <code>[{provider: &quot;github&quot;}]</code>.</p>
+<p>If <code>BT_TOKEN</code> is set and <code>GH_TOKEN</code> is not set &#x2014; defaults to <code>[{provider: &quot;bintray&quot;}]</code>.</p>
+<!-- end of generated block -->
+</li>
+</ul>
+<p>Unicode enabled by default. Large strings are supported (maximum string length of 8192 bytes instead of the default of 1024 bytes).</p>
+<h2 id="32-bit--64-bit">32 bit + 64 bit</h2>
+<p>If you build both ia32 and x64 arch (<code>--x64 --ia32</code>), you in any case get one installer. Appropriate arch will be installed automatically.
+The same applied to web installer (<code>nsis-web</code> target).</p>
+<h2 id="custom-nsis-script">Custom NSIS script</h2>
+<p>Two options are available &#x2014; <a href="#NsisOptions-include">include</a> and <a href="#NsisOptions-script">script</a>. <code>script</code> allows you to provide completely different NSIS script. For most cases it is not required as you need only to customise some aspects, but still use well-tested and maintained default NSIS script. So, <code>include</code> is recommended.</p>
+<p>Keep in mind &#x2014; if you customize NSIS script, you should always state about it in the issue reports. And don&apos;t expect that your issue will be resolved.</p>
+<ol>
+<li>Add file <code>build/installer.nsh</code>.</li>
+<li><p>Define wanted macro to customise: <code>customHeader</code>, <code>preInit</code>, <code>customInit</code>, <code>customUnInit</code>, <code>customInstall</code>, <code>customUnInstall</code>, <code>customRemoveFiles</code>. Example:</p>
+<pre><code class="lang-nsis"> <span class="hljs-keyword">!macro</span> customHeader
+   !system <span class="hljs-string">&quot;echo &apos;&apos; &gt; <span class="hljs-variable">${BUILD_RESOURCES_DIR}</span>/customHeader&quot;</span>
+ <span class="hljs-keyword">!macroend</span>
+
+ <span class="hljs-keyword">!macro</span> preInit
+   <span class="hljs-comment">; This macro is inserted at the beginning of the NSIS .OnInit callback</span>
+   !system <span class="hljs-string">&quot;echo &apos;&apos; &gt; <span class="hljs-variable">${BUILD_RESOURCES_DIR}</span>/preInit&quot;</span>
+ <span class="hljs-keyword">!macroend</span>
+
+ <span class="hljs-keyword">!macro</span> customInit
+   !system <span class="hljs-string">&quot;echo &apos;&apos; &gt; <span class="hljs-variable">${BUILD_RESOURCES_DIR}</span>/customInit&quot;</span>
+ <span class="hljs-keyword">!macroend</span>
+
+ <span class="hljs-keyword">!macro</span> customInstall
+   !system <span class="hljs-string">&quot;echo &apos;&apos; &gt; <span class="hljs-variable">${BUILD_RESOURCES_DIR}</span>/customInstall&quot;</span>
+ <span class="hljs-keyword">!macroend</span>
+</code></pre>
+</li>
+<li><p><code>BUILD_RESOURCES_DIR</code> and <code>PROJECT_DIR</code> are defined.</p>
+</li>
+<li><code>build</code> is added as <code>addincludedir</code> (i.e. you don&apos;t need to use <code>BUILD_RESOURCES_DIR</code> to include files).</li>
+<li>File associations macro <code>registerFileAssociations</code> and <code>unregisterFileAssociations</code> are still defined.</li>
+<li>All other electron-builder specific flags (e.g. <code>ONE_CLICK</code>) are still defined.</li>
+</ol>
+<h2 id="guid-vs-application-name">GUID vs Application Name</h2>
+<p>Windows requires to use registry keys (e.g. INSTALL/UNINSTALL info). Squirrel.Windows simply uses application name as key.
+But it is not robust &#x2014; Google can use key Google Chrome SxS, because it is a Google.</p>
+<p>So, it is better to use <a href="http://stackoverflow.com/a/246935/1910191" target="_blank">GUID</a>.
+You are not forced to explicitly specify it &#x2014; name-based <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_5_.28SHA-1_hash_.26_namespace.29" target="_blank">UUID v5</a> will be generated from your <a href="configuration.html#Configuration-appId">appId</a> or <a href="configuration.html#Metadata-name">name</a>.
+It means that you <strong>should not change appId</strong> once your application in use (or name if <code>appId</code> was not set). Application product name (title) or description can be safely changed.</p>
+<p>You can explicitly set guid using option <a href="#NsisOptions-guid">nsis.guid</a>, but it is not recommended &#x2014; consider using <a href="configuration.html#Configuration-appId">appId</a>.</p>
+<p>It is also important to set the Application User Model ID (AUMID) to the <a href="configuration.html#Configuration-appId">appId</a> of the application, in order for notifications on Windows 8/8.1 to function and for Window 10 notifications to display the app icon within the notifications by default. The AUMID should be set within the Main process and before any BrowserWindows have been opened, it is normally the first piece of code executed: <code>app.setAppUserModelId(appId)</code></p>
+<script src="../_gitbook_plugin_analytics.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="win.html" class="navigation navigation-prev " aria-label="Previous page: Windows">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="appx.html" class="navigation navigation-next " aria-label="Next page: AppX">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"NSIS","level":"1.2.3.1","depth":3,"next":{"title":"AppX","level":"1.2.3.2","depth":3,"path":"configuration/appx.md","ref":"configuration/appx.md","articles":[]},"previous":{"title":"Windows","level":"1.2.3","depth":2,"path":"configuration/win.md","ref":"configuration/win.md","articles":[{"title":"NSIS","level":"1.2.3.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},{"title":"AppX","level":"1.2.3.2","depth":3,"path":"configuration/appx.md","ref":"configuration/appx.md","articles":[]},{"title":"Squirrel.Windows","level":"1.2.3.3","depth":3,"path":"configuration/squirrel-windows.md","ref":"configuration/squirrel-windows.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":true}},"gitbook":"*"},"file":{"path":"configuration/nsis.md","mtime":"2017-08-30T08:52:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-30T08:53:12.939Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

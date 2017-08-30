@@ -1,0 +1,717 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Multi Platform Build · electron-builder</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="docker.html" />
+    
+    
+    <link rel="prev" href="publishing-artifacts.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"electron-userland/electron-builder","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="configuration/configuration.html">
+            
+                <a href="configuration/configuration.html">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="file-patterns.html">
+            
+                <a href="file-patterns.html">
+            
+                    
+                    File Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="configuration/mac.html">
+            
+                <a href="configuration/mac.html">
+            
+                    
+                    macOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="configuration/dmg.html">
+            
+                <a href="configuration/dmg.html">
+            
+                    
+                    DMG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="configuration/mas.html">
+            
+                <a href="configuration/mas.html">
+            
+                    
+                    MAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="configuration/pkg.html">
+            
+                <a href="configuration/pkg.html">
+            
+                    
+                    PKG
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="configuration/win.html">
+            
+                <a href="configuration/win.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="configuration/nsis.html">
+            
+                <a href="configuration/nsis.html">
+            
+                    
+                    NSIS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="configuration/appx.html">
+            
+                <a href="configuration/appx.html">
+            
+                    
+                    AppX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="configuration/squirrel-windows.html">
+            
+                <a href="configuration/squirrel-windows.html">
+            
+                    
+                    Squirrel.Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="configuration/linux.html">
+            
+                <a href="configuration/linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="configuration/deb.html">
+            
+                <a href="configuration/deb.html">
+            
+                    
+                    Debian Package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="configuration/snap.html">
+            
+                <a href="configuration/snap.html">
+            
+                    
+                    Snap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="configuration/linux-other.html">
+            
+                <a href="configuration/linux-other.html">
+            
+                    
+                    Other
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="configuration/target.html">
+            
+                <a href="configuration/target.html">
+            
+                    
+                    Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="icons.html">
+            
+                <a href="icons.html">
+            
+                    
+                    Icons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="auto-update.html">
+            
+                <a href="auto-update.html">
+            
+                    
+                    Auto Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="code-signing.html">
+            
+                <a href="code-signing.html">
+            
+                    
+                    Code Signing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="publishing-artifacts.html">
+            
+                <a href="publishing-artifacts.html">
+            
+                    
+                    Publishing Artifacts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="multi-platform-build.html">
+            
+                <a href="multi-platform-build.html">
+            
+                    
+                    Multi Platform Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="docker.html">
+            
+                <a href="docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="donate.html">
+            
+                <a href="donate.html">
+            
+                    
+                    Donate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tutorials/loading-app-dependencies-manually.html">
+            
+                <a href="tutorials/loading-app-dependencies-manually.html">
+            
+                    
+                    Loading App Dependencies Manually
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="tutorials/two-package-structure.html">
+            
+                <a href="tutorials/two-package-structure.html">
+            
+                    
+                    Two package.json Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tutorials/macos-kernel-extensions.html">
+            
+                <a href="tutorials/macos-kernel-extensions.html">
+            
+                    
+                    macOS Kernel Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Programmatic API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="api/electron-builder.html">
+            
+                <a href="api/electron-builder.html">
+            
+                    
+                    electron-builder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="api/electron-publish.html">
+            
+                <a href="api/electron-publish.html">
+            
+                    
+                    electron-publish
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Multi Platform Build</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>Don&apos;t expect that you can build app for all platforms on one platform.</p>
+<ul>
+<li>If your app has native dependencies, it can be compiled only on the target platform.
+<a href="https://www.npmjs.com/package/prebuild" target="_blank">prebuild</a> is a solution, but most node modules <a href="https://github.com/atom/node-keytar/issues/27" target="_blank">don&apos;t provide</a> prebuilt binaries.</li>
+<li>macOS Code Signing works only on macOS. <a href="http://stackoverflow.com/a/12156576" target="_blank">Cannot be fixed</a>.</li>
+</ul>
+<p>Don&apos;t think that mentioned issues are major, you should use build servers &#x2014; e.g. <a href="http://www.appveyor.com/" target="_blank">AppVeyor</a> to build Windows app and <a href="https://travis-ci.org" target="_blank">Travis</a> to build MacOS/Linux apps.</p>
+<p>See <a href="https://github.com/develar/onshape-desktop-shell/blob/master/appveyor.yml" target="_blank">sample appveyor.yml</a> to build Electron app for Windows.
+And <a href="https://github.com/develar/onshape-desktop-shell/blob/master/.travis.yml" target="_blank">sample .travis.yml</a> to build Electron app for MacOS.</p>
+<p>By default build for current platform and current arch. Use CLI flags <code>--mac</code>, <code>--win</code>, <code>--linux</code> to specify platforms. And <code>--ia32</code>, <code>--x64</code> to specify arch.</p>
+<p>For example, to build app for MacOS, Windows and Linux:</p>
+<pre><code>electron-builder -mwl
+</code></pre><p>Build performed in parallel, so, it is highly recommended to not use npm task per platform (e.g. <code>npm run dist:mac &amp;&amp; npm run dist:win32</code>), but specify multiple platforms/targets in one build command.
+You don&apos;t need to clean dist output before build &#x2014; output directory is cleaned automatically.</p>
+<h2 id="macos">macOS</h2>
+<p>All required system dependencies (except rpm) will be downloaded automatically on demand on macOS 10.12+ (macOS Sierra). On Travis, please add <code>osx_image: xcode8.3</code></p>
+<p>To build rpm: <code>brew install rpm</code> (<a href="https://brew.sh" target="_blank">brew</a>).</p>
+<h2 id="linux">Linux</h2>
+<p>You can use <a href="docker.html">Docker</a> to avoid installing system dependencies.</p>
+<p>To build app in distributable format for Linux:</p>
+<pre><code>sudo apt-get install --no-install-recommends -y icnsutils graphicsmagick xz-utils
+</code></pre><p>To build rpm: <code>sudo apt-get install --no-install-recommends -y rpm</code>.</p>
+<p>To build pacman: <code>sudo apt-get install --no-install-recommends -y bsdtar</code>.</p>
+<p>To build snap: <code>sudo apt-get install --no-install-recommends -y snapcraft</code>.</p>
+<h3 id="to-build-app-for-windows-on-linux">To build app for Windows on Linux:</h3>
+<ul>
+<li><p>Install Wine (1.8+ is required):</p>
+<pre><code>sudo add-apt-repository ppa:ubuntu-wine/ppa -y
+sudo apt-get update
+sudo apt-get install --no-install-recommends -y wine1.8
+</code></pre></li>
+<li><p>Install <a href="http://www.mono-project.com/docs/getting-started/install/linux/#usage" target="_blank">Mono</a> (4.2+ is required) if you want to use Squirrel.Windows (NSIS, default target, doesn&apos;t require mono):</p>
+<pre><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo &quot;deb http://download.mono-project.com/repo/debian wheezy main&quot; | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
+sudo apt-get update
+sudo apt-get install --no-install-recommends -y mono-devel ca-certificates-mono
+</code></pre></li>
+</ul>
+<h2 id="to-build-app-in-32-bit-from-a-machine-with-64-bit">To build app in 32 bit from a machine with 64 bit:</h2>
+<pre><code>sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib
+</code></pre><h2 id="travis-linux">Travis Linux</h2>
+<p><a href="https://docs.travis-ci.com/user/trusty-ci-environment/" target="_blank">Trusty</a> is required &#x2014; default Travis Linux dist is outdated and <code>icnsutils</code> version is non-functional.</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">sudo:</span> required
+<span class="hljs-attr">dist:</span> trusty
+</code></pre>
+<h3 id="travis-macos">Travis macOS</h3>
+<p><a href="https://docs.travis-ci.com/user/osx-ci-environment/#OS-X-Version" target="_blank">macOS 10.12+</a> is required.</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">osx_image:</span> xcode8<span class="hljs-number">.3</span>
+</code></pre>
+<h2 id="windows">Windows</h2>
+<p>Please use <a href="docker.html">Docker</a>.</p>
+<script src="_gitbook_plugin_analytics.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="publishing-artifacts.html" class="navigation navigation-prev " aria-label="Previous page: Publishing Artifacts">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="docker.html" class="navigation navigation-next " aria-label="Next page: Docker">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Multi Platform Build","level":"1.7","depth":1,"next":{"title":"Docker","level":"1.8","depth":1,"path":"docker.md","ref":"docker.md","articles":[]},"previous":{"title":"Publishing Artifacts","level":"1.6","depth":1,"path":"publishing-artifacts.md","ref":"publishing-artifacts.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":true}},"gitbook":"*"},"file":{"path":"multi-platform-build.md","mtime":"2017-08-29T15:35:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-30T08:53:12.939Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
