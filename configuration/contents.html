@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Linux · electron-builder</title>
+        <title>Application Contents · electron-builder</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -58,10 +58,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="deb.html" />
+    <link rel="next" href="../file-patterns.html" />
     
     
-    <link rel="prev" href="squirrel-windows.html" />
+    <link rel="prev" href="configuration.html" />
     
 
     <style>
@@ -128,7 +128,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="contents.html">
+        <li class="chapter active" data-level="1.2.1" data-path="contents.html">
             
                 <a href="contents.html">
             
@@ -270,7 +270,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.5" data-path="linux.html">
+        <li class="chapter " data-level="1.2.5" data-path="linux.html">
             
                 <a href="linux.html">
             
@@ -589,7 +589,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Linux</a>
+        <a href=".." >Application Contents</a>
     </h1>
 </div>
 
@@ -604,22 +604,48 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>The top-level <code>linux</code> key contains set of options instructing electron-builder on how it should build Linux targets. These options applicable for any Linux target.</p>
-<!-- do not edit. start of generated block -->
+                                <h2 id="files"><code>files</code></h2>
+<p><code>Array&lt;String | FileSet&gt; | String | FileSet</code></p>
+<p>A <a href="../file-patterns.html">glob patterns</a> relative to the <a href="configuration.html#MetadataDirectories-app">app directory</a>, which specifies which files to include when copying files to create the package.</p>
+<p>Development dependencies are never copied in any case. You don&apos;t need to ignore it explicitly.</p>
+<p>Default pattern <code>**/*</code> <strong>is not added to your custom</strong> if some of your patterns is not ignore (i.e. not starts with <code>!</code>). <code>package.json</code> and <code>**/node_modules/**/*</code> (only production dependencies will be copied) is added to your custom in any case. All <a href="../file-patterns.html#default-file-pattern">default ignores</a> are added in any case &#x2014; you don&apos;t need to repeat it if you configure own patterns.</p>
+<p>May be specified in the platform options (e.g. in the <a href="mac.html">mac</a>).</p>
+<p>You may also specify custom source and destination directories by using <code>FileSet</code> objects instead of simple glob patterns.</p>
+<pre><code class="lang-json">[
+  {
+    <span class="hljs-string">&quot;from&quot;</span>: <span class="hljs-string">&quot;path/to/source&quot;</span>,
+    <span class="hljs-string">&quot;to&quot;</span>: <span class="hljs-string">&quot;path/to/destination&quot;</span>,
+    <span class="hljs-string">&quot;filter&quot;</span>: [<span class="hljs-string">&quot;**/*&quot;</span>, <span class="hljs-string">&quot;!foo/*.js&quot;</span>]
+  }
+]
+</code></pre>
+<p>You can use <a href="../file-patterns.html#file-macros">file macros</a> in the <code>from</code> and <code>to</code> fields as well. <code>from</code> and <code>to</code> can be files and you can use this to <a href="https://github.com/electron-userland/electron-builder/issues/1119" target="_blank">rename</a> a file while packaging.</p>
+<h3 id="filesetfrom"><code>FileSet.from</code></h3>
+<p><code>String</code></p>
+<p>The source path relative to and defaults to:</p>
 <ul>
-<li><p><code id="LinuxConfiguration-target">target</code> = <code>AppImage</code> String | <a href="target.html#targetconfig">TargetConfiguration</a> - Target package type: list of <code>AppImage</code>, <code>snap</code>, <code>deb</code>, <code>rpm</code>, <code>freebsd</code>, <code>pacman</code>, <code>p5p</code>, <code>apk</code>, <code>7z</code>, <code>zip</code>, <code>tar.xz</code>, <code>tar.lz</code>, <code>tar.gz</code>, <code>tar.bz2</code>, <code>dir</code>.</p>
-<p>electron-builder <a href="../docker.html">docker image</a> can be used to build Linux targets on any platform. See <a href="../multi-platform-build.html">Multi Platform build</a>.</p>
-<p>Please <a href="https://github.com/probonopd/AppImageKit/wiki/Creating-AppImages#common-mistake" target="_blank">do not put an AppImage into another archive</a> like a .zip or .tar.gz.</p>
-</li>
-<li><code id="LinuxConfiguration-maintainer">maintainer</code> String - The maintainer. Defaults to <a href="configuration.html#Metadata-author">author</a>.</li>
-<li><code id="LinuxConfiguration-vendor">vendor</code> String - The vendor. Defaults to <a href="configuration.html#Metadata-author">author</a>.</li>
-<li><code id="LinuxConfiguration-executableName">executableName</code> String - The executable name. Defaults to <code>productName</code>. Cannot be specified per target, allowed only in the <code>linux</code>.</li>
-<li><code id="LinuxConfiguration-icon">icon</code> String - The path to icon set directory, relative to the the <a href="configuration.html#MetadataDirectories-buildResources">build resources</a> or to the project directory. The icon filename must contain the size (e.g. 32x32.png) of the icon. By default will be generated automatically based on the macOS icns file.</li>
-<li><code id="LinuxConfiguration-synopsis">synopsis</code> String - The <a href="https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Description" target="_blank">short description</a>.</li>
-<li><code id="LinuxConfiguration-description">description</code> String - As <a href="configuration.html#Metadata-description">description</a> from application package.json, but allows you to specify different for Linux.</li>
-<li><code id="LinuxConfiguration-category">category</code> String - The <a href="https://specifications.freedesktop.org/menu-spec/latest/apa.html#main-category-registry" target="_blank">application category</a>.</li>
-<li><code id="LinuxConfiguration-desktop">desktop</code> any - The <a href="https://developer.gnome.org/integration-guide/stable/desktop-files.html.en" target="_blank">Desktop file</a> entries (name to value).<!-- end of generated block --></li>
+<li>the <a href="configuration.html#MetadataDirectories-app">app directory</a> for <code>files</code>,</li>
+<li>the project directory for <code>extraResources</code> and <code>extraFiles</code>.</li>
 </ul>
+<p>If you don&apos;t use two-package.json structure and don&apos;t set custom app directory, app directory equals to project directory.</p>
+<h3 id="filesetto"><code>FileSet.to</code></h3>
+<p><code>String</code></p>
+<p>The destination path relative to and defaults to: </p>
+<ul>
+<li>the asar archive root for <code>files</code>,</li>
+<li>the app&apos;s content directory for <code>extraFiles</code>,</li>
+<li>the app&apos;s resource directory for <code>extraResources</code>.</li>
+</ul>
+<h3 id="filesetfilter"><code>FileSet.filter</code></h3>
+<p><code>Array&lt;String&gt; | String</code></p>
+<p>The <a href="../file-patterns.html">glob patterns</a>. Defaults to <code>*/**</code>.</p>
+<h2 id="extraresources"><code>extraResources</code></h2>
+<p><code>Array&lt;String | FileSet&gt; | String | FileSet</code></p>
+<p>A <a href="../file-patterns.html">glob patterns</a> relative to the project directory, when specified, copy the file or directory with matching names directly into the app&apos;s resources directory (<code>Contents/Resources</code> for MacOS, <code>resources</code> for Linux and Windows).</p>
+<p>File patterns (and support for <code>from</code> and <code>to</code> fields) the same as for <a href="#files">files</a>.</p>
+<h2 id="extrafiles"><code>extraFiles</code></h2>
+<p><code>Array&lt;String | FileSet&gt; | String | FileSet</code></p>
+<p>The same as <a href="#extraresources">extraResources</a> but copy into the app&apos;s content directory (<code>Contents</code> for MacOS, root directory for Linux and Windows).</p>
 <script src="../_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
@@ -647,12 +673,12 @@
 
             
                 
-                <a href="squirrel-windows.html" class="navigation navigation-prev " aria-label="Previous page: Squirrel.Windows">
+                <a href="configuration.html" class="navigation navigation-prev " aria-label="Previous page: Configuration">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="deb.html" class="navigation navigation-next " aria-label="Next page: Debian Package">
+                <a href="../file-patterns.html" class="navigation navigation-next " aria-label="Next page: File Patterns">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -663,7 +689,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Linux","level":"1.2.5","depth":2,"next":{"title":"Debian Package","level":"1.2.5.1","depth":3,"path":"configuration/deb.md","ref":"configuration/deb.md","articles":[]},"previous":{"title":"Squirrel.Windows","level":"1.2.4.3","depth":3,"path":"configuration/squirrel-windows.md","ref":"configuration/squirrel-windows.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/linux.md","mtime":"2017-09-01T10:57:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-01T11:24:44.986Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Application Contents","level":"1.2.1","depth":2,"next":{"title":"File Patterns","level":"1.2.2","depth":2,"path":"file-patterns.md","ref":"file-patterns.md","articles":[]},"previous":{"title":"Configuration","level":"1.2","depth":1,"path":"configuration/configuration.md","ref":"configuration/configuration.md","articles":[{"title":"Application Contents","level":"1.2.1","depth":2,"path":"configuration/contents.md","ref":"configuration/contents.md","articles":[]},{"title":"File Patterns","level":"1.2.2","depth":2,"path":"file-patterns.md","ref":"file-patterns.md","articles":[]},{"title":"macOS","level":"1.2.3","depth":2,"path":"configuration/mac.md","ref":"configuration/mac.md","articles":[{"title":"DMG","level":"1.2.3.1","depth":3,"path":"configuration/dmg.md","ref":"configuration/dmg.md","articles":[]},{"title":"MAS","level":"1.2.3.2","depth":3,"path":"configuration/mas.md","ref":"configuration/mas.md","articles":[]},{"title":"PKG","level":"1.2.3.3","depth":3,"path":"configuration/pkg.md","ref":"configuration/pkg.md","articles":[]}]},{"title":"Windows","level":"1.2.4","depth":2,"path":"configuration/win.md","ref":"configuration/win.md","articles":[{"title":"NSIS","level":"1.2.4.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},{"title":"AppX","level":"1.2.4.2","depth":3,"path":"configuration/appx.md","ref":"configuration/appx.md","articles":[]},{"title":"Squirrel.Windows","level":"1.2.4.3","depth":3,"path":"configuration/squirrel-windows.md","ref":"configuration/squirrel-windows.md","articles":[]}]},{"title":"Linux","level":"1.2.5","depth":2,"path":"configuration/linux.md","ref":"configuration/linux.md","articles":[{"title":"Debian Package","level":"1.2.5.1","depth":3,"path":"configuration/deb.md","ref":"configuration/deb.md","articles":[]},{"title":"Snap","level":"1.2.5.2","depth":3,"path":"configuration/snap.md","ref":"configuration/snap.md","articles":[]},{"title":"Other","level":"1.2.5.3","depth":3,"path":"configuration/linux-other.md","ref":"configuration/linux-other.md","articles":[]}]},{"title":"Target","level":"1.2.6","depth":2,"path":"configuration/target.md","ref":"configuration/target.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/contents.md","mtime":"2017-09-01T08:29:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-01T11:24:44.986Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
