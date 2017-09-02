@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>PKG · electron-builder</title>
+        <title>Publish · electron-builder</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -62,10 +62,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="win.html" />
+    <link rel="next" href="../cli.html" />
     
     
-    <link rel="prev" href="mas.html" />
+    <link rel="prev" href="target.html" />
     
 
     <style>
@@ -198,7 +198,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.3.3" data-path="pkg.html">
+        <li class="chapter " data-level="1.2.3.3" data-path="pkg.html">
             
                 <a href="pkg.html">
             
@@ -345,7 +345,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="publish.html">
+        <li class="chapter active" data-level="1.2.7" data-path="publish.html">
             
                 <a href="publish.html">
             
@@ -606,7 +606,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >PKG</a>
+        <a href=".." >Publish</a>
     </h1>
 </div>
 
@@ -621,28 +621,85 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>The top-level <a href="configuration.html#Configuration-pkg">pkg</a> key contains set of options instructing electron-builder on how it should build <a href="https://goo.gl/yVvgF6" target="_blank">PKG</a> (macOS installer component package).</p>
+                                <p>The <a href="configuration.html#Configuration-publish">publish</a> key contains set of options instructing electron-builder on how it should publish artifacts and build update info files for <a href="../auto-update.html">auto update</a>.</p>
+<p><code>String | Object | Array&lt;Object | String&gt;</code> where <code>Object</code> it is <a href="#bintrayoptions">BintrayOptions</a>, <a href="#genericserveroptions">GenericServerOptions</a>, <a href="#githuboptions">GitHub</a> or <a href="#s3options">S3Options</a>. Order is important &#x2014; first item will be used as a default auto-update server. Can be specified in the <a href="configuration#configuration">top-level configuration</a> or any platform- (<a href="configuration.html#Configuration-mac">mac</a>, <a href="configuration.html#Configuration-linux">linux</a>, <a href="configuration.html#Configuration-win">win</a>) or target- (e.g. <a href="configuration.html#Configuration-nsis">nsis</a>) specific configuration.</p>
+<p>If <code>GH_TOKEN</code> is set &#x2014; defaults to <code>[{provider: &quot;github&quot;}]</code>.</p>
+<p>If <code>BT_TOKEN</code> is set and <code>GH_TOKEN</code> is not set &#x2014; defaults to <code>[{provider: &quot;bintray&quot;}]</code>.</p>
+<p>For example, to configure publishing to <a href="https://aws.amazon.com/s3/" target="_blank">Amazon S3</a>:</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;publish&quot;</span>: {
+  <span class="hljs-string">&quot;provider&quot;</span>: <span class="hljs-string">&quot;s3&quot;</span>,
+  <span class="hljs-string">&quot;bucket&quot;</span>: <span class="hljs-string">&quot;bucket-name&quot;</span>
+}
+</code></pre>
+<p>Or publish Windows artifacts to both GitHub and Bintray (order is important &#x2014; first item will be used as a default auto-update server and <a href="../auto-update.html#file-generated-and-uploaded-in-addition">update metadata files</a> will be generated for GitHub):</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;win&quot;</span>: {
+  <span class="hljs-string">&quot;publish&quot;</span>: [<span class="hljs-string">&quot;github&quot;</span>, <span class="hljs-string">&quot;bintray&quot;</span>]
+}
+</code></pre>
+<p>See also <a href="../publishing-artifacts.html">Publishing Artifacts</a> guide.</p>
+<h2 id="github-repository-and-bintray-package">GitHub Repository and Bintray Package</h2>
+<p>Detected automatically using:</p>
+<ul>
+<li><a href="https://docs.npmjs.com/files/package.json#repository" target="_blank">repository</a> in the application or development <code>package.json</code>,</li>
+<li>if not set, env <ul>
+<li><code>TRAVIS_REPO_SLUG</code> </li>
+<li>or <code>APPVEYOR_ACCOUNT_NAME</code>/<code>APPVEYOR_PROJECT_NAME</code> </li>
+<li>or <code>CIRCLE_PROJECT_USERNAME</code>/<code>CIRCLE_PROJECT_REPONAME</code>,</li>
+</ul>
+</li>
+<li>if no env, from <code>.git/config</code> origin url.</li>
+</ul>
 <!-- do not edit. start of generated block -->
+<h2 id="bintrayoptions">BintrayOptions</h2>
+<p><a href="https://bintray.com/" target="_blank">Bintray</a> options.</p>
 <ul>
-<li><code id="PkgOptions-scripts">scripts</code> = <code>build/pkg-scripts</code> String - The scripts directory, relative to <code>build</code> (build resources directory). The scripts can be in any language so long as the files are marked executable and have the appropriate shebang indicating the path to the interpreter. Scripts are required to be executable (<code>chmod +x file</code>). See: <a href="http://macinstallers.blogspot.de/2012/07/scripting-in-installer-packages.html" target="_blank">Scripting in installer packages</a>.</li>
-<li><code id="PkgOptions-installLocation">installLocation</code> = <code>/Applications</code> String - The install location. <a href="https://stackoverflow.com/questions/12863944/how-do-you-specify-a-default-install-location-to-home-with-pkgbuild" target="_blank">Do not use it</a> to create per-user package. Mostly never you will need to change this option. <code>/Applications</code> would install it as expected into <code>/Applications</code> if the local system domain is chosen, or into <code>$HOME/Applications</code> if the home installation is chosen.</li>
-<li><p><code id="PkgOptions-allowAnywhere">allowAnywhere</code> = <code>true</code> Boolean - Whether can be installed at the root of any volume, including non-system volumes. Otherwise, it cannot be installed at the root of a volume.</p>
-<p>Corresponds to <a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Reference/DistributionDefinitionRef/Chapters/Distribution_XML_Ref.html#//apple_ref/doc/uid/TP40005370-CH100-SW70" target="_blank">enable_anywhere</a>.</p>
-</li>
-<li><p><code id="PkgOptions-allowCurrentUserHome">allowCurrentUserHome</code> = <code>true</code> Boolean - Whether can be installed into the current user&#x2019;s home directory. A home directory installation is done as the current user (not as root), and it cannot write outside of the home directory. If the product cannot be installed in the user&#x2019;s home directory and be not completely functional from user&#x2019;s home directory.</p>
-<p>Corresponds to <a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Reference/DistributionDefinitionRef/Chapters/Distribution_XML_Ref.html#//apple_ref/doc/uid/TP40005370-CH100-SW70" target="_blank">enable_currentUserHome</a>.</p>
-</li>
-<li><p><code id="PkgOptions-allowRootDirectory">allowRootDirectory</code> = <code>true</code> Boolean - Whether can be installed into the root directory. Should usually be <code>true</code> unless the product can be installed only to the user&#x2019;s home directory.</p>
-<p>Corresponds to <a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Reference/DistributionDefinitionRef/Chapters/Distribution_XML_Ref.html#//apple_ref/doc/uid/TP40005370-CH100-SW70" target="_blank">enable_localSystem</a>.</p>
-</li>
-<li><code id="PkgOptions-identity">identity</code> String - The name of certificate to use when signing. Consider using environment variables <a href="../code-signing.html">CSC_LINK or CSC_NAME</a> instead of specifying this option.</li>
+<li><strong><code id="BintrayOptions-provider">provider</code></strong> &quot;bintray&quot; - The provider. Must be <code>bintray</code>.</li>
+<li><code id="BintrayOptions-package">package</code> String - The Bintray package name.</li>
+<li><code id="BintrayOptions-repo">repo</code> = <code>generic</code> String - The Bintray repository name.</li>
+<li><code id="BintrayOptions-owner">owner</code> String - The owner.</li>
+<li><code id="BintrayOptions-component">component</code> String - The Bintray component (Debian only).</li>
+<li><code id="BintrayOptions-distribution">distribution</code> = <code>stable</code> String - The Bintray distribution (Debian only).</li>
+<li><code id="BintrayOptions-user">user</code> String - The Bintray user account. Used in cases where the owner is an organization.</li>
+<li><code id="BintrayOptions-token">token</code> String</li>
 </ul>
-<p>Inherited from <code>TargetSpecificOptions</code>:</p>
+<h2 id="genericserveroptions">GenericServerOptions</h2>
+<p>Generic (any HTTP(S) server) options.</p>
 <ul>
-<li><code id="PkgOptions-artifactName">artifactName</code> String - The <a href="configuration.html#artifact-file-name-template">artifact file name template</a>.</li>
-<li><code id="PkgOptions-publish">publish</code> The <a href="publish.html">publish</a> options.<!-- end of generated block --></li>
+<li><strong><code id="GenericServerOptions-provider">provider</code></strong> &quot;generic&quot; - The provider. Must be <code>generic</code>.</li>
+<li><strong><code id="GenericServerOptions-url">url</code></strong> String - The base url. e.g. <code>https://bucket_name.s3.amazonaws.com</code>. You can use <code>${os}</code> (expanded to <code>mac</code>, <code>linux</code> or <code>win</code> according to target platform) and <code>${arch}</code> macros.</li>
+<li><code id="GenericServerOptions-channel">channel</code> = <code>latest</code> String - The channel.</li>
 </ul>
-<script src="../_gitbook_plugin_analytics.js"></script>
+<h2 id="githuboptions">GithubOptions</h2>
+<p><a href="https://help.github.com/articles/about-releases/" target="_blank">GitHub</a> options.</p>
+<p>GitHub <a href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/" target="_blank">personal access token</a> is required. You can generate by going to <a href="https://github.com/settings/tokens/new" target="_blank">https://github.com/settings/tokens/new</a>. The access token should have the repo scope/permission.
+Define <code>GH_TOKEN</code> environment variable.</p>
+<ul>
+<li><strong><code id="GithubOptions-provider">provider</code></strong> &quot;github&quot; - The provider. Must be <code>github</code>.</li>
+<li><code id="GithubOptions-repo">repo</code> String - The repository name. <a href="#github-repository-and-bintray-package">Detected automatically</a>.</li>
+<li><code id="GithubOptions-owner">owner</code> String - The owner.</li>
+<li><code id="GithubOptions-vPrefixedTagName">vPrefixedTagName</code> = <code>true</code> Boolean - Whether to use <code>v</code>-prefixed tag name.</li>
+<li><code id="GithubOptions-host">host</code> = <code>github.com</code> String - The host (including the port if need).</li>
+<li><code id="GithubOptions-protocol">protocol</code> = <code>https</code> &quot;https&quot; | &quot;http&quot; - The protocol. GitHub Publisher supports only <code>https</code>.</li>
+<li><code id="GithubOptions-token">token</code> String - The access token to support auto-update from private github repositories. Never specify it in the configuration files. Only for <a href="../auto-update.html#appupdatersetfeedurloptions">setFeedURL</a>.</li>
+<li><code id="GithubOptions-private">private</code> Boolean - Whether to use private github auto-update provider if <code>GH_TOKEN</code> environment variable is set. See <a href="../auto-update.html#private-github-update-repo">Private GitHub Update Repo</a>.</li>
+</ul>
+<h2 id="s3options">S3Options</h2>
+<p><a href="https://aws.amazon.com/s3/" target="_blank">Amazon S3</a> options. <code>https</code> must be used, so, if you use direct Amazon S3 endpoints, format <code>https://s3.amazonaws.com/bucket_name</code> <a href="http://stackoverflow.com/a/11203685/1910191" target="_blank">must be used</a>. And do not forget to make files/directories public.</p>
+<p>AWS credentials are required, please see <a href="http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-your-credentials.html" target="_blank">getting your credentials</a>.
+Define <code>AWS_ACCESS_KEY_ID</code> and <code>AWS_SECRET_ACCESS_KEY</code> <a href="http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-environment.html" target="_blank">environment variables</a>.
+Or in the <a href="http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-shared.html" target="_blank">~/.aws/credentials</a>.</p>
+<ul>
+<li><strong><code id="S3Options-provider">provider</code></strong> &quot;s3&quot; - The provider. Must be <code>s3</code>.</li>
+<li><strong><code id="S3Options-bucket">bucket</code></strong> String - The bucket name.</li>
+<li><code id="S3Options-path">path</code> = <code>/</code> String - The directory path.</li>
+<li><code id="S3Options-region">region</code> String - The region. Is determined and set automatically when publishing.</li>
+<li><code id="S3Options-channel">channel</code> = <code>latest</code> String - The channel.</li>
+<li><p><code id="S3Options-acl">acl</code> = <code>public-read</code> &quot;private&quot; | &quot;public-read&quot; - The ACL. Set to <code>null</code> to not <a href="https://github.com/electron-userland/electron-builder/issues/1822" target="_blank">add</a>.</p>
+<p>Please see <a href="https://github.com/electron-userland/electron-builder/issues/1618#issuecomment-314679128" target="_blank">required permissions for the S3 provider</a>.</p>
+</li>
+<li><code id="S3Options-storageClass">storageClass</code> = <code>STANDARD</code> &quot;STANDARD&quot; | &quot;REDUCED_REDUNDANCY&quot; | &quot;STANDARD_IA&quot; - The type of storage to use for the object.</li>
+</ul>
+<!-- end of generated block --><script src="../_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
                             
@@ -669,12 +726,12 @@
 
             
                 
-                <a href="mas.html" class="navigation navigation-prev " aria-label="Previous page: MAS">
+                <a href="target.html" class="navigation navigation-prev " aria-label="Previous page: Target">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="win.html" class="navigation navigation-next " aria-label="Next page: Windows">
+                <a href="../cli.html" class="navigation navigation-next " aria-label="Next page: Command Line Interface (CLI)">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -685,7 +742,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"PKG","level":"1.2.3.3","depth":3,"next":{"title":"Windows","level":"1.2.4","depth":2,"path":"configuration/win.md","ref":"configuration/win.md","articles":[{"title":"NSIS","level":"1.2.4.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},{"title":"AppX","level":"1.2.4.2","depth":3,"path":"configuration/appx.md","ref":"configuration/appx.md","articles":[]},{"title":"Squirrel.Windows","level":"1.2.4.3","depth":3,"path":"configuration/squirrel-windows.md","ref":"configuration/squirrel-windows.md","articles":[]}]},"previous":{"title":"MAS","level":"1.2.3.2","depth":3,"path":"configuration/mas.md","ref":"configuration/mas.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/pkg.md","mtime":"2017-09-02T16:10:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-02T16:11:16.329Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Publish","level":"1.2.7","depth":2,"next":{"title":"Command Line Interface (CLI)","level":"1.3","depth":1,"path":"cli.md","ref":"cli.md","articles":[]},"previous":{"title":"Target","level":"1.2.6","depth":2,"path":"configuration/target.md","ref":"configuration/target.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/publish.md","mtime":"2017-09-02T16:10:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-02T16:11:16.329Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

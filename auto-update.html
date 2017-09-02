@@ -345,6 +345,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.7" data-path="configuration/publish.html">
+            
+                <a href="configuration/publish.html">
+            
+                    
+                    Publish
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -608,7 +621,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>See <a href="publishing-artifacts.html">Publishing Artifacts</a> for more information on how to configure your CI environment for automated deployments.</p>
+                                <p>See <a href="configuration/publish.html">publish configuration</a> and <a href="publishing-artifacts.html">Publishing Artifacts</a> guide for more information on how to configure your CI environment for automated deployments.</p>
 <p>Simplified auto-update is supported on Windows if you use the default NSIS target, but is not supported for Squirrel.Windows.</p>
 <h2 id="differences-between-electron-updater-and-built-in-autoupdater">Differences between electron-updater and built-in autoUpdater</h2>
 <ul>
@@ -638,7 +651,7 @@
 <p><strong>NOTICE</strong>: </p>
 <ol>
 <li>Do not call <a href="#appupdatersetfeedurloptions">setFeedURL</a>. electron-builder automatically creates <code>app-update.yml</code> file for you on build in the <code>resources</code> (this file is internal, you don&apos;t need to be aware of it). </li>
-<li><code>zip</code> target for macOS is <strong>required</strong> for Squirrel.Mac, whereas <code>latest-mac.json</code> cannot be created, which causes <code>autoUpdater</code> error. Default <a href="configuration/mac.html#MacOptions-target">target</a> for macOS <code>dmg</code>+<code>zip</code>, you don&apos;t need to explicitly specify target.</li>
+<li><code>zip</code> target for macOS is <strong>required</strong> for Squirrel.Mac, whereas <code>latest-mac.yml</code> cannot be created, which causes <code>autoUpdater</code> error. Default <a href="configuration/mac.html#MacOptions-target">target</a> for macOS <code>dmg</code>+<code>zip</code>, you don&apos;t need to explicitly specify target.</li>
 </ol>
 <h3 id="examples">Examples</h3>
 <ul>
@@ -775,7 +788,7 @@ autoUpdater.logger.transports.file.level = <span class="hljs-string">&quot;info&
 <h4 id="appupdatergetfeedurl-&#x21D2;-undefined--null--string"><code>appUpdater.getFeedURL()</code> &#x21D2; <code>undefined</code> | <code>null</code> | <code>String</code></h4>
 <p><a name="module_electron-updater.AppUpdater+setFeedURL"></a></p>
 <h4 id="appupdatersetfeedurloptions"><code>appUpdater.setFeedURL(options)</code></h4>
-<p>Configure update provider. If value is <code>string</code>, <a href="publishing-artifacts.html#GenericServerOptions">GenericServerOptions</a> will be set with value as <code>url</code>.</p>
+<p>Configure update provider. If value is <code>string</code>, <a href="configuration/publish.html#genericserveroptions">GenericServerOptions</a> will be set with value as <code>url</code>.</p>
 <ul>
 <li>options <code>PublishConfiguration</code> | <code>GenericServerOptions</code> | <code>S3Options</code> | <code>BintrayOptions</code> | <code>GithubOptions</code> | <code>String</code> - If you want to override configuration in the <code>app-update.yml</code>.</li>
 </ul>
@@ -935,7 +948,7 @@ This is different from the normal quit event sequence.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Auto Update","level":"1.5.2","depth":2,"next":{"title":"Code Signing","level":"1.5.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"previous":{"title":"Icons","level":"1.5.1","depth":2,"path":"icons.md","ref":"icons.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"auto-update.md","mtime":"2017-09-01T16:33:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-01T16:38:44.558Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Auto Update","level":"1.5.2","depth":2,"next":{"title":"Code Signing","level":"1.5.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"previous":{"title":"Icons","level":"1.5.1","depth":2,"path":"icons.md","ref":"icons.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"auto-update.md","mtime":"2017-09-02T16:09:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-02T16:11:16.329Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

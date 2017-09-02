@@ -345,6 +345,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.7" data-path="publish.html">
+            
+                <a href="publish.html">
+            
+                    
+                    Publish
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -610,7 +623,7 @@
                                 
                                 <!-- do not edit. start of generated block -->
 <h2 id="appimageoptions">AppImageOptions</h2>
-<p>The top-level <a href="configuration.html#Configuration-appImage">appImage</a> key contains set of options instructing electron-builder on how it should build <a href="https://appimage.org/" target="_blank">AppImage</a>.</p>
+<p>The top-level <code>appImage</code> key contains set of options instructing electron-builder on how it should build <a href="https://appimage.org/" target="_blank">AppImage</a>.</p>
 <ul>
 <li><code id="AppImageOptions-systemIntegration">systemIntegration</code> = <code>ask</code> &quot;ask&quot; | &quot;doNotAsk&quot; - The system integration installation.</li>
 </ul>
@@ -624,13 +637,10 @@
 <p>Inherited from <code>TargetSpecificOptions</code>:</p>
 <ul>
 <li><code id="AppImageOptions-artifactName">artifactName</code> String - The <a href="configuration.html#artifact-file-name-template">artifact file name template</a>.</li>
-<li><p><code id="AppImageOptions-publish">publish</code> - The <a href="../publishing-artifacts.html#publish-options">publish configuration</a>. Order is important &#x2014; first item will be used as a default auto-update server.</p>
-<p>If <code>GH_TOKEN</code> is set &#x2014; defaults to <code>[{provider: &quot;github&quot;}]</code>.</p>
-<p>If <code>BT_TOKEN</code> is set and <code>GH_TOKEN</code> is not set &#x2014; defaults to <code>[{provider: &quot;bintray&quot;}]</code>.</p>
-</li>
+<li><code id="AppImageOptions-publish">publish</code> The <a href="publish.html">publish</a> options.</li>
 </ul>
 <h2 id="linuxtargetspecificoptions">LinuxTargetSpecificOptions</h2>
-<p>The top-level <a href="configuration.html#Configuration-apk">apk</a>, <a href="configuration.html#Configuration-freebsd">freebsd</a>, <a href="configuration.html#Configuration-pacman">pacman</a>, <a href="configuration.html#Configuration-p5p">p5p</a>, <a href="configuration.html#Configuration-rpm">rpm</a> keys contains set of options instructing electron-builder on how it should build corresponding Linux target.</p>
+<p>The top-level <code>apk</code>, <code>freebsd</code>, <code>pacman</code>, <code>p5p</code>,<code>rpm</code> keys contains set of options instructing electron-builder on how it should build corresponding Linux target.</p>
 <ul>
 <li><code id="LinuxTargetSpecificOptions-depends">depends</code> Array&lt;String&gt; - Package dependencies.</li>
 <li><code id="LinuxTargetSpecificOptions-icon">icon</code> String</li>
@@ -650,10 +660,7 @@
 <p>Inherited from <code>TargetSpecificOptions</code>:</p>
 <ul>
 <li><code id="LinuxTargetSpecificOptions-artifactName">artifactName</code> String - The <a href="configuration.html#artifact-file-name-template">artifact file name template</a>.</li>
-<li><p><code id="LinuxTargetSpecificOptions-publish">publish</code> - The <a href="../publishing-artifacts.html#publish-options">publish configuration</a>. Order is important &#x2014; first item will be used as a default auto-update server.</p>
-<p>If <code>GH_TOKEN</code> is set &#x2014; defaults to <code>[{provider: &quot;github&quot;}]</code>.</p>
-<p>If <code>BT_TOKEN</code> is set and <code>GH_TOKEN</code> is not set &#x2014; defaults to <code>[{provider: &quot;bintray&quot;}]</code>.</p>
-</li>
+<li><code id="LinuxTargetSpecificOptions-publish">publish</code> The <a href="publish.html">publish</a> options.</li>
 </ul>
 <!-- end of generated block --><script src="../_gitbook_plugin_analytics.js"></script>
                                 
@@ -698,7 +705,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Other","level":"1.2.5.3","depth":3,"next":{"title":"Target","level":"1.2.6","depth":2,"path":"configuration/target.md","ref":"configuration/target.md","articles":[]},"previous":{"title":"Snap","level":"1.2.5.2","depth":3,"path":"configuration/snap.md","ref":"configuration/snap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/linux-other.md","mtime":"2017-09-01T16:37:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-01T16:38:44.558Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Other","level":"1.2.5.3","depth":3,"next":{"title":"Target","level":"1.2.6","depth":2,"path":"configuration/target.md","ref":"configuration/target.md","articles":[]},"previous":{"title":"Snap","level":"1.2.5.2","depth":3,"path":"configuration/snap.md","ref":"configuration/snap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/linux-other.md","mtime":"2017-09-02T16:10:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-02T16:11:16.329Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
