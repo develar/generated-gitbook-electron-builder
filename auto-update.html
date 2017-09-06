@@ -730,11 +730,14 @@ autoUpdater.logger.transports.file.level = <span class="hljs-string">&quot;info&
 </li>
 <li><a href="#FileInfo"><code>.FileInfo</code></a></li>
 <li><a href="#Logger"><code>.Logger</code></a><ul>
+<li><a href="#module_electron-updater.Logger+debug"><code>.debug(message)</code></a></li>
 <li><a href="#module_electron-updater.Logger+error"><code>.error(message)</code></a></li>
 <li><a href="#module_electron-updater.Logger+info"><code>.info(message)</code></a></li>
 <li><a href="#module_electron-updater.Logger+warn"><code>.warn(message)</code></a></li>
 </ul>
 </li>
+<li><a href="#UpdateInfo"><code>.UpdateInfo</code></a> &#x21D0; <code>VersionInfo</code></li>
+<li><a href="#VersionInfo"><code>.VersionInfo</code></a></li>
 <li><a href="#UpdateCheckResult"><code>.UpdateCheckResult</code></a></li>
 <li><a href="#UpdaterSignal">.UpdaterSignal</a><ul>
 <li><a href="#module_electron-updater.UpdaterSignal+login"><code>.login(handler)</code></a></li>
@@ -743,8 +746,6 @@ autoUpdater.logger.transports.file.level = <span class="hljs-string">&quot;info&
 <li><a href="#module_electron-updater.UpdaterSignal+updateDownloaded"><code>.updateDownloaded(handler)</code></a></li>
 </ul>
 </li>
-<li><a href="#UpdateInfo"><code>.UpdateInfo</code></a> &#x21D0; <code>VersionInfo</code></li>
-<li><a href="#VersionInfo"><code>.VersionInfo</code></a></li>
 </ul>
 </li>
 </ul>
@@ -809,6 +810,7 @@ This is different from the normal quit event sequence.</p>
 <ul>
 <li><strong><code id="FileInfo-name">name</code></strong> String</li>
 <li><strong><code id="FileInfo-url">url</code></strong> String</li>
+<li><code id="FileInfo-packageInfo">packageInfo</code> module:builder-util-runtime.PackageFileInfo</li>
 <li><code id="FileInfo-sha2">sha2</code> String</li>
 <li><code id="FileInfo-sha512">sha512</code> String</li>
 <li><code id="FileInfo-headers">headers</code> [key: string]: string</li>
@@ -818,11 +820,17 @@ This is different from the normal quit event sequence.</p>
 <p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br></p>
 <ul>
 <li><a href="#Logger"><code>.Logger</code></a><ul>
+<li><a href="#module_electron-updater.Logger+debug"><code>.debug(message)</code></a></li>
 <li><a href="#module_electron-updater.Logger+error"><code>.error(message)</code></a></li>
 <li><a href="#module_electron-updater.Logger+info"><code>.info(message)</code></a></li>
 <li><a href="#module_electron-updater.Logger+warn"><code>.warn(message)</code></a></li>
 </ul>
 </li>
+</ul>
+<p><a name="module_electron-updater.Logger+debug"></a></p>
+<h4 id="loggerdebugmessage"><code>logger.debug(message)</code></h4>
+<ul>
+<li>message <code>String</code></li>
 </ul>
 <p><a name="module_electron-updater.Logger+error"></a></p>
 <h4 id="loggererrormessage"><code>logger.error(message)</code></h4>
@@ -839,14 +847,36 @@ This is different from the normal quit event sequence.</p>
 <ul>
 <li>message <code>any</code></li>
 </ul>
+<p><a name="UpdateInfo"></a></p>
+<h3 id="updateinfo-&#x21D0;-versioninfo"><code>UpdateInfo</code> &#x21D0; <code>VersionInfo</code></h3>
+<p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br>
+<strong>Extends</strong>: <code>VersionInfo</code><br><strong>Properties</strong></p>
+<ul>
+<li><strong><code id="UpdateInfo-path">path</code></strong> String</li>
+<li><code id="UpdateInfo-packages">packages</code> Object&lt;String, any&gt;</li>
+<li><code id="UpdateInfo-githubArtifactName">githubArtifactName</code> String</li>
+<li><code id="UpdateInfo-releaseName">releaseName</code> String - The release name.</li>
+<li><code id="UpdateInfo-releaseNotes">releaseNotes</code> String - The release notes.</li>
+<li><strong><code id="UpdateInfo-releaseDate">releaseDate</code></strong> String - The release date.</li>
+<li><code id="UpdateInfo-sha512">sha512</code> String</li>
+<li><code id="UpdateInfo-stagingPercentage">stagingPercentage</code> Number - The <a href="auto-update#staged-rollouts">staged rollout</a> percentage, 0-100.</li>
+<li><strong><code id="UpdateInfo-version">version</code></strong> String - The version.</li>
+</ul>
+<p><a name="VersionInfo"></a></p>
+<h3 id="versioninfo"><code>VersionInfo</code></h3>
+<p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br>
+<strong>Properties</strong></p>
+<ul>
+<li><strong><code id="VersionInfo-version">version</code></strong> String - The version.</li>
+</ul>
 <p><a name="UpdateCheckResult"></a></p>
 <h3 id="updatecheckresult"><code>UpdateCheckResult</code></h3>
 <p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br>
 <strong>Properties</strong></p>
 <ul>
-<li><strong><code id="UpdateCheckResult-versionInfo">versionInfo</code></strong> <a href="#VersionInfo">VersionInfo</a></li>
+<li><strong><code id="UpdateCheckResult-versionInfo">versionInfo</code></strong> module:builder-util-runtime.VersionInfo</li>
 <li><code id="UpdateCheckResult-fileInfo">fileInfo</code> <a href="#FileInfo">FileInfo</a></li>
-<li><code id="UpdateCheckResult-downloadPromise">downloadPromise</code> Promise&lt;any&gt;</li>
+<li><code id="UpdateCheckResult-downloadPromise">downloadPromise</code> Promise&lt;Array&lt;String&gt;&gt;</li>
 <li><code id="UpdateCheckResult-cancellationToken">cancellationToken</code> CancellationToken</li>
 </ul>
 <p><a name="UpdaterSignal"></a></p>
@@ -881,28 +911,6 @@ This is different from the normal quit event sequence.</p>
 <h4 id="updatersignalupdatedownloadedhandler"><code>updaterSignal.updateDownloaded(handler)</code></h4>
 <ul>
 <li>handler <code>callback</code></li>
-</ul>
-<p><a name="UpdateInfo"></a></p>
-<h3 id="updateinfo-&#x21D0;-versioninfo"><code>UpdateInfo</code> &#x21D0; <code>VersionInfo</code></h3>
-<p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br>
-<strong>Extends</strong>: <code>VersionInfo</code><br><strong>Properties</strong></p>
-<ul>
-<li><strong><code id="UpdateInfo-path">path</code></strong> String</li>
-<li><code id="UpdateInfo-packages">packages</code> Object&lt;String, any&gt;</li>
-<li><code id="UpdateInfo-githubArtifactName">githubArtifactName</code> String</li>
-<li><code id="UpdateInfo-releaseName">releaseName</code> String - The release name.</li>
-<li><code id="UpdateInfo-releaseNotes">releaseNotes</code> String - The release notes.</li>
-<li><strong><code id="UpdateInfo-releaseDate">releaseDate</code></strong> String - The release date.</li>
-<li><code id="UpdateInfo-sha512">sha512</code> String</li>
-<li><code id="UpdateInfo-stagingPercentage">stagingPercentage</code> Number - The <a href="auto-update#staged-rollouts">staged rollout</a> percentage, 0-100.</li>
-<li><strong><code id="UpdateInfo-version">version</code></strong> String - The version.</li>
-</ul>
-<p><a name="VersionInfo"></a></p>
-<h3 id="versioninfo"><code>VersionInfo</code></h3>
-<p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br>
-<strong>Properties</strong></p>
-<ul>
-<li><strong><code id="VersionInfo-version">version</code></strong> String - The version.</li>
 </ul>
 <!-- end of generated block -->
 <script src="_gitbook_plugin_analytics.js"></script>
@@ -948,7 +956,7 @@ This is different from the normal quit event sequence.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Auto Update","level":"1.5.2","depth":2,"next":{"title":"Code Signing","level":"1.5.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"previous":{"title":"Icons","level":"1.5.1","depth":2,"path":"icons.md","ref":"icons.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"auto-update.md","mtime":"2017-09-02T17:27:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-02T17:57:46.948Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Auto Update","level":"1.5.2","depth":2,"next":{"title":"Code Signing","level":"1.5.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"previous":{"title":"Icons","level":"1.5.1","depth":2,"path":"icons.md","ref":"icons.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"auto-update.md","mtime":"2017-09-06T14:43:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-06T14:47:58.544Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
