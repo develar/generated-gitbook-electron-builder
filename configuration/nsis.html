@@ -7,7 +7,7 @@
         <title>NSIS · electron-builder</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="GitBook 3.2.6">
         
         
         
@@ -652,6 +652,7 @@
 </li>
 <li><code id="NsisOptions-artifactName">artifactName</code> String - The <a href="configuration#artifact-file-name-template">artifact file name template</a>. Defaults to <code>${productName} Setup ${version}.${ext}</code>.</li>
 <li><code id="NsisOptions-deleteAppDataOnUninstall">deleteAppDataOnUninstall</code> = <code>false</code> Boolean - <em>one-click installer only.</em> Whether to delete app data on uninstall.</li>
+<li><code id="NsisOptions-differentialPackage">differentialPackage</code> Boolean - Defaults to <code>true</code> for web installer (<code>nsis-web</code>)</li>
 </ul>
 <hr>
 <ul>
@@ -675,10 +676,18 @@
 <li><code id="NsisOptions-publish">publish</code> The <a href="publish">publish</a> options.<!-- end of generated block -->
 </li>
 </ul>
+<hr>
 <p>Unicode enabled by default. Large strings are supported (maximum string length of 8192 bytes instead of the default of 1024 bytes).</p>
 <h2 id="32-bit--64-bit">32 bit + 64 bit</h2>
 <p>If you build both ia32 and x64 arch (<code>--x64 --ia32</code>), you in any case get one installer. Appropriate arch will be installed automatically.
-The same applied to web installer (<code>nsis-web</code> target).</p>
+The same applied to web installer (<code>nsis-web</code> <a href="win#WindowsConfiguration-target">target</a>).</p>
+<h2 id="web-installer">Web Installer</h2>
+<p>To build web installer, set <a href="win#WindowsConfiguration-target">target</a> to <code>nsis-web</code>. Web Installer automatically detects OS architecture and downloads corresponding package file. So, user don&apos;t need to guess what installer to download and in the same time you don&apos;t bundle package files for all architectures in the one installer (as in case of default <code>nsis</code> target). It doesn&apos;t matter for common Electron application (due to superb LZMA compression, size difference is acceptable), but if your application is huge, Web Installer is a solution.</p>
+<p>If for some reasons web installer cannot download (antivirus, offline):</p>
+<ul>
+<li>Download package file into the same directory where installer located. It will be detected automatically and used instead of downloading from the Internet. Please note &#x2014; only original package file is allowed (checksum is checked).</li>
+<li>Specify any local package file using <code>--package-file=path_to_file</code>.</li>
+</ul>
 <h2 id="custom-nsis-script">Custom NSIS script</h2>
 <p>Two options are available &#x2014; <a href="#NsisOptions-include">include</a> and <a href="#NsisOptions-script">script</a>. <code>script</code> allows you to provide completely different NSIS script. For most cases it is not required as you need only to customise some aspects, but still use well-tested and maintained default NSIS script. So, <code>include</code> is recommended.</p>
 <p>Keep in mind &#x2014; if you customize NSIS script, you should always state about it in the issue reports. And don&apos;t expect that your issue will be resolved.</p>
@@ -772,7 +781,7 @@ It means that you <strong>should not change appId</strong> once your application
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"NSIS","level":"1.2.4.1","depth":3,"next":{"title":"AppX","level":"1.2.4.2","depth":3,"path":"configuration/appx.md","ref":"configuration/appx.md","articles":[]},"previous":{"title":"Windows","level":"1.2.4","depth":2,"path":"configuration/win.md","ref":"configuration/win.md","articles":[{"title":"NSIS","level":"1.2.4.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},{"title":"AppX","level":"1.2.4.2","depth":3,"path":"configuration/appx.md","ref":"configuration/appx.md","articles":[]},{"title":"Squirrel.Windows","level":"1.2.4.3","depth":3,"path":"configuration/squirrel-windows.md","ref":"configuration/squirrel-windows.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/nsis.md","mtime":"2017-09-06T14:43:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-06T14:47:58.544Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"NSIS","level":"1.2.4.1","depth":3,"next":{"title":"AppX","level":"1.2.4.2","depth":3,"path":"configuration/appx.md","ref":"configuration/appx.md","articles":[]},"previous":{"title":"Windows","level":"1.2.4","depth":2,"path":"configuration/win.md","ref":"configuration/win.md","articles":[{"title":"NSIS","level":"1.2.4.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},{"title":"AppX","level":"1.2.4.2","depth":3,"path":"configuration/appx.md","ref":"configuration/appx.md","articles":[]},{"title":"Squirrel.Windows","level":"1.2.4.3","depth":3,"path":"configuration/squirrel-windows.md","ref":"configuration/squirrel-windows.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/nsis.md","mtime":"2017-09-10T07:58:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-10T07:58:32.861Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

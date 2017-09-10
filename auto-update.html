@@ -7,7 +7,7 @@
         <title>Auto Update · electron-builder</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="GitBook 3.2.6">
         
         
         
@@ -722,6 +722,7 @@ autoUpdater.logger.transports.file.level = <span class="hljs-string">&quot;info&
 <li><a href="#module_electron-updater">electron-updater</a><ul>
 <li><a href="#AppUpdater">.AppUpdater</a> &#x21D0; <code>EventEmitter</code><ul>
 <li><a href="#module_electron-updater.AppUpdater+checkForUpdates"><code>.checkForUpdates()</code></a> &#x21D2; <code>Promise&lt;UpdateCheckResult&gt;</code></li>
+<li><a href="#module_electron-updater.AppUpdater+checkForUpdatesAndNotify"><code>.checkForUpdatesAndNotify()</code></a> &#x21D2; <code>undefined</code> | <code>Promise</code></li>
 <li><a href="#module_electron-updater.AppUpdater+downloadUpdate"><code>.downloadUpdate(cancellationToken)</code></a> &#x21D2; <code>Promise&lt;any&gt;</code></li>
 <li><a href="#module_electron-updater.AppUpdater+getFeedURL"><code>.getFeedURL()</code></a> &#x21D2; <code>undefined</code> | <code>null</code> | <code>String</code></li>
 <li><a href="#module_electron-updater.AppUpdater+setFeedURL"><code>.setFeedURL(options)</code></a></li>
@@ -768,6 +769,7 @@ autoUpdater.logger.transports.file.level = <span class="hljs-string">&quot;info&
 <ul>
 <li><a href="#AppUpdater">.AppUpdater</a> &#x21D0; <code>EventEmitter</code><ul>
 <li><a href="#module_electron-updater.AppUpdater+checkForUpdates"><code>.checkForUpdates()</code></a> &#x21D2; <code>Promise&lt;UpdateCheckResult&gt;</code></li>
+<li><a href="#module_electron-updater.AppUpdater+checkForUpdatesAndNotify"><code>.checkForUpdatesAndNotify()</code></a> &#x21D2; <code>undefined</code> | <code>Promise</code></li>
 <li><a href="#module_electron-updater.AppUpdater+downloadUpdate"><code>.downloadUpdate(cancellationToken)</code></a> &#x21D2; <code>Promise&lt;any&gt;</code></li>
 <li><a href="#module_electron-updater.AppUpdater+getFeedURL"><code>.getFeedURL()</code></a> &#x21D2; <code>undefined</code> | <code>null</code> | <code>String</code></li>
 <li><a href="#module_electron-updater.AppUpdater+setFeedURL"><code>.setFeedURL(options)</code></a></li>
@@ -778,6 +780,8 @@ autoUpdater.logger.transports.file.level = <span class="hljs-string">&quot;info&
 <p><a name="module_electron-updater.AppUpdater+checkForUpdates"></a></p>
 <h4 id="appupdatercheckforupdates-&#x21D2;-promiseupdatecheckresult"><code>appUpdater.checkForUpdates()</code> &#x21D2; <code>Promise&lt;UpdateCheckResult&gt;</code></h4>
 <p>Asks the server whether there is an update.</p>
+<p><a name="module_electron-updater.AppUpdater+checkForUpdatesAndNotify"></a></p>
+<h4 id="appupdatercheckforupdatesandnotify-&#x21D2;-undefined--promise"><code>appUpdater.checkForUpdatesAndNotify()</code> &#x21D2; <code>undefined</code> | <code>Promise</code></h4>
 <p><a name="module_electron-updater.AppUpdater+downloadUpdate"></a></p>
 <h4 id="appupdaterdownloadupdatecancellationtoken-&#x21D2;-promiseany"><code>appUpdater.downloadUpdate(cancellationToken)</code> &#x21D2; <code>Promise&lt;any&gt;</code></h4>
 <p>Start downloading update manually. You can use this method if <code>autoDownload</code> option is set to <code>false</code>.</p>
@@ -956,7 +960,7 @@ This is different from the normal quit event sequence.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Auto Update","level":"1.5.2","depth":2,"next":{"title":"Code Signing","level":"1.5.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"previous":{"title":"Icons","level":"1.5.1","depth":2,"path":"icons.md","ref":"icons.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"auto-update.md","mtime":"2017-09-06T14:43:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-06T14:47:58.544Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Auto Update","level":"1.5.2","depth":2,"next":{"title":"Code Signing","level":"1.5.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"previous":{"title":"Icons","level":"1.5.1","depth":2,"path":"icons.md","ref":"icons.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"auto-update.md","mtime":"2017-09-10T07:58:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-10T07:58:32.861Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

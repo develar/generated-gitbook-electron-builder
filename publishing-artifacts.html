@@ -7,7 +7,7 @@
         <title>Publishing Artifacts · electron-builder</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="GitBook 3.2.6">
         
         
         
@@ -662,16 +662,6 @@
 <p>But please consider using automatic rules instead of explicitly specifying <code>publish</code>:</p>
 <ul>
 <li><p>If CI server detected, &#x2014; <code>onTagOrDraft</code>.</p>
-<p><strong>NOTICE</strong>: <em>This is the recommended workflow.</em></p>
-<ol>
-<li><a href="https://help.github.com/articles/creating-releases/" target="_blank">Draft a new release</a>. Set the &quot;Tag version&quot; to the value of <code>version</code> in your application <code>package.json</code>, and prefix it with <code>v</code>. &quot;Release title&quot; can be anything you want.<ul>
-<li>For example, if your application <code>package.json</code> version is <code>1.0</code>, your draft&apos;s &quot;Tag version&quot; would be <code>v1.0</code>.</li>
-</ul>
-</li>
-<li>Push some commits. Every CI build will update the artifacts attached to this draft.</li>
-<li>Once you are done, publish the release. GitHub will tag the latest commit for you.</li>
-</ol>
-<p>The benefit of this workflow is that it allows you to always have the latest artifacts, and the release can be published once it is ready.</p>
 </li>
 <li><p>If CI server reports that tag was pushed, &#x2014; <code>onTag</code>.</p>
 <p>Release will be drafted (if doesn&apos;t already exist) and artifacts published only if tag was pushed.</p>
@@ -683,6 +673,24 @@
 <p>and if you run <code>yarn release</code>, a release will be drafted (if doesn&apos;t already exist) and artifacts published.</p>
 </li>
 </ul>
+<h2 id="recommended-github-releases-workflow">Recommended GitHub Releases Workflow</h2>
+<ol>
+<li><a href="https://help.github.com/articles/creating-releases/" target="_blank">Draft a new release</a>. Set the &quot;Tag version&quot; to the value of <code>version</code> in your application <code>package.json</code>, and prefix it with <code>v</code>. &quot;Release title&quot; can be anything you want.<ul>
+<li>For example, if your application <code>package.json</code> version is <code>1.0</code>, your draft&apos;s &quot;Tag version&quot; would be <code>v1.0</code>.</li>
+</ul>
+</li>
+<li>Push some commits. Every CI build will update the artifacts attached to this draft.</li>
+<li>Once you are done, publish the release. GitHub will tag the latest commit for you.</li>
+</ol>
+<p>The benefit of this workflow is that it allows you to always have the latest artifacts, and the release can be published once it is ready.</p>
+<h2 id="s3-workflow">S3 Workflow</h2>
+<p>If you are using S3 instead of GitHub releases to publish artifacts the above workflow won&apos;t work. This workflow is modelled on how releases are handled in maven.</p>
+<ol>
+<li>Setup your CI to publish on each commit. E.g. <code>&quot;dist&quot;: &quot;electron-builder --publish always&quot;</code> in your package.json.</li>
+<li>Set your version in your application <code>package.json</code> to <code>1.9.0-snapshot</code> (or <code>1.9.0-master</code> or whatever you want your development channel to be named). This will publish a file named <code>snapshot.yml</code> and a build named <code>something-snapshot.exe</code> (and corresponding for mac) to S3.</li>
+<li>When you are ready to deploy, simply change you package version to <code>1.9.0</code> and push. This will then produce a <code>latest.yml</code> and <code>something.exe</code> on s3. Usually you&apos;ll git-tag this version as well (just to keep track of it).</li>
+<li>Change the version back to a snapshot version right after, i.e. <code>1.10.0-snapshot</code>, and commit it.</li>
+</ol>
 <script src="_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
@@ -726,7 +734,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Publishing Artifacts","level":"1.5.4","depth":2,"next":{"title":"Multi Platform Build","level":"1.5.5","depth":2,"path":"multi-platform-build.md","ref":"multi-platform-build.md","articles":[]},"previous":{"title":"Code Signing","level":"1.5.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"publishing-artifacts.md","mtime":"2017-09-06T13:45:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-06T14:47:58.544Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Publishing Artifacts","level":"1.5.4","depth":2,"next":{"title":"Multi Platform Build","level":"1.5.5","depth":2,"path":"multi-platform-build.md","ref":"multi-platform-build.md","articles":[]},"previous":{"title":"Code Signing","level":"1.5.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics","advanced-emoji"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"publishing-artifacts.md","mtime":"2017-09-10T05:56:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-10T07:58:32.861Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
