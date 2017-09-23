@@ -624,9 +624,13 @@
 <p>To use Squirrel.Windows please install <code>electron-builder-squirrel-windows</code> dependency.</p>
 <p>For <code>portable</code> app, <code>PORTABLE_EXECUTABLE_DIR</code> env is set (dir where portable executable located).</p>
 </li>
-<li><code id="WindowsConfiguration-signingHashAlgorithms">signingHashAlgorithms</code> = <code>[&apos;sha1&apos;, &apos;sha256&apos;]</code> Array&lt;&quot;sha1&quot; | &quot;sha256&quot;&gt; - Array of signing algorithms used. For AppX <code>sha256</code> is always used.</li>
 <li><code id="WindowsConfiguration-icon">icon</code> = <code>build/icon.ico</code> String - The path to application icon.</li>
 <li><code id="WindowsConfiguration-legalTrademarks">legalTrademarks</code> String - The trademarks and registered trademarks.</li>
+</ul>
+<hr>
+<ul>
+<li><code id="WindowsConfiguration-signingHashAlgorithms">signingHashAlgorithms</code> = <code>[&apos;sha1&apos;, &apos;sha256&apos;]</code> Array&lt;&quot;sha1&quot; | &quot;sha256&quot;&gt; - Array of signing algorithms used. For AppX <code>sha256</code> is always used.</li>
+<li><code id="WindowsConfiguration-sign">sign</code> String | (configuration: CustomWindowsSignTaskConfiguration) =&gt; Promise - The custom function (or path to file or module id) to sign Windows executable.</li>
 <li><code id="WindowsConfiguration-certificateFile">certificateFile</code> String - The path to the *.pfx certificate you want to sign with. Please use it only if you cannot use env variable <code>CSC_LINK</code> (<code>WIN_CSC_LINK</code>) for some reason. Please see <a href="../code-signing">Code Signing</a>.</li>
 <li><code id="WindowsConfiguration-certificatePassword">certificatePassword</code> String - The password to the certificate provided in <code>certificateFile</code>. Please use it only if you cannot use env variable <code>CSC_KEY_PASSWORD</code> (<code>WIN_CSC_KEY_PASSWORD</code>) for some reason. Please see <a href="../code-signing">Code Signing</a>.</li>
 <li><code id="WindowsConfiguration-certificateSubjectName">certificateSubjectName</code> String - The name of the subject of the signing certificate. Required only for EV Code Signing and works only on Windows.</li>
@@ -634,10 +638,27 @@
 <li><code id="WindowsConfiguration-additionalCertificateFile">additionalCertificateFile</code> String - The path to an additional certificate file you want to add to the signature block.</li>
 <li><code id="WindowsConfiguration-rfc3161TimeStampServer">rfc3161TimeStampServer</code> = <code>http://timestamp.comodoca.com/rfc3161</code> String - The URL of the RFC 3161 time stamp server.</li>
 <li><code id="WindowsConfiguration-timeStampServer">timeStampServer</code> = <code>http://timestamp.verisign.com/scripts/timstamp.dll</code> String - The URL of the time stamp server.</li>
+</ul>
+<hr>
+<ul>
 <li><code id="WindowsConfiguration-publisherName">publisherName</code> String | Array&lt;String&gt; - <a href="https://github.com/electron-userland/electron-builder/issues/1187#issuecomment-278972073" target="_blank">The publisher name</a>, exactly as in your code signed certificate. Several names can be provided. Defaults to common name from your code signing certificate.</li>
 <li><code id="WindowsConfiguration-verifyUpdateCodeSignature">verifyUpdateCodeSignature</code> = <code>true</code> Boolean - Whether to verify the signature of an available update before installation. The <a href="#publisherName">publisher name</a> will be used for the signature verification.</li>
-<li><code id="WindowsConfiguration-requestedExecutionLevel">requestedExecutionLevel</code> = <code>asInvoker</code> &quot;asInvoker&quot; | &quot;highestAvailable&quot; | &quot;requireAdministrator&quot; - The <a href="https://msdn.microsoft.com/en-us/library/6ad1fshk.aspx#Anchor_9" target="_blank">security level</a> at which the application requests to be executed. Cannot be specified per target, allowed only in the <code>win</code>.<!-- end of generated block --></li>
+<li><code id="WindowsConfiguration-requestedExecutionLevel">requestedExecutionLevel</code> = <code>asInvoker</code> &quot;asInvoker&quot; | &quot;highestAvailable&quot; | &quot;requireAdministrator&quot; - The <a href="https://msdn.microsoft.com/en-us/library/6ad1fshk.aspx#Anchor_9" target="_blank">security level</a> at which the application requests to be executed. Cannot be specified per target, allowed only in the <code>win</code>.<!-- end of generated block -->
+</li>
 </ul>
+<hr>
+<h2 id="common-questions">Common Questions</h2>
+<h4 id="how-do-delegate-code-signing">How do delegate code signing?</h4>
+<p>Use <a href="#WindowsConfiguration-sign">sign</a> option.</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;win&quot;</span>: {
+  <span class="hljs-string">&quot;sign&quot;</span>: <span class="hljs-string">&quot;./customSign.js&quot;</span>
+}
+</code></pre>
+<p>File <code>customSign.js</code> in the project root directory:</p>
+<pre><code class="lang-js">exports.default = <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">configuration</span>) </span>{
+  <span class="hljs-comment">// your custom code</span>
+}
+</code></pre>
 <script src="../_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
@@ -681,7 +702,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Windows","level":"1.2.4","depth":2,"next":{"title":"NSIS","level":"1.2.4.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},"previous":{"title":"PKG","level":"1.2.3.3","depth":3,"path":"configuration/pkg.md","ref":"configuration/pkg.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/win.md","mtime":"2017-09-23T05:56:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-23T05:59:07.189Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Windows","level":"1.2.4","depth":2,"next":{"title":"NSIS","level":"1.2.4.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},"previous":{"title":"PKG","level":"1.2.3.3","depth":3,"path":"configuration/pkg.md","ref":"configuration/pkg.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/win.md","mtime":"2017-09-23T17:58:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-23T17:58:51.671Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
