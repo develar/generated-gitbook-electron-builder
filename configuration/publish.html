@@ -647,7 +647,8 @@
 </ul>
 <!-- do not edit. start of generated block -->
 <h2 id="bintrayoptions">BintrayOptions</h2>
-<p><a href="https://bintray.com/" target="_blank">Bintray</a> options.</p>
+<p><a href="https://bintray.com/" target="_blank">Bintray</a> options. Requires an API key. An API key can be obtained from the user <a href="https://bintray.com/profile/edit" target="_blank">profile</a> page (&quot;Edit Your Profile&quot; -&gt; API Key).
+Define <code>BT_TOKEN</code> environment variable.</p>
 <ul>
 <li><strong><code id="BintrayOptions-provider">provider</code></strong> &quot;bintray&quot; - The provider. Must be <code>bintray</code>.</li>
 <li><code id="BintrayOptions-package">package</code> String - The Bintray package name.</li>
@@ -687,13 +688,24 @@ Or in the <a href="http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-gu
 <ul>
 <li><strong><code id="S3Options-provider">provider</code></strong> &quot;s3&quot; - The provider. Must be <code>s3</code>.</li>
 <li><strong><code id="S3Options-bucket">bucket</code></strong> String - The bucket name.</li>
-<li><code id="S3Options-path">path</code> = <code>/</code> String - The directory path.</li>
 <li><code id="S3Options-region">region</code> String - The region. Is determined and set automatically when publishing.</li>
-<li><code id="S3Options-channel">channel</code> = <code>latest</code> String - The channel.</li>
 <li><p><code id="S3Options-acl">acl</code> = <code>public-read</code> &quot;private&quot; | &quot;public-read&quot; - The ACL. Set to <code>null</code> to not <a href="https://github.com/electron-userland/electron-builder/issues/1822" target="_blank">add</a>.</p>
 <p>Please see <a href="https://github.com/electron-userland/electron-builder/issues/1618#issuecomment-314679128" target="_blank">required permissions for the S3 provider</a>.</p>
 </li>
 <li><code id="S3Options-storageClass">storageClass</code> = <code>STANDARD</code> &quot;STANDARD&quot; | &quot;REDUCED_REDUNDANCY&quot; | &quot;STANDARD_IA&quot; - The type of storage to use for the object.</li>
+<li><code id="S3Options-channel">channel</code> = <code>latest</code> String - The update channel.</li>
+<li><code id="S3Options-path">path</code> = <code>/</code> String - The directory path.</li>
+</ul>
+<h2 id="spacesoptions">SpacesOptions</h2>
+<p><a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-digitalocean-spaces" target="_blank">DigitalOcean Spaces</a> options.
+Access key is required, define <code>DO_KEY_ID</code> and <code>DO_SECRET_KEY</code> environment variables.</p>
+<ul>
+<li><strong><code id="SpacesOptions-provider">provider</code></strong> &quot;spaces&quot; - The provider. Must be <code>spaces</code>.</li>
+<li><strong><code id="SpacesOptions-name">name</code></strong> String - The space name.</li>
+<li><strong><code id="SpacesOptions-region">region</code></strong> String - The region (e.g. <code>nyc3</code>).</li>
+<li><code id="SpacesOptions-channel">channel</code> = <code>latest</code> String - The update channel.</li>
+<li><code id="SpacesOptions-path">path</code> = <code>/</code> String - The directory path.</li>
+<li><code id="SpacesOptions-acl">acl</code> = <code>public-read</code> &quot;private&quot; | &quot;public-read&quot; - The ACL. Set to <code>null</code> to not <a href="https://github.com/electron-userland/electron-builder/issues/1822" target="_blank">add</a>.</li>
 </ul>
 <!-- end of generated block --><script src="../_gitbook_plugin_analytics.js"></script>
                                 
@@ -738,7 +750,7 @@ Or in the <a href="http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-gu
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Publish","level":"1.2.7","depth":2,"next":{"title":"Command Line Interface (CLI)","level":"1.3","depth":1,"path":"cli.md","ref":"cli.md","articles":[]},"previous":{"title":"Target","level":"1.2.6","depth":2,"path":"configuration/target.md","ref":"configuration/target.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/publish.md","mtime":"2017-09-22T15:19:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-22T15:19:22.820Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Publish","level":"1.2.7","depth":2,"next":{"title":"Command Line Interface (CLI)","level":"1.3","depth":1,"path":"cli.md","ref":"cli.md","articles":[]},"previous":{"title":"Target","level":"1.2.6","depth":2,"path":"configuration/target.md","ref":"configuration/target.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/publish.md","mtime":"2017-09-23T05:56:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-23T05:59:07.189Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
