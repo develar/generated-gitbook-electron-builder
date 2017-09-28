@@ -618,7 +618,6 @@
                                 <section class="normal markdown-section">
                                 
                                 <p>The top-level <a href="configuration#Configuration-appx">appx</a> key contains set of options instructing electron-builder on how it should build AppX (Windows Store).</p>
-<p>Please also see <a href="../icons#appx">AppX Assets</a>.</p>
 <p>All options are optional. All required for AppX configuration is inferred and computed automatically.</p>
 <!-- do not edit. start of generated block -->
 <ul>
@@ -636,6 +635,22 @@
 <li><code id="AppXOptions-publish">publish</code> The <a href="publish">publish</a> options.<!-- end of generated block -->
 </li>
 </ul>
+<h2 id="appx-assets">AppX Assets</h2>
+<p>AppX assets need to be placed in the <code>appx</code> folder in the <a href="configuration#MetadataDirectories-buildResources">build</a> directory.</p>
+<p>The assets should follow these naming conventions:</p>
+<ul>
+<li>Logo: <code>StoreLogo.png</code></li>
+<li>Square150x150Logo: <code>Square150x150Logo.png</code></li>
+<li>Square44x44Logo: <code>Square44x44Logo.png</code></li>
+<li>Wide310x150Logo: <code>Wide310x150Logo.png</code></li>
+<li><em>Optional</em> BadgeLogo: <code>BadgeLogo.png</code></li>
+<li><em>Optional</em> Square310x310Logo: <code>LargeTile.png</code></li>
+<li><em>Optional</em> Square71x71Logo: <code>SmallTile.png</code></li>
+<li><em>Optional</em> SplashScreen: <code>SplashScreen.png</code></li>
+</ul>
+<p>All official AppX asset types are supported by the build process. These assets can include scaled assets by using <code>target size</code> and <code>scale</code> in the name.
+See <a href="https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets" target="_blank">Guidelines for tile and icon assets</a> for more information.</p>
+<p>Default assets will be used for <code>Logo</code>, <code>Square150x150Logo</code>, <code>Square44x44Logo</code> and <code>Wide310x150Logo</code> if not provided. For assets marked <code>Optional</code>, these assets will not be listed in the manifest file if not provided.</p>
 <h2 id="how-to-publish-your-electron-app-to-the-windows-app-store">How to publish your Electron App to the Windows App Store</h2>
 <ol>
 <li>You&apos;ll need a microsoft developer account (pay some small fee). Use your favourite search engine to find the registration form.</li>
@@ -694,7 +709,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"AppX","level":"1.2.4.2","depth":3,"next":{"title":"Squirrel.Windows","level":"1.2.4.3","depth":3,"path":"configuration/squirrel-windows.md","ref":"configuration/squirrel-windows.md","articles":[]},"previous":{"title":"NSIS","level":"1.2.4.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/appx.md","mtime":"2017-09-27T07:20:37.416Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-27T07:20:38.250Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"AppX","level":"1.2.4.2","depth":3,"next":{"title":"Squirrel.Windows","level":"1.2.4.3","depth":3,"path":"configuration/squirrel-windows.md","ref":"configuration/squirrel-windows.md","articles":[]},"previous":{"title":"NSIS","level":"1.2.4.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/appx.md","mtime":"2017-09-28T06:11:19.200Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-28T06:11:20.183Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

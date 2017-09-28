@@ -659,6 +659,25 @@
   <span class="hljs-comment">// your custom code</span>
 }
 </code></pre>
+<h4 id="how-do-create-parallels-windows-10-virtual-machine">How do create Parallels Windows 10 Virtual Machine?</h4>
+<p>You don&apos;t need to have Windows 10 license. Free (expire after 90 days, but it is not a problem because no additional setup is required) is provided.</p>
+<ol>
+<li>Open Parallels Desktop.</li>
+<li>File -&gt; New.</li>
+<li>Select &quot;Modern.IE&quot; in the &quot;Free Systems&quot;.</li>
+<li>Continue, Continue, Accept software license agreement.</li>
+<li>Select &quot;Microsoft Edge on Windows 10&quot;.</li>
+<li>The next steps are general, see <a href="http://kb.parallels.com/4729" target="_blank">Installing Windows on your Mac using Parallels Desktop</a> from &quot;Step 6: Specify a name and location&quot;.</li>
+</ol>
+<h4 id="how-do-create-virtualbox-windows-10-virtual-machine">How do create VirtualBox Windows 10 Virtual Machine?</h4>
+<p>If you are not on macOS or don&apos;t want to buy <a href="Parallels%20Desktop">http://www.parallels.com/products/desktop/</a>, you can use free <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox</a>.</p>
+<ol>
+<li>Open <a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/" target="_blank">Download virtual machines</a>.</li>
+<li>Select &quot;MSEdge on Win10 (x64) Stable&quot;.</li>
+<li>Select &quot;VirtualBox&quot; platform.</li>
+<li>Download. See <a href="https://az792536.vo.msecnd.net/vms/release_notes_license_terms_8_1_15.pdf" target="_blank">installation instructions</a>.</li>
+</ol>
+<p>VirtualBox is not supported by electron-builder for now, so, you need to setup build environment on Windows if you want to use VirtualBox to build AppX (and other Windows-only tasks).</p>
 <script src="../_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
@@ -702,7 +721,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Windows","level":"1.2.4","depth":2,"next":{"title":"NSIS","level":"1.2.4.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},"previous":{"title":"PKG","level":"1.2.3.3","depth":3,"path":"configuration/pkg.md","ref":"configuration/pkg.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/win.md","mtime":"2017-09-27T07:20:37.412Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-27T07:20:38.250Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Windows","level":"1.2.4","depth":2,"next":{"title":"NSIS","level":"1.2.4.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},"previous":{"title":"PKG","level":"1.2.3.3","depth":3,"path":"configuration/pkg.md","ref":"configuration/pkg.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/win.md","mtime":"2017-09-28T06:11:19.197Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-28T06:11:20.183Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
