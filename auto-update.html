@@ -438,20 +438,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="publishing-artifacts">
-            
-                <a href="publishing-artifacts">
-            
-                    
-                    Publishing Artifacts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.5" data-path="multi-platform-build">
+        <li class="chapter " data-level="1.5.4" data-path="multi-platform-build">
             
                 <a href="multi-platform-build">
             
@@ -617,7 +604,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>See <a href="configuration/publish">publish configuration</a> and <a href="publishing-artifacts">Publishing Artifacts</a> guide for more information on how to configure your CI environment for automated deployments.</p>
+                                <p>See <a href="configuration/publish">publish configuration</a> for more information on how to configure your CI environment for automated deployments.</p>
 <p>Simplified auto-update is supported on Windows if you use the default NSIS target, but is not supported for Squirrel.Windows.</p>
 <h2 id="differences-between-electron-updater-and-built-in-autoupdater">Differences between electron-updater and built-in autoUpdater</h2>
 <ul>
@@ -791,7 +778,7 @@ autoUpdater.logger.transports.file.level = <span class="hljs-string">&quot;info&
 <h4 id="appupdatersetfeedurloptions"><code>appUpdater.setFeedURL(options)</code></h4>
 <p>Configure update provider. If value is <code>string</code>, <a href="configuration/publish#genericserveroptions">GenericServerOptions</a> will be set with value as <code>url</code>.</p>
 <ul>
-<li>options <code>PublishConfiguration</code> | <code>GenericServerOptions</code> | <code>S3Options</code> | <code>SpacesOptions</code> | <code>BintrayOptions</code> | <code>GithubOptions</code> | <code>String</code> - If you want to override configuration in the <code>app-update.yml</code>.</li>
+<li>options <code>PublishConfiguration</code> | <code>String</code> | <code>GithubOptions</code> | <code>S3Options</code> | <code>SpacesOptions</code> | <code>GenericServerOptions</code> | <code>BintrayOptions</code> - If you want to override configuration in the <code>app-update.yml</code>.</li>
 </ul>
 <p><a name="module_electron-updater.AppUpdater+quitAndInstall"></a></p>
 <h4 id="appupdaterquitandinstallissilent-isforcerunafter"><code>appUpdater.quitAndInstall(isSilent, isForceRunAfter)</code></h4>
@@ -956,7 +943,7 @@ This is different from the normal quit event sequence.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Auto Update","level":"1.5.2","depth":2,"next":{"title":"Code Signing","level":"1.5.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"previous":{"title":"Icons","level":"1.5.1","depth":2,"path":"icons.md","ref":"icons.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"auto-update.md","mtime":"2017-09-28T06:11:19.731Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-28T06:11:20.183Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Auto Update","level":"1.5.2","depth":2,"next":{"title":"Code Signing","level":"1.5.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"previous":{"title":"Icons","level":"1.5.1","depth":2,"path":"icons.md","ref":"icons.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"auto-update.md","mtime":"2017-09-28T07:26:17.353Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-28T07:26:17.893Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

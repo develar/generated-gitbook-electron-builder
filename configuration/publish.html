@@ -438,20 +438,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../publishing-artifacts">
-            
-                <a href="../publishing-artifacts">
-            
-                    
-                    Publishing Artifacts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.5" data-path="../multi-platform-build">
+        <li class="chapter " data-level="1.5.4" data-path="../multi-platform-build">
             
                 <a href="../multi-platform-build">
             
@@ -618,16 +605,78 @@
                                 <section class="normal markdown-section">
                                 
                                 <p>The <a href="configuration#Configuration-publish">publish</a> key contains set of options instructing electron-builder on how it should publish artifacts and build update info files for <a href="../auto-update">auto update</a>.</p>
-<p><code>String | Object | Array&lt;Object | String&gt;</code> where <code>Object</code> it is <a href="#bintrayoptions">BintrayOptions</a>, <a href="#genericserveroptions">GenericServerOptions</a>, <a href="#githuboptions">GitHub</a> or <a href="#s3options">S3Options</a>. Order is important &#x2014; first item will be used as a default auto-update server. Can be specified in the <a href="configuration#configuration">top-level configuration</a> or any platform- (<a href="mac">mac</a>, <a href="linux">linux</a>, <a href="win">win</a>) or target- (e.g. <a href="nsis">nsis</a>) specific configuration.</p>
+<p><code>String | Object | Array&lt;Object | String&gt;</code> where <code>Object</code> it is <a href="#bintrayoptions">BintrayOptions</a>, <a href="#genericserveroptions">GenericServerOptions</a>, <a href="#githuboptions">GitHub</a>, <a href="#s3options">S3Options</a> or <a href="#spacesoptions">SpacesOptions</a>. Order is important &#x2014; first item will be used as a default auto-update server. Can be specified in the <a href="configuration#configuration">top-level configuration</a> or any platform- (<a href="mac">mac</a>, <a href="linux">linux</a>, <a href="win">win</a>) or target- (e.g. <a href="nsis">nsis</a>) specific configuration.</p>
 <p>If <code>GH_TOKEN</code> is defined &#x2014; defaults to <code>[{provider: &quot;github&quot;}]</code>.</p>
 <p>If <code>BT_TOKEN</code> is defined and <code>GH_TOKEN</code> is not &#x2014; defaults to <code>[{provider: &quot;bintray&quot;}]</code>.</p>
-<p>You can publish to multiple providers. Order is important &#x2014; first item will be used as a default auto-update server.</p>
-<p>For example, to publish Windows artifacts to both GitHub and Bintray:</p>
+<p>Travis and AppVeyor support publishing artifacts. But it requires additional configuration for each CI and you need to configure what to publish.
+<code>electron-builder</code> makes publishing dead simple.</p>
+<p>You can publish to multiple providers. For example, to publish Windows artifacts to both GitHub and Bintray (order is important &#x2014; first item will be used as a default auto-update server, so, in this example app will use github as auto-update provider):</p>
 <pre><code class="lang-json"><span class="hljs-string">&quot;win&quot;</span>: {
   <span class="hljs-string">&quot;publish&quot;</span>: [<span class="hljs-string">&quot;github&quot;</span>, <span class="hljs-string">&quot;bintray&quot;</span>]
 }
 </code></pre>
-<p>See also <a href="../publishing-artifacts">Publishing Artifacts</a> guide.</p>
+<h2 id="how-do-publish">How do Publish</h2>
+<p>Excerpt from <a href="https://github.com/electron-userland/electron-builder#cli-usage" target="_blank">CLI Usage</a> of <code>electron-builder</code> command:</p>
+<pre><code>Publishing:
+  --publish, -p  [choices: &quot;onTag&quot;, &quot;onTagOrDraft&quot;, &quot;always&quot;, &quot;never&quot;]
+</code></pre><p>CLI <code>--publish</code> option values:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>onTag</code></td>
+<td>on tag push only</td>
+</tr>
+<tr>
+<td><code>onTagOrDraft</code></td>
+<td>on tag push or if draft release exists</td>
+</tr>
+<tr>
+<td><code>always</code></td>
+<td>always publish</td>
+</tr>
+<tr>
+<td><code>never</code></td>
+<td>never publish</td>
+</tr>
+</tbody>
+</table>
+<p>But please consider using automatic rules instead of explicitly specifying <code>publish</code>:</p>
+<ul>
+<li><p>If CI server detected, &#x2014; <code>onTagOrDraft</code>.</p>
+</li>
+<li><p>If CI server reports that tag was pushed, &#x2014; <code>onTag</code>.</p>
+<p>Release will be drafted (if doesn&apos;t already exist) and artifacts published only if tag was pushed.</p>
+</li>
+<li><p>If <a href="https://docs.npmjs.com/misc/scripts" target="_blank">npm script</a> named <code>release</code>, &#x2014; <code>always</code>.</p>
+<p>Add to <code>scripts</code> in the development <code>package.json</code>:</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;release&quot;</span>: <span class="hljs-string">&quot;build&quot;</span>
+</code></pre>
+<p>and if you run <code>yarn release</code>, a release will be drafted (if doesn&apos;t already exist) and artifacts published.</p>
+</li>
+</ul>
+<h3 id="recommended-github-releases-workflow">Recommended GitHub Releases Workflow</h3>
+<ol>
+<li><p><a href="https://help.github.com/articles/creating-releases/" target="_blank">Draft a new release</a>. Set the &quot;Tag version&quot; to the value of <code>version</code> in your application <code>package.json</code>, and prefix it with <code>v</code>. &quot;Release title&quot; can be anything you want.</p>
+<p>For example, if your application <code>package.json</code> version is <code>1.0</code>, your draft&apos;s &quot;Tag version&quot; would be <code>v1.0</code>.</p>
+</li>
+<li>Push some commits. Every CI build will update the artifacts attached to this draft.</li>
+<li>Once you are done, publish the release. GitHub will tag the latest commit for you.</li>
+</ol>
+<p>The benefit of this workflow is that it allows you to always have the latest artifacts, and the release can be published once it is ready.</p>
+<h3 id="continuous-deployment-workflow-on-amazon-s3-and-other-non-github">Continuous Deployment Workflow on Amazon S3 and other non-GitHub</h3>
+<p>This example workflow is modelled on how releases are handled in maven (it is an example of one of many possible workflows, you are not forced to follow it).</p>
+<ol>
+<li>Setup your CI to publish on each commit. E.g. <code>&quot;dist&quot;: &quot;electron-builder --publish always&quot;</code> in your <code>package.json</code>.</li>
+<li>Set your version in your application <code>package.json</code> to <code>1.9.0-snapshot</code> (or <code>1.9.0-master</code> or whatever you want your development channel to be named). This will publish a file named <code>snapshot.yml</code> and a build named <code>something-snapshot.exe</code> (and corresponding for mac) to S3.</li>
+<li>When you are ready to deploy, simply change you package version to <code>1.9.0</code> and push. This will then produce a <code>latest.yml</code> and <code>something.exe</code> on s3. Usually you&apos;ll git-tag this version as well (just to keep track of it).</li>
+<li>Change the version back to a snapshot version right after, i.e. <code>1.10.0-snapshot</code>, and commit it.</li>
+</ol>
 <h2 id="github-repository-and-bintray-package">GitHub Repository and Bintray Package</h2>
 <p>Detected automatically using:</p>
 <ul>
@@ -674,6 +723,9 @@ Define <code>GH_TOKEN</code> environment variable.</p>
 <li><code id="GithubOptions-protocol">protocol</code> = <code>https</code> &quot;https&quot; | &quot;http&quot; - The protocol. GitHub Publisher supports only <code>https</code>.</li>
 <li><code id="GithubOptions-token">token</code> String - The access token to support auto-update from private github repositories. Never specify it in the configuration files. Only for <a href="../auto-update#appupdatersetfeedurloptions">setFeedURL</a>.</li>
 <li><code id="GithubOptions-private">private</code> Boolean - Whether to use private github auto-update provider if <code>GH_TOKEN</code> environment variable is defined. See <a href="../auto-update#private-github-update-repo">Private GitHub Update Repo</a>.</li>
+<li><p><code id="GithubOptions-releaseType">releaseType</code> = <code>draft</code> &quot;draft&quot; | &quot;prerelease&quot; | &quot;release&quot; - The type of release. By default <code>draft</code> release will be created.</p>
+<p>Also you can set release type using environment variable. If <code>EP_DRAFT</code>is set to <code>true</code> &#x2014; <code>draft</code>, if <code>EP_PRELEASE</code>is set to <code>true</code> &#x2014; <code>prerelease</code>.</p>
+</li>
 </ul>
 <!-- end of generated block -->
 <h2 id="s3options">S3Options</h2>
@@ -758,7 +810,7 @@ Access key is required, define <code>DO_KEY_ID</code> and <code>DO_SECRET_KEY</c
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Publish","level":"1.2.7","depth":2,"next":{"title":"Command Line Interface (CLI)","level":"1.3","depth":1,"path":"cli.md","ref":"cli.md","articles":[]},"previous":{"title":"Target","level":"1.2.6","depth":2,"path":"configuration/target.md","ref":"configuration/target.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/publish.md","mtime":"2017-09-28T06:11:19.209Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-28T06:11:20.183Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Publish","level":"1.2.7","depth":2,"next":{"title":"Command Line Interface (CLI)","level":"1.3","depth":1,"path":"cli.md","ref":"cli.md","articles":[]},"previous":{"title":"Target","level":"1.2.6","depth":2,"path":"configuration/target.md","ref":"configuration/target.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/publish.md","mtime":"2017-09-28T07:26:17.083Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-28T07:26:17.893Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
