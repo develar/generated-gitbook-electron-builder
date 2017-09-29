@@ -58,7 +58,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="deb" />
+    <link rel="next" href="snap" />
     
     
     <link rel="prev" href="squirrel-windows" />
@@ -284,38 +284,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.5.1" data-path="deb">
-            
-                <a href="deb">
-            
-                    
-                    Debian Package
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.5.2" data-path="snap">
+        <li class="chapter " data-level="1.2.5.1" data-path="snap">
             
                 <a href="snap">
             
                     
                     Snap
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.5.3" data-path="linux-other">
-            
-                <a href="linux-other">
-            
-                    
-                    Other
             
                 </a>
             
@@ -372,20 +346,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../docker">
-            
-                <a href="../docker">
-            
-                    
-                    Docker
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" >
+        <li class="chapter " data-level="1.4" >
             
                 <span>
             
@@ -399,7 +360,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../icons">
+        <li class="chapter " data-level="1.4.1" data-path="../icons">
             
                 <a href="../icons">
             
@@ -412,7 +373,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../auto-update">
+        <li class="chapter " data-level="1.4.2" data-path="../auto-update">
             
                 <a href="../auto-update">
             
@@ -425,7 +386,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../code-signing">
+        <li class="chapter " data-level="1.4.3" data-path="../code-signing">
             
                 <a href="../code-signing">
             
@@ -438,7 +399,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../multi-platform-build">
+        <li class="chapter " data-level="1.4.4" data-path="../multi-platform-build">
             
                 <a href="../multi-platform-build">
             
@@ -456,7 +417,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" >
+        <li class="chapter " data-level="1.5" >
             
                 <span>
             
@@ -470,7 +431,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../tutorials/loading-app-dependencies-manually">
+        <li class="chapter " data-level="1.5.1" data-path="../tutorials/loading-app-dependencies-manually">
             
                 <a href="../tutorials/loading-app-dependencies-manually">
             
@@ -483,7 +444,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../tutorials/two-package-structure">
+        <li class="chapter " data-level="1.5.2" data-path="../tutorials/two-package-structure">
             
                 <a href="../tutorials/two-package-structure">
             
@@ -496,7 +457,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../tutorials/macos-kernel-extensions">
+        <li class="chapter " data-level="1.5.3" data-path="../tutorials/macos-kernel-extensions">
             
                 <a href="../tutorials/macos-kernel-extensions">
             
@@ -514,7 +475,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" >
+        <li class="chapter " data-level="1.6" >
             
                 <span>
             
@@ -528,7 +489,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../api/electron-builder">
+        <li class="chapter " data-level="1.6.1" data-path="../api/electron-builder">
             
                 <a href="../api/electron-builder">
             
@@ -546,7 +507,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../donate">
+        <li class="chapter " data-level="1.7" data-path="../donate">
             
                 <a href="../donate">
             
@@ -608,7 +569,7 @@
 <!-- do not edit. start of generated block -->
 <ul>
 <li><p><code id="LinuxConfiguration-target">target</code> = <code>AppImage</code> String | <a href="target#targetconfiguration">TargetConfiguration</a> - Target package type: list of <code>AppImage</code>, <code>snap</code>, <code>deb</code>, <code>rpm</code>, <code>freebsd</code>, <code>pacman</code>, <code>p5p</code>, <code>apk</code>, <code>7z</code>, <code>zip</code>, <code>tar.xz</code>, <code>tar.lz</code>, <code>tar.gz</code>, <code>tar.bz2</code>, <code>dir</code>.</p>
-<p>electron-builder <a href="../docker">docker image</a> can be used to build Linux targets on any platform. See <a href="../multi-platform-build">Multi Platform build</a>.</p>
+<p>electron-builder <a href="../multi-platform-build#docker">docker image</a> can be used to build Linux targets on any platform.</p>
 <p>Please <a href="https://github.com/probonopd/AppImageKit/wiki/Creating-AppImages#common-mistake" target="_blank">do not put an AppImage into another archive</a> like a .zip or .tar.gz.</p>
 </li>
 <li><code id="LinuxConfiguration-maintainer">maintainer</code> String - The maintainer. Defaults to <a href="configuration#Metadata-author">author</a>.</li>
@@ -618,7 +579,58 @@
 <li><code id="LinuxConfiguration-synopsis">synopsis</code> String - The <a href="https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Description" target="_blank">short description</a>.</li>
 <li><code id="LinuxConfiguration-description">description</code> String - As <a href="configuration#Metadata-description">description</a> from application package.json, but allows you to specify different for Linux.</li>
 <li><code id="LinuxConfiguration-category">category</code> String - The <a href="https://specifications.freedesktop.org/menu-spec/latest/apa.html#main-category-registry" target="_blank">application category</a>.</li>
-<li><code id="LinuxConfiguration-desktop">desktop</code> any - The <a href="https://developer.gnome.org/integration-guide/stable/desktop-files.html.en" target="_blank">Desktop file</a> entries (name to value).<!-- end of generated block --></li>
+<li><code id="LinuxConfiguration-desktop">desktop</code> any - The <a href="https://developer.gnome.org/integration-guide/stable/desktop-files.html.en" target="_blank">Desktop file</a> entries (name to value).<!-- end of generated block -->
+</li>
+</ul>
+<h2 id="appimage-options">AppImage Options</h2>
+<p>The top-level <code>appImage</code> key contains set of options instructing electron-builder on how it should build <a href="https://appimage.org/" target="_blank">AppImage</a>.</p>
+<ul>
+<li><code id="AppImageOptions-systemIntegration">systemIntegration</code> = <code>ask</code> &quot;ask&quot; | &quot;doNotAsk&quot; - The system integration installation.</li>
+</ul>
+<p>Inherited from <code>CommonLinuxOptions</code>:</p>
+<ul>
+<li><code id="AppImageOptions-synopsis">synopsis</code> String - The <a href="https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Description" target="_blank">short description</a>.</li>
+<li><code id="AppImageOptions-description">description</code> String - As <a href="configuration#Metadata-description">description</a> from application package.json, but allows you to specify different for Linux.</li>
+<li><code id="AppImageOptions-category">category</code> String - The <a href="https://specifications.freedesktop.org/menu-spec/latest/apa.html#main-category-registry" target="_blank">application category</a>.</li>
+<li><code id="AppImageOptions-desktop">desktop</code> any - The <a href="https://developer.gnome.org/integration-guide/stable/desktop-files.html.en" target="_blank">Desktop file</a> entries (name to value).</li>
+</ul>
+<p>Inherited from <code>TargetSpecificOptions</code>:</p>
+<ul>
+<li><code id="AppImageOptions-artifactName">artifactName</code> String - The <a href="configuration#artifact-file-name-template">artifact file name template</a>.</li>
+<li><code id="AppImageOptions-publish">publish</code> The <a href="publish">publish</a> options.</li>
+</ul>
+<h2 id="debian-package-options">Debian Package Options</h2>
+<p>The top-level <a href="configuration#Configuration-deb">deb</a> key contains set of options instructing electron-builder on how it should build Debian package.</p>
+<ul>
+<li><code id="DebOptions-compression">compression</code> = <code>xz</code> &quot;gz&quot; | &quot;bzip2&quot; | &quot;xz&quot; - The compression type.</li>
+<li><code id="DebOptions-depends">depends</code> Array&lt;String&gt; - Package dependencies. Defaults to <code>[&quot;gconf2&quot;, &quot;gconf-service&quot;, &quot;libnotify4&quot;, &quot;libappindicator1&quot;, &quot;libxtst6&quot;, &quot;libnss3&quot;]</code>.</li>
+<li><code id="DebOptions-packageCategory">packageCategory</code> String - The <a href="https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Section" target="_blank">package category</a>.</li>
+<li><code id="DebOptions-priority">priority</code> String - The <a href="https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Priority" target="_blank">Priority</a> attribute.</li>
+</ul>
+<p>All <code>LinuxTargetSpecificOptions</code> can be also specified in the <code>deb</code> to customize Debian package. </p>
+<h2 id="linuxtargetspecificoptions-apk-freebsd-pacman-p5p-and-rpm-options"><code>LinuxTargetSpecificOptions</code> APK, FreeBSD, Pacman, P5P and RPM Options</h2>
+<p><a name="LinuxTargetSpecificOptions"></a></p>
+<p>The top-level <code>apk</code>, <code>freebsd</code>, <code>pacman</code>, <code>p5p</code> and <code>rpm</code> keys contains set of options instructing electron-builder on how it should build corresponding Linux target.</p>
+<ul>
+<li><code id="LinuxTargetSpecificOptions-depends">depends</code> Array&lt;String&gt; - Package dependencies.</li>
+<li><code id="LinuxTargetSpecificOptions-icon">icon</code> String</li>
+<li><code id="LinuxTargetSpecificOptions-packageCategory">packageCategory</code> String - The package category.</li>
+<li><code id="LinuxTargetSpecificOptions-vendor">vendor</code> String</li>
+<li><code id="LinuxTargetSpecificOptions-maintainer">maintainer</code> String</li>
+<li><code id="LinuxTargetSpecificOptions-afterInstall">afterInstall</code> String</li>
+<li><code id="LinuxTargetSpecificOptions-afterRemove">afterRemove</code> String</li>
+</ul>
+<p>Inherited from <code>CommonLinuxOptions</code>:</p>
+<ul>
+<li><code id="LinuxTargetSpecificOptions-synopsis">synopsis</code> String - The <a href="https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Description" target="_blank">short description</a>.</li>
+<li><code id="LinuxTargetSpecificOptions-description">description</code> String - As <a href="configuration#Metadata-description">description</a> from application package.json, but allows you to specify different for Linux.</li>
+<li><code id="LinuxTargetSpecificOptions-category">category</code> String - The <a href="https://specifications.freedesktop.org/menu-spec/latest/apa.html#main-category-registry" target="_blank">application category</a>.</li>
+<li><code id="LinuxTargetSpecificOptions-desktop">desktop</code> any - The <a href="https://developer.gnome.org/integration-guide/stable/desktop-files.html.en" target="_blank">Desktop file</a> entries (name to value).</li>
+</ul>
+<p>Inherited from <code>TargetSpecificOptions</code>:</p>
+<ul>
+<li><code id="LinuxTargetSpecificOptions-artifactName">artifactName</code> String - The <a href="configuration#artifact-file-name-template">artifact file name template</a>.</li>
+<li><code id="LinuxTargetSpecificOptions-publish">publish</code> The <a href="publish">publish</a> options.</li>
 </ul>
 <script src="../_gitbook_plugin_analytics.js"></script>
                                 
@@ -652,7 +664,7 @@
                 </a>
                 
                 
-                <a href="deb" class="navigation navigation-next " aria-label="Next page: Debian Package">
+                <a href="snap" class="navigation navigation-next " aria-label="Next page: Snap">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -663,7 +675,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Linux","level":"1.2.5","depth":2,"next":{"title":"Debian Package","level":"1.2.5.1","depth":3,"path":"configuration/deb.md","ref":"configuration/deb.md","articles":[]},"previous":{"title":"Squirrel.Windows","level":"1.2.4.3","depth":3,"path":"configuration/squirrel-windows.md","ref":"configuration/squirrel-windows.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/linux.md","mtime":"2017-09-28T07:49:01.183Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-28T08:36:37.449Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Linux","level":"1.2.5","depth":2,"next":{"title":"Snap","level":"1.2.5.1","depth":3,"path":"configuration/snap.md","ref":"configuration/snap.md","articles":[]},"previous":{"title":"Squirrel.Windows","level":"1.2.4.3","depth":3,"path":"configuration/squirrel-windows.md","ref":"configuration/squirrel-windows.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/linux.md","mtime":"2017-09-29T09:43:01.711Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-29T09:43:03.440Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
