@@ -573,8 +573,10 @@
 <li><a href="#ArtifactCreated"><code>.ArtifactCreated</code></a></li>
 <li><a href="#BeforeBuildContext"><code>.BeforeBuildContext</code></a></li>
 <li><a href="#BuildResult"><code>.BuildResult</code></a></li>
+<li><a href="#CertificateFromStoreInfo"><code>.CertificateFromStoreInfo</code></a></li>
 <li><a href="#CommonLinuxOptions"><code>.CommonLinuxOptions</code></a></li>
 <li><a href="#CommonNsisOptions"><code>.CommonNsisOptions</code></a></li>
+<li><a href="#FileCodeSigningInfo"><code>.FileCodeSigningInfo</code></a></li>
 <li><a href="#FileSet"><code>.FileSet</code></a></li>
 <li><a href="#ForgeOptions"><code>.ForgeOptions</code></a></li>
 <li><a href="#LinuxTargetSpecificOptions"><code>.LinuxTargetSpecificOptions</code></a> &#x21D0; <code>CommonLinuxOptions</code></li>
@@ -656,6 +658,16 @@
 <li><strong><code id="BuildResult-outDir">outDir</code></strong> String</li>
 <li><strong><code id="BuildResult-platformToTargets">platformToTargets</code></strong> Map&lt;<a href="#Platform">Platform</a> | Map&lt;String | <a href="#Target">Target</a>&gt;&gt;</li>
 </ul>
+<p><a name="CertificateFromStoreInfo"></a></p>
+<h2 id="certificatefromstoreinfo"><code>CertificateFromStoreInfo</code></h2>
+<p><strong>Kind</strong>: interface of <a href="#module_electron-builder"><code>electron-builder</code></a><br>
+<strong>Properties</strong></p>
+<ul>
+<li><strong><code id="CertificateFromStoreInfo-thumbprint">thumbprint</code></strong> String</li>
+<li><strong><code id="CertificateFromStoreInfo-subject">subject</code></strong> String</li>
+<li><strong><code id="CertificateFromStoreInfo-store">store</code></strong> String</li>
+<li><strong><code id="CertificateFromStoreInfo-isLocalMachineStore">isLocalMachineStore</code></strong> Boolean</li>
+</ul>
 <p><a name="CommonLinuxOptions"></a></p>
 <h2 id="commonlinuxoptions"><code>CommonLinuxOptions</code></h2>
 <p><strong>Kind</strong>: interface of <a href="#module_electron-builder"><code>electron-builder</code></a><br>
@@ -674,6 +686,14 @@
 <li><code id="CommonNsisOptions-unicode">unicode</code> = <code>true</code> Boolean - Whether to create <a href="http://nsis.sourceforge.net/Docs/Chapter1.html#intro-unicode" target="_blank">Unicode installer</a>.</li>
 <li><code id="CommonNsisOptions-guid">guid</code> String - See <a href="../configuration/nsis#guid-vs-application-name">GUID vs Application Name</a>.</li>
 <li><code id="CommonNsisOptions-warningsAsErrors">warningsAsErrors</code> = <code>true</code> Boolean - If <code>warningsAsErrors</code> is <code>true</code> (default): NSIS will treat warnings as errors. If <code>warningsAsErrors</code> is <code>false</code>: NSIS will allow warnings.</li>
+</ul>
+<p><a name="FileCodeSigningInfo"></a></p>
+<h2 id="filecodesigninginfo"><code>FileCodeSigningInfo</code></h2>
+<p><strong>Kind</strong>: interface of <a href="#module_electron-builder"><code>electron-builder</code></a><br>
+<strong>Properties</strong></p>
+<ul>
+<li><strong><code id="FileCodeSigningInfo-file">file</code></strong> String</li>
+<li><code id="FileCodeSigningInfo-password">password</code> String</li>
 </ul>
 <p><a name="FileSet"></a></p>
 <h2 id="fileset"><code>FileSet</code></h2>
@@ -1068,7 +1088,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"electron-builder","level":"1.6.1","depth":2,"next":{"title":"Donate","level":"1.7","depth":1,"path":"donate.md","ref":"donate.md","articles":[]},"previous":{"title":"Programmatic API","level":"1.6","depth":1,"ref":"","articles":[{"title":"electron-builder","level":"1.6.1","depth":2,"path":"api/electron-builder.md","ref":"api/electron-builder.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"api/electron-builder.md","mtime":"2017-09-29T09:41:30.010Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-09-29T10:00:26.140Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"electron-builder","level":"1.6.1","depth":2,"next":{"title":"Donate","level":"1.7","depth":1,"path":"donate.md","ref":"donate.md","articles":[]},"previous":{"title":"Programmatic API","level":"1.6","depth":1,"ref":"","articles":[{"title":"electron-builder","level":"1.6.1","depth":2,"path":"api/electron-builder.md","ref":"api/electron-builder.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"api/electron-builder.md","mtime":"2017-10-06T08:13:00.125Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-10-06T08:13:00.764Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
