@@ -593,18 +593,8 @@
 <ul>
 <li><code id="Configuration-appId">appId</code> = <code>com.electron.${name}</code> String - The application id. Used as <a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/20001431-102070" target="_blank">CFBundleIdentifier</a> for MacOS and as <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd378459(v=vs.85" target="_blank">Application User Model ID</a>.aspx) for Windows (NSIS target only, Squirrel.Windows not supported). It is strongly recommended that an explicit ID is set.</li>
 <li><code id="Configuration-productName">productName</code> String - As <a href="#Metadata-name">name</a>, but allows you to specify a product name for your executable which contains spaces and other special characters not allowed in the <a href="https://docs.npmjs.com/files/package.json#name}" target="_blank">name property</a>.</li>
-<li><code id="Configuration-artifactName">artifactName</code> String - The <a href="configuration#artifact-file-name-template">artifact file name template</a>. Defaults to <code>${productName}-${version}.${ext}</code> (some target can have other defaults, see corresponding options).</li>
-<li><p><code id="Configuration-asar">asar</code> = <code>true</code> Boolean | AsarOptions<a name="AsarOptions"></a> - Whether to package the application&apos;s source code into an archive, using <a href="http://electron.atom.io/docs/tutorial/application-packaging/" target="_blank">Electron&apos;s archive format</a>.</p>
-<p>Node modules, that must be unpacked, will be detected automatically, you don&apos;t need to explicitly set <a href="#configuration-asarUnpack">asarUnpack</a> - please file an issue if this doesn&apos;t work.</p>
-<ul>
-<li><code id="AsarOptions-smartUnpack">smartUnpack</code> = <code>true</code> Boolean - Whether to automatically unpack executables files.</li>
-<li><code id="AsarOptions-ordering">ordering</code> String</li>
-</ul>
-</li>
-<li><code id="Configuration-asarUnpack">asarUnpack</code> Array&lt;String&gt; | String - A <a href="../file-patterns">glob patterns</a> relative to the <a href="#MetadataDirectories-app">app directory</a>, which specifies which files to unpack when creating the <a href="http://electron.atom.io/docs/tutorial/application-packaging/" target="_blank">asar</a> archive.</li>
 <li><code id="Configuration-compression">compression</code> = <code>normal</code> &quot;store&quot; | &quot;normal&quot; | &quot;maximum&quot; - The compression level. If you want to rapidly test build, <code>store</code> can reduce build time significantly. <code>maximum</code> doesn&apos;t lead to noticeable size difference, but increase build time.</li>
 <li><code id="Configuration-copyright">copyright</code> = <code>Copyright &#xA9; year ${author}</code> String - The human-readable copyright line for the app.</li>
-<li><code id="Configuration-publish">publish</code> The <a href="publish">publish</a> options.</li>
 </ul>
 <hr>
 <ul>
@@ -615,27 +605,6 @@
 </li>
 <li><code id="MetadataDirectories-output">output</code> = <code>dist</code> String - The output directory.</li>
 <li><code id="MetadataDirectories-app">app</code> String - The application directory (containing the application package.json), defaults to <code>app</code>, <code>www</code> or working directory.</li>
-</ul>
-</li>
-<li><code id="Configuration-files">files</code> The <a href="contents#files">files</a> configuration.</li>
-<li><code id="Configuration-extraResources">extraResources</code> The <a href="contents#extraresources">extra resources</a> configuration.</li>
-<li><code id="Configuration-extraFiles">extraFiles</code> The <a href="contents#extrafiles">extra files</a> configuration.</li>
-</ul>
-<hr>
-<ul>
-<li><code id="Configuration-fileAssociations">fileAssociations</code> Array&lt;FileAssociation&gt; | FileAssociation<a name="FileAssociation"></a> - The file associations.<ul>
-<li><strong><code id="FileAssociation-ext">ext</code></strong> String | Array&lt;String&gt; - The extension (minus the leading period). e.g. <code>png</code>.</li>
-<li><code id="FileAssociation-name">name</code> String - The name. e.g. <code>PNG</code>. Defaults to <code>ext</code>.</li>
-<li><code id="FileAssociation-description">description</code> String - <em>windows-only.</em> The description.</li>
-<li><code id="FileAssociation-icon">icon</code> String - The path to icon (<code>.icns</code> for MacOS and <code>.ico</code> for Windows), relative to <code>build</code> (build resources directory). Defaults to <code>${firstExt}.icns</code>/<code>${firstExt}.ico</code> (if several extensions specified, first is used) or to application icon.</li>
-<li><code id="FileAssociation-role">role</code> = <code>Editor</code> String - <em>macOS-only</em> The app&#x2019;s role with respect to the type. The value can be <code>Editor</code>, <code>Viewer</code>, <code>Shell</code>, or <code>None</code>. Corresponds to <code>CFBundleTypeRole</code>.</li>
-<li><code id="FileAssociation-isPackage">isPackage</code> Boolean - <em>macOS-only</em> Whether the document is distributed as a bundle. If set to true, the bundle directory is treated as a file. Corresponds to <code>LSTypeIsPackage</code>.</li>
-</ul>
-</li>
-<li><code id="Configuration-protocols">protocols</code> Array&lt;Protocol&gt; | Protocol<a name="Protocol"></a> - The URL protocol schemes.<ul>
-<li><strong><code id="Protocol-name">name</code></strong> String - The name. e.g. <code>IRC server URL</code>.</li>
-<li><strong><code id="Protocol-schemes">schemes</code></strong> Array&lt;String&gt; - The schemes. e.g. <code>[&quot;irc&quot;, &quot;ircs&quot;]</code>.</li>
-<li><code id="Protocol-role">role</code> = <code>Editor</code> &quot;Editor&quot; | &quot;Viewer&quot; | &quot;Shell&quot; | &quot;None&quot; - <em>macOS-only</em> The app&#x2019;s role with respect to the type.</li>
 </ul>
 </li>
 </ul>
@@ -691,8 +660,6 @@ Inherits <a href="nsis">NsisOptions</a> options.</p>
 <hr>
 <ul>
 <li><code id="Configuration-buildVersion">buildVersion</code> String - The build version. Maps to the <code>CFBundleVersion</code> on macOS, and <code>FileVersion</code> metadata property on Windows. Defaults to the <code>version</code>. If <code>TRAVIS_BUILD_NUMBER</code> or <code>APPVEYOR_BUILD_NUMBER</code> or <code>CIRCLE_BUILD_NUM</code> or <code>BUILD_NUMBER</code> or <code>bamboo.buildNumber</code> env defined, it will be used as a build version (<code>version.build_number</code>).</li>
-<li><code id="Configuration-detectUpdateChannel">detectUpdateChannel</code> = <code>true</code> Boolean - Whether to infer update channel from application version pre-release components. e.g. if version <code>0.12.1-alpha.1</code>, channel will be set to <code>alpha</code>. Otherwise to <code>latest</code>.</li>
-<li><code id="Configuration-generateUpdatesFilesForAllChannels">generateUpdatesFilesForAllChannels</code> = <code>false</code> Boolean - Please see <a href="https://github.com/electron-userland/electron-builder/issues/1182#issuecomment-324947139" target="_blank">Building and Releasing using Channels</a>.</li>
 <li><code id="Configuration-electronCompile">electronCompile</code> Boolean - Whether to use <a href="http://github.com/electron/electron-compile" target="_blank">electron-compile</a> to compile app. Defaults to <code>true</code> if <code>electron-compile</code> in the dependencies. And <code>false</code> if in the <code>devDependencies</code> or doesn&apos;t specified.</li>
 <li><code id="Configuration-electronDist">electronDist</code> String - The path to custom Electron build (e.g. <code>~/electron/out/R</code>).</li>
 <li><code id="Configuration-electronDownload">electronDownload</code><a name="ElectronDownloadOptions"></a> - The <a href="https://github.com/electron-userland/electron-download#usage" target="_blank">electron-download</a> options.<ul>
@@ -708,22 +675,68 @@ Inherits <a href="nsis">NsisOptions</a> options.</p>
 <p>If <code>react-scripts</code> in the app dev dependencies, <code>react-cra</code> will be set automatically. Set to <code>null</code> to disable automatic detection.</p>
 </li>
 <li><code id="Configuration-extraMetadata">extraMetadata</code> any - Inject properties to <code>package.json</code>.</li>
+</ul>
+<hr>
+<ul>
 <li><code id="Configuration-forceCodeSigning">forceCodeSigning</code> = <code>false</code> Boolean - Whether to fail if the application is not signed (to prevent unsigned app if code signing configuration is not correct).</li>
 <li><code id="Configuration-muonVersion">muonVersion</code> String - The version of muon you are packaging for.</li>
-<li><p><code id="Configuration-releaseInfo">releaseInfo</code><a name="ReleaseInfo"></a> - The release info. Intended for command line usage:</p>
-<p><code>-c.releaseInfo.releaseNotes=&quot;new features&quot;</code></p>
+</ul>
+<hr>
 <ul>
-<li><code id="ReleaseInfo-releaseName">releaseName</code> String - The release name.</li>
-<li><code id="ReleaseInfo-releaseNotes">releaseNotes</code> String - The release notes.</li>
-<li><code id="ReleaseInfo-releaseNotesFile">releaseNotesFile</code> String - The path to release notes file. Defaults to <code>release-notes.md</code> in the <a href="#MetadataDirectories-buildResources">build resources</a>.</li>
-<li><code id="ReleaseInfo-releaseDate">releaseDate</code> String - The release date.</li>
+<li><code id="Configuration-afterPack">afterPack</code> (context: AfterPackContext) =&gt; Promise | null - The function (or path to file or module id) to be run after pack (but before pack into distributable format and sign).</li>
+<li><code id="Configuration-beforeBuild">beforeBuild</code> (context: BeforeBuildContext) =&gt; Promise | null - The function (or path to file or module id) to be run before dependencies are installed or rebuilt. Works when <code>npmRebuild</code> is set to <code>true</code>. Resolving to <code>false</code> will skip dependencies install or rebuild.<!-- end of generated block -->
+</li>
+</ul>
+<hr>
+<p>Following options can be set also per platform (top-level keys <a href="mac">mac</a>, <a href="linux">linux</a> and <a href="win">win</a>).</p>
+<ul>
+<li><code id="PlatformSpecificBuildOptions-artifactName">artifactName</code> String - The <a href="configuration#artifact-file-name-template">artifact file name template</a>. Defaults to <code>${productName}-${version}.${ext}</code> (some target can have other defaults, see corresponding options).</li>
+<li><code id="PlatformSpecificBuildOptions-files">files</code> The <a href="contents#files">files</a> configuration.</li>
+<li><code id="PlatformSpecificBuildOptions-extraResources">extraResources</code> The <a href="contents#extraresources">extra resources</a> configuration.</li>
+<li><code id="PlatformSpecificBuildOptions-extraFiles">extraFiles</code> The <a href="contents#extrafiles">extra files</a> configuration.</li>
+<li><p><code id="PlatformSpecificBuildOptions-asar">asar</code> = <code>true</code> AsarOptions | Boolean<a name="AsarOptions"></a> - Whether to package the application&apos;s source code into an archive, using <a href="http://electron.atom.io/docs/tutorial/application-packaging/" target="_blank">Electron&apos;s archive format</a>.</p>
+<p>Node modules, that must be unpacked, will be detected automatically, you don&apos;t need to explicitly set <a href="#configuration-asarUnpack">asarUnpack</a> - please file an issue if this doesn&apos;t work.</p>
+<ul>
+<li><code id="AsarOptions-smartUnpack">smartUnpack</code> = <code>true</code> Boolean - Whether to automatically unpack executables files.</li>
+<li><code id="AsarOptions-ordering">ordering</code> String</li>
+</ul>
+</li>
+<li><code id="PlatformSpecificBuildOptions-asarUnpack">asarUnpack</code> Array&lt;String&gt; | String - A <a href="../file-patterns">glob patterns</a> relative to the <a href="#MetadataDirectories-app">app directory</a>, which specifies which files to unpack when creating the <a href="http://electron.atom.io/docs/tutorial/application-packaging/" target="_blank">asar</a> archive.</li>
+</ul>
+<hr>
+<ul>
+<li><code id="PlatformSpecificBuildOptions-fileAssociations">fileAssociations</code> Array&lt;FileAssociation&gt; | FileAssociation<a name="FileAssociation"></a> - The file associations.<ul>
+<li><strong><code id="FileAssociation-ext">ext</code></strong> String | Array&lt;String&gt; - The extension (minus the leading period). e.g. <code>png</code>.</li>
+<li><code id="FileAssociation-name">name</code> String - The name. e.g. <code>PNG</code>. Defaults to <code>ext</code>.</li>
+<li><code id="FileAssociation-description">description</code> String - <em>windows-only.</em> The description.</li>
+<li><code id="FileAssociation-icon">icon</code> String - The path to icon (<code>.icns</code> for MacOS and <code>.ico</code> for Windows), relative to <code>build</code> (build resources directory). Defaults to <code>${firstExt}.icns</code>/<code>${firstExt}.ico</code> (if several extensions specified, first is used) or to application icon.</li>
+<li><code id="FileAssociation-role">role</code> = <code>Editor</code> String - <em>macOS-only</em> The app&#x2019;s role with respect to the type. The value can be <code>Editor</code>, <code>Viewer</code>, <code>Shell</code>, or <code>None</code>. Corresponds to <code>CFBundleTypeRole</code>.</li>
+<li><code id="FileAssociation-isPackage">isPackage</code> Boolean - <em>macOS-only</em> Whether the document is distributed as a bundle. If set to true, the bundle directory is treated as a file. Corresponds to <code>LSTypeIsPackage</code>.</li>
+</ul>
+</li>
+<li><code id="PlatformSpecificBuildOptions-protocols">protocols</code> Array&lt;Protocol&gt; | Protocol<a name="Protocol"></a> - The URL protocol schemes.<ul>
+<li><strong><code id="Protocol-name">name</code></strong> String - The name. e.g. <code>IRC server URL</code>.</li>
+<li><strong><code id="Protocol-schemes">schemes</code></strong> Array&lt;String&gt; - The schemes. e.g. <code>[&quot;irc&quot;, &quot;ircs&quot;]</code>.</li>
+<li><code id="Protocol-role">role</code> = <code>Editor</code> &quot;Editor&quot; | &quot;Viewer&quot; | &quot;Shell&quot; | &quot;None&quot; - <em>macOS-only</em> The app&#x2019;s role with respect to the type.</li>
 </ul>
 </li>
 </ul>
 <hr>
 <ul>
-<li><code id="Configuration-afterPack">afterPack</code> (context: AfterPackContext) =&gt; Promise | null - The function (or path to file or module id) to be run after pack (but before pack into distributable format and sign).</li>
-<li><code id="Configuration-beforeBuild">beforeBuild</code> (context: BeforeBuildContext) =&gt; Promise | null - The function (or path to file or module id) to be run before dependencies are installed or rebuilt. Works when <code>npmRebuild</code> is set to <code>true</code>. Resolving to <code>false</code> will skip dependencies install or rebuild.</li>
+<li><code id="PlatformSpecificBuildOptions-forceCodeSigning">forceCodeSigning</code> Boolean</li>
+<li><code id="PlatformSpecificBuildOptions-publish">publish</code> The <a href="publish">publish</a> options.</li>
+<li><code id="PlatformSpecificBuildOptions-detectUpdateChannel">detectUpdateChannel</code> = <code>true</code> Boolean - Whether to infer update channel from application version pre-release components. e.g. if version <code>0.12.1-alpha.1</code>, channel will be set to <code>alpha</code>. Otherwise to <code>latest</code>.</li>
+<li><code id="PlatformSpecificBuildOptions-generateUpdatesFilesForAllChannels">generateUpdatesFilesForAllChannels</code> = <code>false</code> Boolean - Please see <a href="https://github.com/electron-userland/electron-builder/issues/1182#issuecomment-324947139" target="_blank">Building and Releasing using Channels</a>.</li>
+<li><p><code id="PlatformSpecificBuildOptions-releaseInfo">releaseInfo</code><a name="ReleaseInfo"></a> - The release info. Intended for command line usage:</p>
+<p><code>-c.releaseInfo.releaseNotes=&quot;new features&quot;</code></p>
+<ul>
+<li><code id="ReleaseInfo-releaseName">releaseName</code> String - The release name.</li>
+<li><code id="ReleaseInfo-releaseNotes">releaseNotes</code> String - The release notes.</li>
+<li><code id="ReleaseInfo-releaseNotesFile">releaseNotesFile</code> String - The path to release notes file. Defaults to <code>release-notes-${platform}.md</code> (where <code>platform</code> it is current platform &#x2014; <code>mac</code>, <code>linux</code> or <code>windows</code>) or <code>release-notes.md</code> in the <a href="#MetadataDirectories-buildResources">build resources</a>.</li>
+<li><code id="ReleaseInfo-releaseDate">releaseDate</code> String - The release date.</li>
+</ul>
+</li>
+<li><code id="PlatformSpecificBuildOptions-target">target</code> String | <a href="target#targetconfiguration">TargetConfiguration</a></li>
 </ul>
 <h2 id="metadata">Metadata</h2>
 <p>Some standard fields should be defined in the <code>package.json</code>.</p>
@@ -745,7 +758,6 @@ Inherits <a href="nsis">NsisOptions</a> options.</p>
 </li>
 <li><code id="Metadata-build">build</code> <a href="#configuration">Configuration</a> - The electron-builder configuration.</li>
 </ul>
-<!-- end of generated block -->
 <h2 id="build-version-management">Build Version Management</h2>
 <p><code>CFBundleVersion</code> (macOS) and <code>FileVersion</code> (Windows) will be set automatically to <code>version.build_number</code> on CI server (Travis, AppVeyor, CircleCI and Bamboo supported).</p>
 <script src="../_gitbook_plugin_analytics.js"></script>
@@ -791,7 +803,7 @@ Inherits <a href="nsis">NsisOptions</a> options.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Configuration","level":"1.2","depth":1,"next":{"title":"Application Contents","level":"1.2.1","depth":2,"path":"configuration/contents.md","ref":"configuration/contents.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/configuration.md","mtime":"2017-10-06T08:12:59.299Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-10-06T08:13:00.764Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Configuration","level":"1.2","depth":1,"next":{"title":"Application Contents","level":"1.2.1","depth":2,"path":"configuration/contents.md","ref":"configuration/contents.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/configuration.md","mtime":"2017-10-07T14:35:19.836Z","type":"markdown"},"gitbook":{"version":"3.2.6","time":"2017-10-07T14:35:41.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
