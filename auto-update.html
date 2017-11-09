@@ -674,7 +674,6 @@ If <code>GH_TOKEN</code> is set, electron-updater will use the GitHub API for up
 <li><a href="#module_electron-updater.AppUpdater+quitAndInstall"><code>.quitAndInstall(isSilent, isForceRunAfter)</code></a></li>
 </ul>
 </li>
-<li><a href="#FileInfo"><code>.FileInfo</code></a></li>
 <li><a href="#Logger"><code>.Logger</code></a><ul>
 <li><a href="#module_electron-updater.Logger+debug"><code>.debug(message)</code></a></li>
 <li><a href="#module_electron-updater.Logger+error"><code>.error(message)</code></a></li>
@@ -753,18 +752,6 @@ This is different from the normal quit event sequence.</p>
 <li>isSilent <code>Boolean</code> - <em>windows-only</em> Runs the installer in silent mode.</li>
 <li>isForceRunAfter <code>Boolean</code> - <em>windows-only</em> Run the app after finish even on silent install.</li>
 </ul>
-<p><a name="FileInfo"></a></p>
-<h3 id="fileinfo"><code>FileInfo</code></h3>
-<p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br>
-<strong>Properties</strong></p>
-<ul>
-<li><strong><code id="FileInfo-name">name</code></strong> String</li>
-<li><strong><code id="FileInfo-url">url</code></strong> String</li>
-<li><code id="FileInfo-packageInfo">packageInfo</code> module:builder-util-runtime.PackageFileInfo</li>
-<li><code id="FileInfo-sha2">sha2</code> String</li>
-<li><code id="FileInfo-sha512">sha512</code> String</li>
-<li><code id="FileInfo-headers">headers</code> [key: string]: string</li>
-</ul>
 <p><a name="Logger"></a></p>
 <h3 id="logger"><code>Logger</code></h3>
 <p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br></p>
@@ -803,10 +790,9 @@ This is different from the normal quit event sequence.</p>
 <strong>Properties</strong></p>
 <ul>
 <li><strong><code id="UpdateInfo-version">version</code></strong> String - The version.</li>
+<li><strong><code id="UpdateInfo-files">files</code></strong> Array&lt;module:builder-util-runtime.UpdateFileInfo&gt;</li>
 <li><strong><code id="UpdateInfo-path">path</code></strong> String - Deprecated: {tag.description}</li>
-<li><strong><code id="UpdateInfo-url">url</code></strong> String | Array&lt;String&gt;</li>
-<li><strong><code id="UpdateInfo-sha512">sha512</code></strong> String</li>
-<li><code id="UpdateInfo-githubArtifactName">githubArtifactName</code> String</li>
+<li><strong><code id="UpdateInfo-sha512">sha512</code></strong> String - Deprecated: {tag.description}</li>
 <li><code id="UpdateInfo-releaseName">releaseName</code> String - The release name.</li>
 <li><code id="UpdateInfo-releaseNotes">releaseNotes</code> String | Array&lt;module:builder-util-runtime.ReleaseNoteInfo&gt; - The release notes. List if <code>updater.fullChangelog</code> is set to <code>true</code>, <code>string</code> otherwise.</li>
 <li><strong><code id="UpdateInfo-releaseDate">releaseDate</code></strong> String - The release date.</li>
@@ -817,11 +803,10 @@ This is different from the normal quit event sequence.</p>
 <p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br>
 <strong>Properties</strong></p>
 <ul>
-<li><strong><code id="UpdateCheckResult-versionInfo">versionInfo</code></strong> module:builder-util-runtime.UpdateInfo - Deprecated: {tag.description}</li>
 <li><strong><code id="UpdateCheckResult-updateInfo">updateInfo</code></strong> module:builder-util-runtime.UpdateInfo</li>
-<li><code id="UpdateCheckResult-fileInfo">fileInfo</code> <a href="#FileInfo">FileInfo</a></li>
 <li><code id="UpdateCheckResult-downloadPromise">downloadPromise</code> Promise&lt;Array&lt;String&gt;&gt;</li>
 <li><code id="UpdateCheckResult-cancellationToken">cancellationToken</code> CancellationToken</li>
+<li><strong><code id="UpdateCheckResult-versionInfo">versionInfo</code></strong> module:builder-util-runtime.UpdateInfo - Deprecated: {tag.description}</li>
 </ul>
 <p><a name="UpdaterSignal"></a></p>
 <h3 id="updatersignal">UpdaterSignal</h3>
@@ -900,7 +885,7 @@ This is different from the normal quit event sequence.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Auto Update","level":"1.4.2","depth":2,"next":{"title":"Code Signing","level":"1.4.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"previous":{"title":"Icons","level":"1.4.1","depth":2,"path":"icons.md","ref":"icons.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"auto-update.md","mtime":"2017-10-30T17:16:42.121Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2017-10-30T17:16:42.648Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Auto Update","level":"1.4.2","depth":2,"next":{"title":"Code Signing","level":"1.4.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"previous":{"title":"Icons","level":"1.4.1","depth":2,"path":"icons.md","ref":"icons.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"auto-update.md","mtime":"2017-11-09T07:18:38.877Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2017-11-09T07:18:39.387Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
