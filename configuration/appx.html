@@ -1,0 +1,720 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>AppX · electron-builder</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.11">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="squirrel-windows" />
+    
+    
+    <link rel="prev" href="nsis" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"electron-userland/electron-builder","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="configuration">
+            
+                <a href="configuration">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="contents">
+            
+                <a href="contents">
+            
+                    
+                    Application Contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../file-patterns">
+            
+                <a href="../file-patterns">
+            
+                    
+                    File Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="mac">
+            
+                <a href="mac">
+            
+                    
+                    macOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="dmg">
+            
+                <a href="dmg">
+            
+                    
+                    DMG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="mas">
+            
+                <a href="mas">
+            
+                    
+                    MAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="pkg">
+            
+                <a href="pkg">
+            
+                    
+                    PKG
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="win">
+            
+                <a href="win">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="nsis">
+            
+                <a href="nsis">
+            
+                    
+                    NSIS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4.2" data-path="appx">
+            
+                <a href="appx">
+            
+                    
+                    AppX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="squirrel-windows">
+            
+                <a href="squirrel-windows">
+            
+                    
+                    Squirrel.Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="linux">
+            
+                <a href="linux">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="snap">
+            
+                <a href="snap">
+            
+                    
+                    Snap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="target">
+            
+                <a href="target">
+            
+                    
+                    Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="publish">
+            
+                <a href="publish">
+            
+                    
+                    Publish
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../cli">
+            
+                <a href="../cli">
+            
+                    
+                    Command Line Interface (CLI)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Guides
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../icons">
+            
+                <a href="../icons">
+            
+                    
+                    Icons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../auto-update">
+            
+                <a href="../auto-update">
+            
+                    
+                    Auto Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../code-signing">
+            
+                <a href="../code-signing">
+            
+                    
+                    Code Signing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../multi-platform-build">
+            
+                <a href="../multi-platform-build">
+            
+                    
+                    Multi Platform Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../tutorials/loading-app-dependencies-manually">
+            
+                <a href="../tutorials/loading-app-dependencies-manually">
+            
+                    
+                    Loading App Dependencies Manually
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../tutorials/two-package-structure">
+            
+                <a href="../tutorials/two-package-structure">
+            
+                    
+                    Two package.json Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../tutorials/macos-kernel-extensions">
+            
+                <a href="../tutorials/macos-kernel-extensions">
+            
+                    
+                    macOS Kernel Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Programmatic API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../api/electron-builder">
+            
+                <a href="../api/electron-builder">
+            
+                    
+                    electron-builder
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../donate">
+            
+                <a href="../donate">
+            
+                    
+                    Donate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >AppX</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>The top-level <a href="configuration#Configuration-appx">appx</a> key contains set of options instructing electron-builder on how it should build AppX (Windows Store).</p>
+<p>All options are optional. All required for AppX configuration is inferred and computed automatically.</p>
+<!-- do not edit. start of generated block -->
+<ul>
+<li><code id="AppXOptions-applicationId">applicationId</code> String - The application id. Defaults to <code>identityName</code>. Can&#x2019;t start with numbers.</li>
+<li><code id="AppXOptions-backgroundColor">backgroundColor</code> = <code>#464646</code> String - The background color of the app tile. See <a href="https://msdn.microsoft.com/en-us/library/windows/apps/br211471.aspx" target="_blank">Visual Elements</a>.</li>
+<li><code id="AppXOptions-displayName">displayName</code> String - A friendly name that can be displayed to users. Corresponds to <a href="https://msdn.microsoft.com/en-us/library/windows/apps/br211432.aspx" target="_blank">Properties.DisplayName</a>. Defaults to the application product name.</li>
+<li><code id="AppXOptions-identityName">identityName</code> String - The name. Corresponds to <a href="https://msdn.microsoft.com/en-us/library/windows/apps/br211441.aspx" target="_blank">Identity.Name</a>. Defaults to the <a href="configuration#Metadata-name">application name</a>.</li>
+<li><code id="AppXOptions-publisher">publisher</code> String - The Windows Store publisher. Not used if AppX is build for testing. See <a href="#appx-package-code-signing">AppX Package Code Signing</a> below.</li>
+<li><code id="AppXOptions-publisherDisplayName">publisherDisplayName</code> String - A friendly name for the publisher that can be displayed to users. Corresponds to <a href="https://msdn.microsoft.com/en-us/library/windows/apps/br211460.aspx" target="_blank">Properties.PublisherDisplayName</a>. Defaults to company name from the application metadata.</li>
+<li><code id="AppXOptions-languages">languages</code> Array&lt;String&gt; | String - The list of <a href="https://docs.microsoft.com/en-us/windows/uwp/globalizing/manage-language-and-region#specify-the-supported-languages-in-the-apps-manifest" target="_blank">supported languages</a> that will be listed in the Windows Store. The first entry (index 0) will be the default language. Defaults to en-US if omitted.</li>
+</ul>
+<p>Inherited from <code>TargetSpecificOptions</code>:</p>
+<ul>
+<li><code id="AppXOptions-artifactName">artifactName</code> String - The <a href="configuration#artifact-file-name-template">artifact file name template</a>.</li>
+<li><code id="AppXOptions-publish">publish</code> The <a href="publish">publish</a> options.<!-- end of generated block -->
+</li>
+</ul>
+<h2 id="appx-package-code-signing">AppX Package Code Signing</h2>
+<ul>
+<li>If the AppX package is meant for enterprise or self-made distribution (manually install the app without using the Store for testing or for enterprise distribution), it must be <a href="../code-signing">signed</a>.</li>
+<li>If the AppX package is meant for Windows Store distribution, no need to sign the package with any certificate. The Windows Store will take care of signing it with a Microsoft certificate during the submission process.</li>
+</ul>
+<h2 id="appx-assets">AppX Assets</h2>
+<p>AppX assets need to be placed in the <code>appx</code> folder in the <a href="configuration#MetadataDirectories-buildResources">build</a> directory.</p>
+<p>The assets should follow these naming conventions:</p>
+<ul>
+<li>Logo: <code>StoreLogo.png</code></li>
+<li>Square150x150Logo: <code>Square150x150Logo.png</code></li>
+<li>Square44x44Logo: <code>Square44x44Logo.png</code></li>
+<li>Wide310x150Logo: <code>Wide310x150Logo.png</code></li>
+<li><em>Optional</em> BadgeLogo: <code>BadgeLogo.png</code></li>
+<li><em>Optional</em> Square310x310Logo: <code>LargeTile.png</code></li>
+<li><em>Optional</em> Square71x71Logo: <code>SmallTile.png</code></li>
+<li><em>Optional</em> SplashScreen: <code>SplashScreen.png</code></li>
+</ul>
+<p>All official AppX asset types are supported by the build process. These assets can include scaled assets by using <code>target size</code> and <code>scale</code> in the name.
+See <a href="https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets" target="_blank">Guidelines for tile and icon assets</a> for more information.</p>
+<p>Default assets will be used for <code>Logo</code>, <code>Square150x150Logo</code>, <code>Square44x44Logo</code> and <code>Wide310x150Logo</code> if not provided. For assets marked <code>Optional</code>, these assets will not be listed in the manifest file if not provided.</p>
+<h2 id="how-to-publish-your-electron-app-to-the-windows-app-store">How to publish your Electron App to the Windows App Store</h2>
+<ol>
+<li>You&apos;ll need a microsoft developer account (pay some small fee). Use your favourite search engine to find the registration form.</li>
+<li>Register you app for the desktop bridge <a href="https://developer.microsoft.com/en-us/windows/projects/campaigns/desktop-bridge" target="_blank">here</a>.</li>
+<li>Wait for MS to answer and further guide you.</li>
+<li><p>In the meantime, build and test your appx. It&apos;s dead simple. </p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;win&quot;</span>: {
+  <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;appx&quot;</span>,
+},
+</code></pre>
+</li>
+<li>The rest should be pretty straight forward &#x2014; upload the appx to the store and wait for approval.</li>
+</ol>
+<h2 id="building-appx-on-macos">Building AppX on macOS</h2>
+<p>The only solution for now &#x2014; using <a href="http://www.parallels.com/products/desktop/" target="_blank">Parallels Desktop for Mac</a> (<a href="https://forum.parallels.com/threads/prlctl-is-now-a-pro-or-business-version-tool-only.330290/" target="_blank">Pro Edition</a> is required). Create Windows 10 virtual machine and start it. It will be detected and used automatically to build AppX on your macOS machine. Nothing is required to setup on Windows. It allows you to not copy project to Windows and to not setup build environment on Windows.</p>
+<h2 id="common-questions">Common Questions</h2>
+<h4 id="how-do-install-appx-without-trusted-certificate">How do install AppX without trusted certificate?</h4>
+<p>If you use self-signed certificate, you need to add it to &quot;Trusted People&quot;. See <a href="https://stackoverflow.com/a/24372483/1910191" target="_blank">Install the certificate</a>.</p>
+<script src="../_gitbook_plugin_analytics.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="nsis" class="navigation navigation-prev " aria-label="Previous page: NSIS">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="squirrel-windows" class="navigation navigation-next " aria-label="Next page: Squirrel.Windows">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"AppX","level":"1.2.4.2","depth":3,"next":{"title":"Squirrel.Windows","level":"1.2.4.3","depth":3,"path":"configuration/squirrel-windows.md","ref":"configuration/squirrel-windows.md","articles":[]},"previous":{"title":"NSIS","level":"1.2.4.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/appx.md","mtime":"2017-11-09T07:18:38.579Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2017-12-08T08:37:47.165Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-develar-toolbar-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

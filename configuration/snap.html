@@ -1,0 +1,694 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Snap · electron-builder</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.11">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="target" />
+    
+    
+    <link rel="prev" href="linux" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"electron-userland/electron-builder","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="configuration">
+            
+                <a href="configuration">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="contents">
+            
+                <a href="contents">
+            
+                    
+                    Application Contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../file-patterns">
+            
+                <a href="../file-patterns">
+            
+                    
+                    File Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="mac">
+            
+                <a href="mac">
+            
+                    
+                    macOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="dmg">
+            
+                <a href="dmg">
+            
+                    
+                    DMG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="mas">
+            
+                <a href="mas">
+            
+                    
+                    MAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="pkg">
+            
+                <a href="pkg">
+            
+                    
+                    PKG
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="win">
+            
+                <a href="win">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="nsis">
+            
+                <a href="nsis">
+            
+                    
+                    NSIS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="appx">
+            
+                <a href="appx">
+            
+                    
+                    AppX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="squirrel-windows">
+            
+                <a href="squirrel-windows">
+            
+                    
+                    Squirrel.Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="linux">
+            
+                <a href="linux">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.5.1" data-path="snap">
+            
+                <a href="snap">
+            
+                    
+                    Snap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="target">
+            
+                <a href="target">
+            
+                    
+                    Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="publish">
+            
+                <a href="publish">
+            
+                    
+                    Publish
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../cli">
+            
+                <a href="../cli">
+            
+                    
+                    Command Line Interface (CLI)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Guides
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../icons">
+            
+                <a href="../icons">
+            
+                    
+                    Icons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../auto-update">
+            
+                <a href="../auto-update">
+            
+                    
+                    Auto Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../code-signing">
+            
+                <a href="../code-signing">
+            
+                    
+                    Code Signing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../multi-platform-build">
+            
+                <a href="../multi-platform-build">
+            
+                    
+                    Multi Platform Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../tutorials/loading-app-dependencies-manually">
+            
+                <a href="../tutorials/loading-app-dependencies-manually">
+            
+                    
+                    Loading App Dependencies Manually
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../tutorials/two-package-structure">
+            
+                <a href="../tutorials/two-package-structure">
+            
+                    
+                    Two package.json Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../tutorials/macos-kernel-extensions">
+            
+                <a href="../tutorials/macos-kernel-extensions">
+            
+                    
+                    macOS Kernel Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Programmatic API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../api/electron-builder">
+            
+                <a href="../api/electron-builder">
+            
+                    
+                    electron-builder
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../donate">
+            
+                <a href="../donate">
+            
+                    
+                    Donate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Snap</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>The top-level <a href="configuration#Configuration-snap">snap</a> key contains set of options instructing electron-builder on how it should build <a href="http://snapcraft.io" target="_blank">Snap</a>.</p>
+<!-- do not edit. start of generated block -->
+<ul>
+<li><code id="SnapOptions-confinement">confinement</code> = <code>strict</code> &quot;devmode&quot; | &quot;strict&quot; | &quot;classic&quot; - The type of <a href="https://snapcraft.io/docs/reference/confinement" target="_blank">confinement</a> supported by the snap.</li>
+<li><code id="SnapOptions-summary">summary</code> String - The 78 character long summary. Defaults to <a href="configuration#Configuration-productName">productName</a>.</li>
+<li><code id="SnapOptions-grade">grade</code> = <code>stable</code> &quot;devel&quot; | &quot;stable&quot; - The quality grade of the snap. It can be either <code>devel</code> (i.e. a development version of the snap, so not to be published to the &#x201C;stable&#x201D; or &#x201C;candidate&#x201D; channels) or &#x201C;stable&#x201D; (i.e. a stable release or release candidate, which can be released to all channels).</li>
+<li><code id="SnapOptions-assumes">assumes</code> Array&lt;String&gt; - The list of features that must be supported by the core in order for this snap to install.</li>
+<li><code id="SnapOptions-buildPackages">buildPackages</code> Array&lt;String&gt; - The list of debian packages needs to be installed for building this snap.</li>
+<li><p><code id="SnapOptions-stagePackages">stagePackages</code> Array&lt;String&gt; - The list of Ubuntu packages to use that are needed to support the <code>app</code> part creation. Like <code>depends</code> for <code>deb</code>. Defaults to <code>[&quot;libnotify4&quot;, &quot;libappindicator1&quot;, &quot;libxtst6&quot;, &quot;libnss3&quot;, &quot;libxss1&quot;, &quot;fontconfig-config&quot;, &quot;gconf2&quot;, &quot;libasound2&quot;, &quot;pulseaudio&quot;]</code>.</p>
+<p>If list contains <code>default</code>, it will be replaced to default list, so, <code>[&quot;default&quot;, &quot;foo&quot;]</code> can be used to add custom package <code>foo</code> in addition to defaults.</p>
+</li>
+<li><p><code id="SnapOptions-plugs">plugs</code> Array&lt;String&gt; - The list of <a href="https://snapcraft.io/docs/reference/interfaces" target="_blank">plugs</a>. Defaults to <code>[&quot;home&quot;, &quot;x11&quot;, &quot;unity7&quot;, &quot;browser-support&quot;, &quot;network&quot;, &quot;gsettings&quot;, &quot;pulseaudio&quot;, &quot;opengl&quot;]</code>.</p>
+<p>If list contains <code>default</code>, it will be replaced to default list, so, <code>[&quot;default&quot;, &quot;foo&quot;]</code> can be used to add custom plug <code>foo</code> in addition to defaults.</p>
+</li>
+<li><p><code id="SnapOptions-after">after</code> Array&lt;String&gt; - Specifies any <a href="https://snapcraft.io/docs/reference/parts" target="_blank">parts</a> that should be built before this part. Defaults to <code>[&quot;desktop-only&quot;&quot;]</code>.</p>
+<p>If list contains <code>default</code>, it will be replaced to default list, so, <code>[&quot;default&quot;, &quot;foo&quot;]</code> can be used to add custom parts <code>foo</code> in addition to defaults.</p>
+</li>
+<li><code id="SnapOptions-ubuntuAppPlatformContent">ubuntuAppPlatformContent</code> String - Specify <code>ubuntu-app-platform1</code> to use <a href="https://insights.ubuntu.com/2016/11/17/how-to-create-snap-packages-on-qt-applications/" target="_blank">ubuntu-app-platform</a>. Snap size will be greatly reduced, but it is not recommended for now because &quot;the snaps must be connected before running uitk-gallery for the first time&quot;.</li>
+</ul>
+<p>Inherited from <code>CommonLinuxOptions</code>:</p>
+<ul>
+<li><code id="SnapOptions-synopsis">synopsis</code> String - The <a href="https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Description" target="_blank">short description</a>.</li>
+<li><code id="SnapOptions-description">description</code> String - As <a href="configuration#Metadata-description">description</a> from application package.json, but allows you to specify different for Linux.</li>
+<li><code id="SnapOptions-category">category</code> String - The <a href="https://specifications.freedesktop.org/menu-spec/latest/apa.html#main-category-registry" target="_blank">application category</a>.</li>
+<li><code id="SnapOptions-desktop">desktop</code> any - The <a href="https://developer.gnome.org/integration-guide/stable/desktop-files.html.en" target="_blank">Desktop file</a> entries (name to value).</li>
+</ul>
+<p>Inherited from <code>TargetSpecificOptions</code>:</p>
+<ul>
+<li><code id="SnapOptions-artifactName">artifactName</code> String - The <a href="configuration#artifact-file-name-template">artifact file name template</a>.</li>
+<li><code id="SnapOptions-publish">publish</code> The <a href="publish">publish</a> options.<!-- end of generated block --></li>
+</ul>
+<script src="../_gitbook_plugin_analytics.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="linux" class="navigation navigation-prev " aria-label="Previous page: Linux">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="target" class="navigation navigation-next " aria-label="Next page: Target">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Snap","level":"1.2.5.1","depth":3,"next":{"title":"Target","level":"1.2.6","depth":2,"path":"configuration/target.md","ref":"configuration/target.md","articles":[]},"previous":{"title":"Linux","level":"1.2.5","depth":2,"path":"configuration/linux.md","ref":"configuration/linux.md","articles":[{"title":"Snap","level":"1.2.5.1","depth":3,"path":"configuration/snap.md","ref":"configuration/snap.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/snap.md","mtime":"2017-11-09T07:18:38.582Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2017-12-08T08:37:47.165Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-develar-toolbar-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

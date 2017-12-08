@@ -1,0 +1,940 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Auto Update · electron-builder</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.11">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="code-signing" />
+    
+    
+    <link rel="prev" href="icons" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"electron-userland/electron-builder","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="configuration/configuration">
+            
+                <a href="configuration/configuration">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="configuration/contents">
+            
+                <a href="configuration/contents">
+            
+                    
+                    Application Contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="file-patterns">
+            
+                <a href="file-patterns">
+            
+                    
+                    File Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="configuration/mac">
+            
+                <a href="configuration/mac">
+            
+                    
+                    macOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="configuration/dmg">
+            
+                <a href="configuration/dmg">
+            
+                    
+                    DMG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="configuration/mas">
+            
+                <a href="configuration/mas">
+            
+                    
+                    MAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="configuration/pkg">
+            
+                <a href="configuration/pkg">
+            
+                    
+                    PKG
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="configuration/win">
+            
+                <a href="configuration/win">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="configuration/nsis">
+            
+                <a href="configuration/nsis">
+            
+                    
+                    NSIS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="configuration/appx">
+            
+                <a href="configuration/appx">
+            
+                    
+                    AppX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="configuration/squirrel-windows">
+            
+                <a href="configuration/squirrel-windows">
+            
+                    
+                    Squirrel.Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="configuration/linux">
+            
+                <a href="configuration/linux">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="configuration/snap">
+            
+                <a href="configuration/snap">
+            
+                    
+                    Snap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="configuration/target">
+            
+                <a href="configuration/target">
+            
+                    
+                    Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="configuration/publish">
+            
+                <a href="configuration/publish">
+            
+                    
+                    Publish
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="cli">
+            
+                <a href="cli">
+            
+                    
+                    Command Line Interface (CLI)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Guides
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="icons">
+            
+                <a href="icons">
+            
+                    
+                    Icons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="auto-update">
+            
+                <a href="auto-update">
+            
+                    
+                    Auto Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="code-signing">
+            
+                <a href="code-signing">
+            
+                    
+                    Code Signing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="multi-platform-build">
+            
+                <a href="multi-platform-build">
+            
+                    
+                    Multi Platform Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="tutorials/loading-app-dependencies-manually">
+            
+                <a href="tutorials/loading-app-dependencies-manually">
+            
+                    
+                    Loading App Dependencies Manually
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="tutorials/two-package-structure">
+            
+                <a href="tutorials/two-package-structure">
+            
+                    
+                    Two package.json Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="tutorials/macos-kernel-extensions">
+            
+                <a href="tutorials/macos-kernel-extensions">
+            
+                    
+                    macOS Kernel Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Programmatic API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="api/electron-builder">
+            
+                <a href="api/electron-builder">
+            
+                    
+                    electron-builder
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="donate">
+            
+                <a href="donate">
+            
+                    
+                    Donate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Auto Update</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>See <a href="configuration/publish">publish configuration</a> for information on how to configure your local or CI environment for automated deployments.</p>
+<p>Simplified auto-update is supported on Windows if you use the default NSIS target, but is not supported for Squirrel.Windows.</p>
+<h2 id="differences-between-electron-updater-and-built-in-autoupdater">Differences between electron-updater and built-in autoUpdater</h2>
+<ul>
+<li>It doesn&apos;t require a dedicated release server.</li>
+<li>Code signature validation not only on macOS, but also on Windows.</li>
+<li>electron-builder produces and publishes all required metadata files and artifacts.</li>
+<li>Download progress supported on all platforms.</li>
+<li><a href="#staged-rollouts">Staged rollouts</a> supported on all platforms.</li>
+<li>Actually, built-in autoUpdater is used inside on macOS.</li>
+<li>Different providers supported out of the box (<a href="https://help.github.com/articles/about-releases/" target="_blank">GitHub Releases</a>, <a href="https://aws.amazon.com/s3/" target="_blank">Amazon S3</a>, <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-digitalocean-spaces" target="_blank">DigitalOcean Spaces</a>, <a href="https://bintray.com" target="_blank">Bintray</a> and generic HTTP(s) server).</li>
+<li>You need only 2 lines of code to make it work.</li>
+</ul>
+<h2 id="quick-setup-guide">Quick Setup Guide</h2>
+<ol>
+<li><p>Install <a href="https://yarn.pm/electron-updater" target="_blank">electron-updater</a> as an app dependency.</p>
+</li>
+<li><p><a href="configuration/publish">Configure publish</a>.</p>
+</li>
+<li><p>Use <code>autoUpdater</code> from <code>electron-updater</code> instead of <code>electron</code>:</p>
+<pre><code class="lang-js"> <span class="hljs-keyword">import</span> { autoUpdater } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;electron-updater&quot;</span>
+</code></pre>
+<p> Or if you don&apos;t use ES6: <code>const autoUpdater = require(&quot;electron-updater&quot;).autoUpdater</code></p>
+</li>
+<li><p>Call <code>autoUpdater.checkForUpdatesAndNotify()</code>. Or, if you need custom behaviour, implement <code>electron-updater</code> events, check examples below.</p>
+</li>
+</ol>
+<p><strong>NOTICE</strong>:</p>
+<ol>
+<li>Do not call <a href="#appupdatersetfeedurloptions">setFeedURL</a>. electron-builder automatically creates <code>app-update.yml</code> file for you on build in the <code>resources</code> (this file is internal, you don&apos;t need to be aware of it).</li>
+<li><code>zip</code> target for macOS is <strong>required</strong> for Squirrel.Mac, otherwise <code>latest-mac.yml</code> cannot be created, which causes <code>autoUpdater</code> error. Default <a href="configuration/mac#MacOptions-target">target</a> for macOS is <code>dmg</code>+<code>zip</code>, so there is no need to explicitly specify target.</li>
+</ol>
+<h3 id="examples">Examples</h3>
+<ul>
+<li><a href="https://github.com/develar/onshape-desktop-shell/blob/master/src/AppUpdater.ts" target="_blank">Example in Typescript</a> using system notifications.</li>
+<li>A <a href="https://github.com/iffy/electron-updater-example" target="_blank">complete example</a> showing how to use.</li>
+<li>An <a href="https://github.com/electron-userland/electron-builder/blob/master/docs/encapsulated%20manual%20update%20via%20menu.js" target="_blank">encapsulated manual update via menu</a>.</li>
+</ul>
+<h2 id="debugging">Debugging</h2>
+<p>You don&apos;t need to listen all events to understand what&apos;s wrong. Just set <code>logger</code>.
+<a href="https://github.com/megahertz/electron-log" target="_blank">electron-log</a> is recommended (it is an additional dependency that you can install if needed).</p>
+<pre><code class="lang-js">autoUpdater.logger = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;electron-log&quot;</span>)
+autoUpdater.logger.transports.file.level = <span class="hljs-string">&quot;info&quot;</span>
+</code></pre>
+<h2 id="staged-rollouts">Staged Rollouts</h2>
+<p>Staged rollouts allow you to distribute the latest version of your app to a subset of users that you can increase over time, similar to rollouts on platforms like Google Play.</p>
+<p>Staged rollouts are controlled by manually editing your <code>latest.yml</code> / <code>latest-mac.yml</code> (channel update info file).</p>
+<pre><code class="lang-yml"><span class="hljs-attr">version:</span> <span class="hljs-number">1.1</span><span class="hljs-number">.0</span>
+<span class="hljs-attr">path:</span> TestApp Setup <span class="hljs-number">1.1</span><span class="hljs-number">.0</span>.exe
+<span class="hljs-attr">sha512:</span> Dj51I0q8aPQ3ioaz9LMqGYujAYRbDNblAQbodDRXAMxmY6hsHqEl3F6SvhfJj5oPhcqdX1ldsgEvfMNXGUXBIw==
+<span class="hljs-attr">stagingPercentage:</span> <span class="hljs-number">10</span>
+</code></pre>
+<p>Update will be shipped to 10% of userbase.</p>
+<p>If you want to pull a staged release because it hasn&apos;t gone well, you <strong>must</strong> increment the version number higher than your broken release.
+Because some of your users will be on the broken 1.0.1, releasing a new 1.0.1 would result in them staying on a broken version.</p>
+<h2 id="file-generated-and-uploaded-in-addition">File Generated and Uploaded in Addition</h2>
+<p><code>latest.yml</code> (or <code>latest-mac.yml</code> for macOS, or <code>latest-linux.yml</code> for Linux) will be generated and uploaded for all providers except <code>bintray</code> (because not required, <code>bintray</code> doesn&apos;t use <code>latest.yml</code>).</p>
+<h2 id="private-github-update-repo">Private GitHub Update Repo</h2>
+<p>You can use a private repository for updates with electron-updater by setting the <code>GH_TOKEN</code> environment variable (on user machine) and <code>private</code> option.
+If <code>GH_TOKEN</code> is set, electron-updater will use the GitHub API for updates allowing private repositories to work.</p>
+<p>Only for <a href="https://github.com/electron-userland/electron-builder/issues/1393#issuecomment-288191885" target="_blank">very special</a> cases &#x2014; not intended and not suitable for all users.</p>
+<p><strong>Note:</strong> The GitHub API currently has a rate limit of 5000 requests per user per hour. An update check uses up to 3 requests per check.</p>
+<h3 id="events">Events</h3>
+<p>The <code>autoUpdater</code> object emits the following events:</p>
+<h4 id="event-error">Event: <code>error</code></h4>
+<ul>
+<li><code>error</code> Error</li>
+</ul>
+<p>Emitted when there is an error while updating.</p>
+<h4 id="event-checking-for-update">Event: <code>checking-for-update</code></h4>
+<p>Emitted when checking if an update has started.</p>
+<h4 id="event-update-available">Event: <code>update-available</code></h4>
+<ul>
+<li><code>info</code> <a href="#UpdateInfo">UpdateInfo</a> (for generic and github providers) | <a href="#VersionInfo">VersionInfo</a> (for Bintray provider)</li>
+</ul>
+<p>Emitted when there is an available update. The update is downloaded automatically if <code>autoDownload</code> is <code>true</code>.</p>
+<h4 id="event-update-not-available">Event: <code>update-not-available</code></h4>
+<p>Emitted when there is no available update.</p>
+<ul>
+<li><code>info</code> <a href="#UpdateInfo">UpdateInfo</a> (for generic and github providers) | <a href="#VersionInfo">VersionInfo</a> (for Bintray provider)</li>
+</ul>
+<h4 id="event-download-progress">Event: <code>download-progress</code></h4>
+<ul>
+<li><code>progress</code> ProgressInfo<ul>
+<li><code>bytesPerSecond</code></li>
+<li><code>percent</code></li>
+<li><code>total</code></li>
+<li><code>transferred</code></li>
+</ul>
+</li>
+</ul>
+<p>Emitted on progress.</p>
+<h4 id="event-update-downloaded">Event: <code>update-downloaded</code></h4>
+<ul>
+<li><code>info</code> <a href="#UpdateInfo">UpdateInfo</a> &#x2014; for generic and github providers. <a href="#VersionInfo">VersionInfo</a> for Bintray provider.</li>
+</ul>
+<!-- do not edit. start of generated block -->
+<h2 id="api">API</h2>
+<ul>
+<li><a href="#module_electron-updater">electron-updater</a><ul>
+<li><a href="#AppUpdater">.AppUpdater</a> &#x21D0; <code>EventEmitter</code><ul>
+<li><a href="#module_electron-updater.AppUpdater+checkForUpdates"><code>.checkForUpdates()</code></a> &#x21D2; <code>Promise&lt;UpdateCheckResult&gt;</code></li>
+<li><a href="#module_electron-updater.AppUpdater+checkForUpdatesAndNotify"><code>.checkForUpdatesAndNotify()</code></a> &#x21D2; <code>Promise&lt; | UpdateCheckResult&gt;</code></li>
+<li><a href="#module_electron-updater.AppUpdater+downloadUpdate"><code>.downloadUpdate(cancellationToken)</code></a> &#x21D2; <code>Promise&lt;any&gt;</code></li>
+<li><a href="#module_electron-updater.AppUpdater+getFeedURL"><code>.getFeedURL()</code></a> &#x21D2; <code>undefined</code> | <code>null</code> | <code>String</code></li>
+<li><a href="#module_electron-updater.AppUpdater+setFeedURL"><code>.setFeedURL(options)</code></a></li>
+<li><a href="#module_electron-updater.AppUpdater+quitAndInstall"><code>.quitAndInstall(isSilent, isForceRunAfter)</code></a></li>
+</ul>
+</li>
+<li><a href="#Logger"><code>.Logger</code></a><ul>
+<li><a href="#module_electron-updater.Logger+debug"><code>.debug(message)</code></a></li>
+<li><a href="#module_electron-updater.Logger+error"><code>.error(message)</code></a></li>
+<li><a href="#module_electron-updater.Logger+info"><code>.info(message)</code></a></li>
+<li><a href="#module_electron-updater.Logger+warn"><code>.warn(message)</code></a></li>
+</ul>
+</li>
+<li><a href="#UpdateInfo"><code>.UpdateInfo</code></a></li>
+<li><a href="#UpdateCheckResult"><code>.UpdateCheckResult</code></a></li>
+<li><a href="#UpdaterSignal">.UpdaterSignal</a><ul>
+<li><a href="#module_electron-updater.UpdaterSignal+login"><code>.login(handler)</code></a></li>
+<li><a href="#module_electron-updater.UpdaterSignal+progress"><code>.progress(handler)</code></a></li>
+<li><a href="#module_electron-updater.UpdaterSignal+updateCancelled"><code>.updateCancelled(handler)</code></a></li>
+<li><a href="#module_electron-updater.UpdaterSignal+updateDownloaded"><code>.updateDownloaded(handler)</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a name="AppUpdater"></a></p>
+<h3 id="appupdater-&#x21D0;-eventemitter">AppUpdater &#x21D0; <code>EventEmitter</code></h3>
+<p><strong>Kind</strong>: class of <a href="#module_electron-updater"><code>electron-updater</code></a><br>
+<strong>Extends</strong>: <code>EventEmitter</code><br><strong>Properties</strong></p>
+<ul>
+<li><code id="AppUpdater-autoDownload">autoDownload</code> = <code>true</code> Boolean - Whether to automatically download an update when it is found.</li>
+<li><p><code id="AppUpdater-allowPrerelease">allowPrerelease</code> = <code>false</code> Boolean - <em>GitHub provider only.</em> Whether to allow update to pre-release versions. Defaults to <code>true</code> if application version contains prerelease components (e.g. <code>0.12.1-alpha.1</code>, here <code>alpha</code> is a prerelease component), otherwise <code>false</code>.</p>
+<p>If <code>true</code>, downgrade will be allowed (<code>allowDowngrade</code> will be set to <code>true</code>).</p>
+</li>
+<li><code id="AppUpdater-fullChangelog">fullChangelog</code> = <code>false</code> Boolean - <em>GitHub provider only.</em> Get all release notes (from current version to latest), not just the latest.</li>
+<li><code id="AppUpdater-allowDowngrade">allowDowngrade</code> = <code>false</code> Boolean - Whether to allow version downgrade (when a user from the beta channel wants to go back to the stable channel).</li>
+<li><code id="AppUpdater-currentVersion">currentVersion</code> String - The current application version.</li>
+<li><code id="AppUpdater-requestHeaders">requestHeaders</code> [key: string]: string - The request headers.</li>
+<li><code id="AppUpdater-logger">logger</code> <a href="#Logger">Logger</a> - The logger. You can pass <a href="https://github.com/megahertz/electron-log" target="_blank">electron-log</a>, <a href="https://github.com/winstonjs/winston" target="_blank">winston</a> or another logger with the following interface: <code>{ info(), warn(), error() }</code>. Set it to <code>null</code> if you would like to disable a logging feature.</li>
+<li><code id="AppUpdater-signals">signals</code> = <code>new UpdaterSignal(this)</code> <a href="#UpdaterSignal">UpdaterSignal</a> - For type safety you can use signals, e.g. <code>autoUpdater.signals.updateDownloaded(() =&gt; {})</code> instead of <code>autoUpdater.on(&apos;update-available&apos;, () =&gt; {})</code></li>
+<li><code id="AppUpdater-configOnDisk">configOnDisk</code> = <code>new Lazy&lt;any&gt;(() =&gt; this.loadUpdateConfig())</code> Lazy&lt;any&gt;</li>
+</ul>
+<p><strong>Methods</strong></p>
+<ul>
+<li><a href="#AppUpdater">.AppUpdater</a> &#x21D0; <code>EventEmitter</code><ul>
+<li><a href="#module_electron-updater.AppUpdater+checkForUpdates"><code>.checkForUpdates()</code></a> &#x21D2; <code>Promise&lt;UpdateCheckResult&gt;</code></li>
+<li><a href="#module_electron-updater.AppUpdater+checkForUpdatesAndNotify"><code>.checkForUpdatesAndNotify()</code></a> &#x21D2; <code>Promise&lt; | UpdateCheckResult&gt;</code></li>
+<li><a href="#module_electron-updater.AppUpdater+downloadUpdate"><code>.downloadUpdate(cancellationToken)</code></a> &#x21D2; <code>Promise&lt;any&gt;</code></li>
+<li><a href="#module_electron-updater.AppUpdater+getFeedURL"><code>.getFeedURL()</code></a> &#x21D2; <code>undefined</code> | <code>null</code> | <code>String</code></li>
+<li><a href="#module_electron-updater.AppUpdater+setFeedURL"><code>.setFeedURL(options)</code></a></li>
+<li><a href="#module_electron-updater.AppUpdater+quitAndInstall"><code>.quitAndInstall(isSilent, isForceRunAfter)</code></a></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_electron-updater.AppUpdater+checkForUpdates"></a></p>
+<h4 id="appupdatercheckforupdates-&#x21D2;-promiseupdatecheckresult"><code>appUpdater.checkForUpdates()</code> &#x21D2; <code>Promise&lt;UpdateCheckResult&gt;</code></h4>
+<p>Asks the server whether there is an update.</p>
+<p><a name="module_electron-updater.AppUpdater+checkForUpdatesAndNotify"></a></p>
+<h4 id="appupdatercheckforupdatesandnotify-&#x21D2;-promise--updatecheckresult"><code>appUpdater.checkForUpdatesAndNotify()</code> &#x21D2; <code>Promise&lt; | UpdateCheckResult&gt;</code></h4>
+<p><a name="module_electron-updater.AppUpdater+downloadUpdate"></a></p>
+<h4 id="appupdaterdownloadupdatecancellationtoken-&#x21D2;-promiseany"><code>appUpdater.downloadUpdate(cancellationToken)</code> &#x21D2; <code>Promise&lt;any&gt;</code></h4>
+<p>Start downloading update manually. You can use this method if <code>autoDownload</code> option is set to <code>false</code>.</p>
+<p><strong>Returns</strong>: <code>Promise&lt;any&gt;</code> - Path to downloaded file.  </p>
+<ul>
+<li>cancellationToken <code>CancellationToken</code></li>
+</ul>
+<p><a name="module_electron-updater.AppUpdater+getFeedURL"></a></p>
+<h4 id="appupdatergetfeedurl-&#x21D2;-undefined--null--string"><code>appUpdater.getFeedURL()</code> &#x21D2; <code>undefined</code> | <code>null</code> | <code>String</code></h4>
+<p><a name="module_electron-updater.AppUpdater+setFeedURL"></a></p>
+<h4 id="appupdatersetfeedurloptions"><code>appUpdater.setFeedURL(options)</code></h4>
+<p>Configure update provider. If value is <code>string</code>, <a href="configuration/publish#genericserveroptions">GenericServerOptions</a> will be set with value as <code>url</code>.</p>
+<ul>
+<li>options <code>PublishConfiguration</code> | <code>String</code> | <code>GithubOptions</code> | <code>S3Options</code> | <code>SpacesOptions</code> | <code>GenericServerOptions</code> | <code>BintrayOptions</code> - If you want to override configuration in the <code>app-update.yml</code>.</li>
+</ul>
+<p><a name="module_electron-updater.AppUpdater+quitAndInstall"></a></p>
+<h4 id="appupdaterquitandinstallissilent-isforcerunafter"><code>appUpdater.quitAndInstall(isSilent, isForceRunAfter)</code></h4>
+<p>Restarts the app and installs the update after it has been downloaded.
+It should only be called after <code>update-downloaded</code> has been emitted.</p>
+<p><strong>Note:</strong> <code>autoUpdater.quitAndInstall()</code> will close all application windows first and only emit <code>before-quit</code> event on <code>app</code> after that.
+This is different from the normal quit event sequence.</p>
+<ul>
+<li>isSilent <code>Boolean</code> - <em>windows-only</em> Runs the installer in silent mode.</li>
+<li>isForceRunAfter <code>Boolean</code> - <em>windows-only</em> Run the app after finish even on silent install.</li>
+</ul>
+<p><a name="Logger"></a></p>
+<h3 id="logger"><code>Logger</code></h3>
+<p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br></p>
+<ul>
+<li><a href="#Logger"><code>.Logger</code></a><ul>
+<li><a href="#module_electron-updater.Logger+debug"><code>.debug(message)</code></a></li>
+<li><a href="#module_electron-updater.Logger+error"><code>.error(message)</code></a></li>
+<li><a href="#module_electron-updater.Logger+info"><code>.info(message)</code></a></li>
+<li><a href="#module_electron-updater.Logger+warn"><code>.warn(message)</code></a></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_electron-updater.Logger+debug"></a></p>
+<h4 id="loggerdebugmessage"><code>logger.debug(message)</code></h4>
+<ul>
+<li>message <code>String</code></li>
+</ul>
+<p><a name="module_electron-updater.Logger+error"></a></p>
+<h4 id="loggererrormessage"><code>logger.error(message)</code></h4>
+<ul>
+<li>message <code>any</code></li>
+</ul>
+<p><a name="module_electron-updater.Logger+info"></a></p>
+<h4 id="loggerinfomessage"><code>logger.info(message)</code></h4>
+<ul>
+<li>message <code>any</code></li>
+</ul>
+<p><a name="module_electron-updater.Logger+warn"></a></p>
+<h4 id="loggerwarnmessage"><code>logger.warn(message)</code></h4>
+<ul>
+<li>message <code>any</code></li>
+</ul>
+<p><a name="UpdateInfo"></a></p>
+<h3 id="updateinfo"><code>UpdateInfo</code></h3>
+<p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br>
+<strong>Properties</strong></p>
+<ul>
+<li><strong><code id="UpdateInfo-version">version</code></strong> String - The version.</li>
+<li><strong><code id="UpdateInfo-files">files</code></strong> Array&lt;module:builder-util-runtime.UpdateFileInfo&gt;</li>
+<li><strong><code id="UpdateInfo-path">path</code></strong> String - Deprecated: {tag.description}</li>
+<li><strong><code id="UpdateInfo-sha512">sha512</code></strong> String - Deprecated: {tag.description}</li>
+<li><code id="UpdateInfo-releaseName">releaseName</code> String - The release name.</li>
+<li><code id="UpdateInfo-releaseNotes">releaseNotes</code> String | Array&lt;module:builder-util-runtime.ReleaseNoteInfo&gt; - The release notes. List if <code>updater.fullChangelog</code> is set to <code>true</code>, <code>string</code> otherwise.</li>
+<li><strong><code id="UpdateInfo-releaseDate">releaseDate</code></strong> String - The release date.</li>
+<li><code id="UpdateInfo-stagingPercentage">stagingPercentage</code> Number - The <a href="auto-update#staged-rollouts">staged rollout</a> percentage, 0-100.</li>
+</ul>
+<p><a name="UpdateCheckResult"></a></p>
+<h3 id="updatecheckresult"><code>UpdateCheckResult</code></h3>
+<p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br>
+<strong>Properties</strong></p>
+<ul>
+<li><strong><code id="UpdateCheckResult-updateInfo">updateInfo</code></strong> module:builder-util-runtime.UpdateInfo</li>
+<li><code id="UpdateCheckResult-downloadPromise">downloadPromise</code> Promise&lt;Array&lt;String&gt;&gt;</li>
+<li><code id="UpdateCheckResult-cancellationToken">cancellationToken</code> CancellationToken</li>
+<li><strong><code id="UpdateCheckResult-versionInfo">versionInfo</code></strong> module:builder-util-runtime.UpdateInfo - Deprecated: {tag.description}</li>
+</ul>
+<p><a name="UpdaterSignal"></a></p>
+<h3 id="updatersignal">UpdaterSignal</h3>
+<p><strong>Kind</strong>: class of <a href="#module_electron-updater"><code>electron-updater</code></a><br></p>
+<ul>
+<li><a href="#UpdaterSignal">.UpdaterSignal</a><ul>
+<li><a href="#module_electron-updater.UpdaterSignal+login"><code>.login(handler)</code></a></li>
+<li><a href="#module_electron-updater.UpdaterSignal+progress"><code>.progress(handler)</code></a></li>
+<li><a href="#module_electron-updater.UpdaterSignal+updateCancelled"><code>.updateCancelled(handler)</code></a></li>
+<li><a href="#module_electron-updater.UpdaterSignal+updateDownloaded"><code>.updateDownloaded(handler)</code></a></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_electron-updater.UpdaterSignal+login"></a></p>
+<h4 id="updatersignalloginhandler"><code>updaterSignal.login(handler)</code></h4>
+<p>Emitted when an authenticating proxy is <a href="https://github.com/electron/electron/blob/master/docs/api/client-request.md#event-login" target="_blank">asking for user credentials</a>.</p>
+<ul>
+<li>handler <code>module:electron-updater.__type</code></li>
+</ul>
+<p><a name="module_electron-updater.UpdaterSignal+progress"></a></p>
+<h4 id="updatersignalprogresshandler"><code>updaterSignal.progress(handler)</code></h4>
+<ul>
+<li>handler <code>callback</code></li>
+</ul>
+<p><a name="module_electron-updater.UpdaterSignal+updateCancelled"></a></p>
+<h4 id="updatersignalupdatecancelledhandler"><code>updaterSignal.updateCancelled(handler)</code></h4>
+<ul>
+<li>handler <code>callback</code></li>
+</ul>
+<p><a name="module_electron-updater.UpdaterSignal+updateDownloaded"></a></p>
+<h4 id="updatersignalupdatedownloadedhandler"><code>updaterSignal.updateDownloaded(handler)</code></h4>
+<ul>
+<li>handler <code>callback</code></li>
+</ul>
+<!-- end of generated block -->
+<script src="_gitbook_plugin_analytics.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="icons" class="navigation navigation-prev " aria-label="Previous page: Icons">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="code-signing" class="navigation navigation-next " aria-label="Next page: Code Signing">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Auto Update","level":"1.4.2","depth":2,"next":{"title":"Code Signing","level":"1.4.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"previous":{"title":"Icons","level":"1.4.1","depth":2,"path":"icons.md","ref":"icons.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"auto-update.md","mtime":"2017-11-29T17:50:26.321Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2017-12-08T08:37:47.165Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-develar-toolbar-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

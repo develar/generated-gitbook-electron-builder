@@ -1,0 +1,722 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>File Patterns · electron-builder</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.11">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="configuration/mac" />
+    
+    
+    <link rel="prev" href="configuration/contents" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"electron-userland/electron-builder","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="configuration/configuration">
+            
+                <a href="configuration/configuration">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="configuration/contents">
+            
+                <a href="configuration/contents">
+            
+                    
+                    Application Contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="file-patterns">
+            
+                <a href="file-patterns">
+            
+                    
+                    File Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="configuration/mac">
+            
+                <a href="configuration/mac">
+            
+                    
+                    macOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="configuration/dmg">
+            
+                <a href="configuration/dmg">
+            
+                    
+                    DMG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="configuration/mas">
+            
+                <a href="configuration/mas">
+            
+                    
+                    MAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="configuration/pkg">
+            
+                <a href="configuration/pkg">
+            
+                    
+                    PKG
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="configuration/win">
+            
+                <a href="configuration/win">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="configuration/nsis">
+            
+                <a href="configuration/nsis">
+            
+                    
+                    NSIS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="configuration/appx">
+            
+                <a href="configuration/appx">
+            
+                    
+                    AppX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="configuration/squirrel-windows">
+            
+                <a href="configuration/squirrel-windows">
+            
+                    
+                    Squirrel.Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="configuration/linux">
+            
+                <a href="configuration/linux">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="configuration/snap">
+            
+                <a href="configuration/snap">
+            
+                    
+                    Snap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="configuration/target">
+            
+                <a href="configuration/target">
+            
+                    
+                    Target
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="configuration/publish">
+            
+                <a href="configuration/publish">
+            
+                    
+                    Publish
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="cli">
+            
+                <a href="cli">
+            
+                    
+                    Command Line Interface (CLI)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Guides
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="icons">
+            
+                <a href="icons">
+            
+                    
+                    Icons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="auto-update">
+            
+                <a href="auto-update">
+            
+                    
+                    Auto Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="code-signing">
+            
+                <a href="code-signing">
+            
+                    
+                    Code Signing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="multi-platform-build">
+            
+                <a href="multi-platform-build">
+            
+                    
+                    Multi Platform Build
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="tutorials/loading-app-dependencies-manually">
+            
+                <a href="tutorials/loading-app-dependencies-manually">
+            
+                    
+                    Loading App Dependencies Manually
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="tutorials/two-package-structure">
+            
+                <a href="tutorials/two-package-structure">
+            
+                    
+                    Two package.json Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="tutorials/macos-kernel-extensions">
+            
+                <a href="tutorials/macos-kernel-extensions">
+            
+                    
+                    macOS Kernel Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Programmatic API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="api/electron-builder">
+            
+                <a href="api/electron-builder">
+            
+                    
+                    electron-builder
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="donate">
+            
+                <a href="donate">
+            
+                    
+                    Donate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >File Patterns</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <ul>
+<li><code>*</code> Matches 0 or more characters in a single path portion</li>
+<li><code>?</code> Matches 1 character</li>
+<li><code>[...]</code> Matches a range of characters, similar to a RegExp range.
+If the first character of the range is <code>!</code> or <code>^</code> then it matches
+any character not in the range.</li>
+<li><code>!(pattern|pattern|pattern)</code> Matches anything that does not match
+any of the patterns provided.</li>
+<li><code>?(pattern|pattern|pattern)</code> Matches zero or one occurrence of the
+patterns provided.</li>
+<li><code>+(pattern|pattern|pattern)</code> Matches one or more occurrences of the
+patterns provided.</li>
+<li><code>*(a|b|c)</code> Matches zero or more occurrences of the patterns provided</li>
+<li><code>@(pattern|pat*|pat?erN)</code> Matches exactly one of the patterns
+provided</li>
+<li><code>**</code> If a &quot;globstar&quot; is alone in a path portion, then it matches
+zero or more directories and subdirectories searching for matches.
+It does not crawl symlinked directories.</li>
+</ul>
+<p>Hidden files are not ignored by default, but all files that should be ignored, are <a href="#default-file-pattern">ignored by default</a>.</p>
+<p>If directory matched, all contents are copied. So, you can just specify <code>foo</code> to copy <code>foo</code> directory.</p>
+<h2 id="multiple-glob-patterns">Multiple Glob Patterns</h2>
+<pre><code class="lang-js"> [
+   <span class="hljs-comment">// match all files</span>
+   <span class="hljs-string">&quot;**/*&quot;</span>,
+
+   <span class="hljs-comment">// except for js files in the foo/ directory</span>
+   <span class="hljs-string">&quot;!foo/*.js&quot;</span>,
+
+   <span class="hljs-comment">// unless it&apos;s foo/bar.js</span>
+   <span class="hljs-string">&quot;foo/bar.js&quot;</span>,
+ ]
+</code></pre>
+<h2 id="excluding-directories">Excluding Directories</h2>
+<p>Remember that <code>!doNotCopyMe/**/*</code> would match the files <em>in</em> the <code>doNotCopyMe</code> directory, but not the directory itself, so the <a href="https://github.com/gulpjs/gulp/issues/165#issuecomment-32613179" target="_blank">empty directory</a> would be created.
+Solution &#x2014; use macro <code>${/*}</code>, e.g. <code>!doNotCopyMe${/*}</code>.</p>
+<h2 id="file-macros">File Macros</h2>
+<p>You can use macros in the file patterns, artifact file name patterns and publish configuration url:</p>
+<ul>
+<li><code>${arch}</code> &#x2014; expanded to <code>ia32</code>, <code>x64</code>. If no <code>arch</code>, macro will be removed from your pattern with leading space, <code>-</code> and <code>_</code> (so, you don&apos;t need to worry and can reuse pattern).</li>
+<li><code>${os}</code> &#x2014; expanded to <code>mac</code>, <code>linux</code> or <code>win</code> according to target platform.</li>
+<li><code>${name}</code> &#x2013; <code>package.json</code> <code>name</code>.</li>
+<li><code>${productName}</code> &#x2014; <a href="https://www.npmjs.com/package/sanitize-filename" target="_blank">Sanitized</a> product name.</li>
+<li><code>${version}</code></li>
+<li><code>${channel}</code> &#x2014; detected prerelease component from version (e.g. <code>beta</code>).</li>
+<li><code>${env.ENV_NAME}</code> &#x2014; any environment variable.</li>
+<li>Any property of <a href="api/electron-builder#AppInfo">AppInfo</a> (e.g. <code>buildVersion</code>, <code>buildNumber</code>).</li>
+</ul>
+<h2 id="default-file-pattern">Default File Pattern</h2>
+<p><a href="configuration/configuration#Configuration-files">files</a> defaults to:</p>
+<ul>
+<li><code>**/*</code></li>
+<li><code>!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme,test,__tests__,tests,powered-test,example,examples,*.d.ts}</code></li>
+<li><code>!**/node_modules/.bin</code></li>
+<li><code>!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}</code></li>
+<li><code>!**/._*</code></li>
+<li><code>!.editorconfig</code></li>
+<li><code>!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,__pycache__,thumbs.db,.gitignore,.gitattributes,.flowconfig,.yarn-metadata.json,.idea,.vs,appveyor.yml,.travis.yml,circle.yml,npm-debug.log,.nyc_output,yarn.lock,.yarn-integrity}</code></li>
+</ul>
+<script src="_gitbook_plugin_analytics.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="configuration/contents" class="navigation navigation-prev " aria-label="Previous page: Application Contents">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="configuration/mac" class="navigation navigation-next " aria-label="Next page: macOS">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"File Patterns","level":"1.2.2","depth":2,"next":{"title":"macOS","level":"1.2.3","depth":2,"path":"configuration/mac.md","ref":"configuration/mac.md","articles":[{"title":"DMG","level":"1.2.3.1","depth":3,"path":"configuration/dmg.md","ref":"configuration/dmg.md","articles":[]},{"title":"MAS","level":"1.2.3.2","depth":3,"path":"configuration/mas.md","ref":"configuration/mas.md","articles":[]},{"title":"PKG","level":"1.2.3.3","depth":3,"path":"configuration/pkg.md","ref":"configuration/pkg.md","articles":[]}]},"previous":{"title":"Application Contents","level":"1.2.1","depth":2,"path":"configuration/contents.md","ref":"configuration/contents.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"file-patterns.md","mtime":"2017-08-30T18:04:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2017-12-08T08:37:47.165Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-develar-toolbar-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
