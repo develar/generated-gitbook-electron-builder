@@ -470,6 +470,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.4" data-path="tutorials/release-using-channels">
+            
+                <a href="tutorials/release-using-channels">
+            
+                    
+                    Release Using Channels
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -606,6 +619,7 @@ Solution &#x2014; use macro <code>${/*}</code>, e.g. <code>!doNotCopyMe${/*}</co
 <ul>
 <li><code>${arch}</code> &#x2014; expanded to <code>ia32</code>, <code>x64</code>. If no <code>arch</code>, macro will be removed from your pattern with leading space, <code>-</code> and <code>_</code> (so, you don&apos;t need to worry and can reuse pattern).</li>
 <li><code>${os}</code> &#x2014; expanded to <code>mac</code>, <code>linux</code> or <code>win</code> according to target platform.</li>
+<li><code>${platform}</code> &#x2014; expanded to <code>darwin</code>, <code>linux</code> or <code>win32</code> according to Node.js <code>process.platform</code> property.</li>
 <li><code>${name}</code> &#x2013; <code>package.json</code> <code>name</code>.</li>
 <li><code>${productName}</code> &#x2014; <a href="https://www.npmjs.com/package/sanitize-filename" target="_blank">Sanitized</a> product name.</li>
 <li><code>${version}</code></li>
@@ -667,7 +681,7 @@ Solution &#x2014; use macro <code>${/*}</code>, e.g. <code>!doNotCopyMe${/*}</co
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"File Patterns","level":"1.2.2","depth":2,"next":{"title":"macOS","level":"1.2.3","depth":2,"path":"configuration/mac.md","ref":"configuration/mac.md","articles":[{"title":"DMG","level":"1.2.3.1","depth":3,"path":"configuration/dmg.md","ref":"configuration/dmg.md","articles":[]},{"title":"MAS","level":"1.2.3.2","depth":3,"path":"configuration/mas.md","ref":"configuration/mas.md","articles":[]},{"title":"PKG","level":"1.2.3.3","depth":3,"path":"configuration/pkg.md","ref":"configuration/pkg.md","articles":[]}]},"previous":{"title":"Application Contents","level":"1.2.1","depth":2,"path":"configuration/contents.md","ref":"configuration/contents.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"file-patterns.md","mtime":"2017-11-03T08:50:30.406Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-02-02T18:06:48.967Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"File Patterns","level":"1.2.2","depth":2,"next":{"title":"macOS","level":"1.2.3","depth":2,"path":"configuration/mac.md","ref":"configuration/mac.md","articles":[{"title":"DMG","level":"1.2.3.1","depth":3,"path":"configuration/dmg.md","ref":"configuration/dmg.md","articles":[]},{"title":"MAS","level":"1.2.3.2","depth":3,"path":"configuration/mas.md","ref":"configuration/mas.md","articles":[]},{"title":"PKG","level":"1.2.3.3","depth":3,"path":"configuration/pkg.md","ref":"configuration/pkg.md","articles":[]}]},"previous":{"title":"Application Contents","level":"1.2.1","depth":2,"path":"configuration/contents.md","ref":"configuration/contents.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"file-patterns.md","mtime":"2018-03-05T07:20:25.353Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-04-27T07:27:54.945Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

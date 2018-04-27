@@ -470,6 +470,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.4" data-path="tutorials/release-using-channels">
+            
+                <a href="tutorials/release-using-channels">
+            
+                    
+                    Release Using Channels
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -609,6 +622,7 @@
 <pre><code class="lang-js">autoUpdater.logger = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;electron-log&quot;</span>)
 autoUpdater.logger.transports.file.level = <span class="hljs-string">&quot;info&quot;</span>
 </code></pre>
+<p>Note that in order to develop/test UI/UX of updating without packaging the application you need to have a file named <code>dev-app-update.yml</code> in the root of your project, which matches your <code>publish</code> setting from electron-builder config (but in <a href="https://www.json2yaml.com" target="_blank">YAML</a> format).</p>
 <h2 id="staged-rollouts">Staged Rollouts</h2>
 <p>Staged rollouts allow you to distribute the latest version of your app to a subset of users that you can increase over time, similar to rollouts on platforms like Google Play.</p>
 <p>Staged rollouts are controlled by manually editing your <code>latest.yml</code> / <code>latest-mac.yml</code> (channel update info file).</p>
@@ -671,6 +685,7 @@ If <code>GH_TOKEN</code> is set, electron-updater will use the GitHub API for up
 <li><a href="#module_electron-updater.AppUpdater+downloadUpdate"><code>.downloadUpdate(cancellationToken)</code></a> &#x21D2; <code>Promise&lt;any&gt;</code></li>
 <li><a href="#module_electron-updater.AppUpdater+getFeedURL"><code>.getFeedURL()</code></a> &#x21D2; <code>undefined</code> | <code>null</code> | <code>String</code></li>
 <li><a href="#module_electron-updater.AppUpdater+setFeedURL"><code>.setFeedURL(options)</code></a></li>
+<li><a href="#module_electron-updater.AppUpdater+channel"><code>.channel()</code></a></li>
 <li><a href="#module_electron-updater.AppUpdater+quitAndInstall"><code>.quitAndInstall(isSilent, isForceRunAfter)</code></a></li>
 </ul>
 </li>
@@ -718,6 +733,7 @@ If <code>GH_TOKEN</code> is set, electron-updater will use the GitHub API for up
 <li><a href="#module_electron-updater.AppUpdater+downloadUpdate"><code>.downloadUpdate(cancellationToken)</code></a> &#x21D2; <code>Promise&lt;any&gt;</code></li>
 <li><a href="#module_electron-updater.AppUpdater+getFeedURL"><code>.getFeedURL()</code></a> &#x21D2; <code>undefined</code> | <code>null</code> | <code>String</code></li>
 <li><a href="#module_electron-updater.AppUpdater+setFeedURL"><code>.setFeedURL(options)</code></a></li>
+<li><a href="#module_electron-updater.AppUpdater+channel"><code>.channel()</code></a></li>
 <li><a href="#module_electron-updater.AppUpdater+quitAndInstall"><code>.quitAndInstall(isSilent, isForceRunAfter)</code></a></li>
 </ul>
 </li>
@@ -742,6 +758,9 @@ If <code>GH_TOKEN</code> is set, electron-updater will use the GitHub API for up
 <ul>
 <li>options <code>PublishConfiguration</code> | <code>String</code> | <code>GithubOptions</code> | <code>S3Options</code> | <code>SpacesOptions</code> | <code>GenericServerOptions</code> | <code>BintrayOptions</code> - If you want to override configuration in the <code>app-update.yml</code>.</li>
 </ul>
+<p><a name="module_electron-updater.AppUpdater+channel"></a></p>
+<h4 id="appupdaterchannel-getter-and-setter"><code>appUpdater.channel</code> (getter and setter)</h4>
+<p>Define the channel which the Auto-Updater will follow (see <a href="tutorials/release-using-channels#release_using_channels">the auto-update with channels tutorial</a>) using <code>appUpdater.channel = &apos;beta&apos;</code> or get the current channel with <code>currentChannel = appUpdater.channel</code>.</p>
 <p><a name="module_electron-updater.AppUpdater+quitAndInstall"></a></p>
 <h4 id="appupdaterquitandinstallissilent-isforcerunafter"><code>appUpdater.quitAndInstall(isSilent, isForceRunAfter)</code></h4>
 <p>Restarts the app and installs the update after it has been downloaded.
@@ -885,7 +904,7 @@ This is different from the normal quit event sequence.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Auto Update","level":"1.4.2","depth":2,"next":{"title":"Code Signing","level":"1.4.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"previous":{"title":"Icons","level":"1.4.1","depth":2,"path":"icons.md","ref":"icons.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"auto-update.md","mtime":"2018-02-02T18:04:20.950Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-02-02T18:06:48.967Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Auto Update","level":"1.4.2","depth":2,"next":{"title":"Code Signing","level":"1.4.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"previous":{"title":"Icons","level":"1.4.1","depth":2,"path":"icons.md","ref":"icons.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"auto-update.md","mtime":"2018-04-27T07:26:13.350Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-04-27T07:27:54.945Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

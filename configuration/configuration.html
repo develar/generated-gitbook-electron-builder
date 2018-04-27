@@ -470,6 +470,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.4" data-path="../tutorials/release-using-channels">
+            
+                <a href="../tutorials/release-using-channels">
+            
+                    
+                    Release Using Channels
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -676,6 +689,7 @@ Inherits <a href="nsis">NsisOptions</a> options.</p>
 <li><code id="Configuration-extraMetadata">extraMetadata</code> any - Inject properties to <code>package.json</code>.</li>
 <li><code id="Configuration-readonly">readonly</code> = <code>false</code> Boolean - Whether to fail if the application is not signed (to prevent unsigned app if code signing configuration is not correct).</li>
 <li><code id="Configuration-muonVersion">muonVersion</code> String - The version of muon you are packaging for.</li>
+<li><code id="Configuration-protonNodeVersion">protonNodeVersion</code> String - <em>Proton Native only</em> The version of NodeJS you are packaging for. You can set it to <code>current</code> to set the Node.js version that you use to run electron-builder.</li>
 </ul>
 <hr>
 <ul>
@@ -684,7 +698,10 @@ Inherits <a href="nsis">NsisOptions</a> options.</p>
 <hr>
 <ul>
 <li><code id="Configuration-afterSign">afterSign</code> (context: AfterPackContext) =&gt; Promise | null - The function (or path to file or module id) to be run after pack and sign (but before pack into distributable format).</li>
-<li><code id="Configuration-beforeBuild">beforeBuild</code> (context: BeforeBuildContext) =&gt; Promise | null - The function (or path to file or module id) to be run before dependencies are installed or rebuilt. Works when <code>npmRebuild</code> is set to <code>true</code>. Resolving to <code>false</code> will skip dependencies install or rebuild.</li>
+<li><code id="Configuration-onNodeModuleFile">onNodeModuleFile</code> module:electron-builder-lib/out/configuration.__type | String - The function (or path to file or module id) to be run on each node module file.</li>
+<li><p><code id="Configuration-beforeBuild">beforeBuild</code> (context: BeforeBuildContext) =&gt; Promise | null - The function (or path to file or module id) to be run before dependencies are installed or rebuilt. Works when <code>npmRebuild</code> is set to <code>true</code>. Resolving to <code>false</code> will skip dependencies install or rebuild.</p>
+<p>If provided and <code>node_modules</code> are missing, it will not invoke production dependencies check.</p>
+</li>
 <li><code id="Configuration-remoteBuild">remoteBuild</code> = <code>true</code> Boolean - Whether to build using Electron Build Service if target not supported on current OS.</li>
 <li><code id="Configuration-includePdb">includePdb</code> = <code>false</code> Boolean - Whether to include PDB files.</li>
 <li><code id="Configuration-removePackageScripts">removePackageScripts</code> = <code>true</code> Boolean - Whether to remove <code>scripts</code> field from <code>package.json</code> files.<!-- end of generated block -->
@@ -807,7 +824,7 @@ Inherits <a href="nsis">NsisOptions</a> options.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Configuration","level":"1.2","depth":1,"next":{"title":"Application Contents","level":"1.2.1","depth":2,"path":"configuration/contents.md","ref":"configuration/contents.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/configuration.md","mtime":"2018-02-02T17:56:41.412Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-02-02T18:06:48.967Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Configuration","level":"1.2","depth":1,"next":{"title":"Application Contents","level":"1.2.1","depth":2,"path":"configuration/contents.md","ref":"configuration/contents.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/configuration.md","mtime":"2018-04-27T07:25:50.113Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-04-27T07:27:54.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -470,6 +470,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.4" data-path="../tutorials/release-using-channels">
+            
+                <a href="../tutorials/release-using-channels">
+            
+                    
+                    Release Using Channels
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -576,6 +589,8 @@
   <span class="hljs-string">&quot;publish&quot;</span>: [<span class="hljs-string">&quot;github&quot;</span>, <span class="hljs-string">&quot;bintray&quot;</span>]
 }
 </code></pre>
+<h2 id="macros">Macros</h2>
+<p>In all publish options <a href="../file-patterns#file-macros">File Macros</a> are supported.</p>
 <h2 id="how-to-publish">How to Publish</h2>
 <p>Excerpt from <a href="https://github.com/electron-userland/electron-builder#cli-usage" target="_blank">CLI Usage</a> of <code>electron-builder</code> command:</p>
 <pre><code>Publishing:
@@ -644,7 +659,7 @@
 <li><a href="https://docs.npmjs.com/files/package.json#repository" target="_blank">repository</a> in the application or development <code>package.json</code>,</li>
 <li>if not set, env <ul>
 <li><code>TRAVIS_REPO_SLUG</code> </li>
-<li>or <code>APPVEYOR_ACCOUNT_NAME</code>/<code>APPVEYOR_PROJECT_NAME</code> </li>
+<li>or <code>APPVEYOR_REPO_NAME</code> </li>
 <li>or <code>CIRCLE_PROJECT_USERNAME</code>/<code>CIRCLE_PROJECT_REPONAME</code>,</li>
 </ul>
 </li>
@@ -664,13 +679,26 @@ Define <code>BT_TOKEN</code> environment variable.</p>
 <li><code id="BintrayOptions-user">user</code> String - The Bintray user account. Used in cases where the owner is an organization.</li>
 <li><code id="BintrayOptions-token">token</code> String</li>
 </ul>
+<p>Inherited from <code>PublishConfiguration</code>:</p>
+<ul>
+<li><p><code id="BintrayOptions-publishAutoUpdate">publishAutoUpdate</code> = <code>true</code> Boolean - Whether to publish auto update info files.</p>
+<p>Auto update relies only on the first provider in the list (you can specify several publishers). Thus, probably, there`s no need to upload the metadata files for the other configured providers. But by default will be uploaded.</p>
+</li>
+</ul>
 <h2 id="genericserveroptions">GenericServerOptions</h2>
-<p>Generic (any HTTP(S) server) options.</p>
+<p>Generic (any HTTP(S) server) options.
+In all publish options <a href="../file-patterns#file-macros">File Macros</a> are supported.</p>
 <ul>
 <li><strong><code id="GenericServerOptions-provider">provider</code></strong> &quot;generic&quot; - The provider. Must be <code>generic</code>.</li>
-<li><strong><code id="GenericServerOptions-url">url</code></strong> String - The base url. e.g. <code>https://bucket_name.s3.amazonaws.com</code>. You can use <code>${os}</code> (expanded to <code>mac</code>, <code>linux</code> or <code>win</code> according to target platform) and <code>${arch}</code> macros.</li>
+<li><strong><code id="GenericServerOptions-url">url</code></strong> String - The base url. e.g. <code>https://bucket_name.s3.amazonaws.com</code>.</li>
 <li><code id="GenericServerOptions-channel">channel</code> = <code>latest</code> String - The channel.</li>
 <li><code id="GenericServerOptions-useMultipleRangeRequest">useMultipleRangeRequest</code> Boolean - Whether to use multiple range requests for differential update. Defaults to <code>true</code> if <code>url</code> doesn&apos;t contain <code>s3.amazonaws.com</code>.</li>
+</ul>
+<p>Inherited from <code>PublishConfiguration</code>:</p>
+<ul>
+<li><p><code id="GenericServerOptions-publishAutoUpdate">publishAutoUpdate</code> = <code>true</code> Boolean - Whether to publish auto update info files.</p>
+<p>Auto update relies only on the first provider in the list (you can specify several publishers). Thus, probably, there`s no need to upload the metadata files for the other configured providers. But by default will be uploaded.</p>
+</li>
 </ul>
 <h2 id="githuboptions">GithubOptions</h2>
 <p><a href="https://help.github.com/articles/about-releases/" target="_blank">GitHub</a> options.</p>
@@ -687,6 +715,12 @@ Define <code>GH_TOKEN</code> environment variable.</p>
 <li><code id="GithubOptions-private">private</code> Boolean - Whether to use private github auto-update provider if <code>GH_TOKEN</code> environment variable is defined. See <a href="../auto-update#private-github-update-repo">Private GitHub Update Repo</a>.</li>
 <li><p><code id="GithubOptions-releaseType">releaseType</code> = <code>draft</code> &quot;draft&quot; | &quot;prerelease&quot; | &quot;release&quot; - The type of release. By default <code>draft</code> release will be created.</p>
 <p>Also you can set release type using environment variable. If <code>EP_DRAFT</code>is set to <code>true</code> &#x2014; <code>draft</code>, if <code>EP_PRELEASE</code>is set to <code>true</code> &#x2014; <code>prerelease</code>.</p>
+</li>
+</ul>
+<p>Inherited from <code>PublishConfiguration</code>:</p>
+<ul>
+<li><p><code id="GithubOptions-publishAutoUpdate">publishAutoUpdate</code> = <code>true</code> Boolean - Whether to publish auto update info files.</p>
+<p>Auto update relies only on the first provider in the list (you can specify several publishers). Thus, probably, there`s no need to upload the metadata files for the other configured providers. But by default will be uploaded.</p>
 </li>
 </ul>
 <!-- end of generated block -->
@@ -775,7 +809,7 @@ Access key is required, define <code>DO_KEY_ID</code> and <code>DO_SECRET_KEY</c
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Publish","level":"1.2.7","depth":2,"next":{"title":"Command Line Interface (CLI)","level":"1.3","depth":1,"path":"cli.md","ref":"cli.md","articles":[]},"previous":{"title":"Target","level":"1.2.6","depth":2,"path":"configuration/target.md","ref":"configuration/target.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/publish.md","mtime":"2018-02-02T17:56:41.465Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-02-02T18:06:48.967Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Publish","level":"1.2.7","depth":2,"next":{"title":"Command Line Interface (CLI)","level":"1.3","depth":1,"path":"cli.md","ref":"cli.md","articles":[]},"previous":{"title":"Target","level":"1.2.6","depth":2,"path":"configuration/target.md","ref":"configuration/target.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/publish.md","mtime":"2018-04-27T07:25:50.136Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-04-27T07:27:54.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

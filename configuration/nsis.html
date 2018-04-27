@@ -470,6 +470,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.4" data-path="../tutorials/release-using-channels">
+            
+                <a href="../tutorials/release-using-channels">
+            
+                    
+                    Release Using Channels
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -606,14 +619,15 @@
 <li><code id="NsisOptions-language">language</code> String - <a href="https://msdn.microsoft.com/en-au/goglobal/bb964664.aspx" target="_blank">LCID Dec</a>, defaults to <code>1033</code>(<code>English - United States</code>).</li>
 <li><code id="NsisOptions-multiLanguageInstaller">multiLanguageInstaller</code> Boolean - Whether to create multi-language installer. Defaults to <code>unicode</code> option value.</li>
 <li><code id="NsisOptions-packElevateHelper">packElevateHelper</code> = <code>true</code> Boolean - Whether to pack the elevate executable (required for electron-updater if per-machine installer used or can be used in the future). Ignored if <code>perMachine</code> is set to <code>true</code>.</li>
+<li><code id="NsisOptions-preCompressedFileExtensions">preCompressedFileExtensions</code> = <code>[&quot;.avi&quot;, &quot;.mov&quot;, &quot;.m4v&quot;, &quot;.mp4&quot;, &quot;.m4p&quot;, &quot;.qt&quot;, &quot;.mkv&quot;, &quot;.webm&quot;, &quot;.vmdk&quot;]</code> Array&lt;String&gt; | String - The file extension of files that will be not compressed. Applicable only for <code>extraResources</code> and <code>extraFiles</code> files.</li>
 <li><code id="NsisOptions-unicode">unicode</code> = <code>true</code> Boolean - Whether to create <a href="http://nsis.sourceforge.net/Docs/Chapter1.html#intro-unicode" target="_blank">Unicode installer</a>.</li>
 <li><code id="NsisOptions-guid">guid</code> String - See <a href="nsis#guid-vs-application-name">GUID vs Application Name</a>.</li>
 <li><code id="NsisOptions-warningsAsErrors">warningsAsErrors</code> = <code>true</code> Boolean - If <code>warningsAsErrors</code> is <code>true</code> (default): NSIS will treat warnings as errors. If <code>warningsAsErrors</code> is <code>false</code>: NSIS will allow warnings.</li>
-<li><code id="NsisOptions-runAfterFinish">runAfterFinish</code> = <code>true</code> Boolean - <em>one-click installer only.</em>  Whether to run the installed application after finish.</li>
+<li><code id="NsisOptions-runAfterFinish">runAfterFinish</code> = <code>true</code> Boolean - Whether to run the installed application after finish. For assisted installer corresponding checkbox will be removed.</li>
 </ul>
 <hr>
 <ul>
-<li><code id="NsisOptions-createDesktopShortcut">createDesktopShortcut</code> = <code>true</code> Boolean - Whether to create desktop shortcut.</li>
+<li><code id="NsisOptions-createDesktopShortcut">createDesktopShortcut</code> = <code>true</code> Boolean | &quot;always&quot; - Whether to create desktop shortcut. Set to <code>always</code> if to recreate also on reinstall (even if removed by user).</li>
 <li><code id="NsisOptions-createStartMenuShortcut">createStartMenuShortcut</code> = <code>true</code> Boolean - Whether to create start menu shortcut.</li>
 <li><code id="NsisOptions-menuCategory">menuCategory</code> = <code>false</code> Boolean | String - Whether to create submenu for start menu shortcut and program files directory. If <code>true</code>, company name will be used. Or string value.</li>
 <li><code id="NsisOptions-shortcutName">shortcutName</code> String - The name that will be used for all shortcuts. Defaults to the application name.<!-- end of generated block -->
@@ -681,7 +695,7 @@ It means that you <strong>should not change appId</strong> once your application
 <h2 id="common-questions">Common Questions</h2>
 <h4 id="how-do-change-the-default-installation-directory-to-custom">How do change the default installation directory to custom?</h4>
 <p>It is very specific requirement. Do not do if you are not sure. Add <a href="#custom-nsis-script">custom macro</a>:</p>
-<pre><code class="lang-nsis">macro preInit
+<pre><code class="lang-nsis"><span class="hljs-keyword">!macro</span> preInit
     <span class="hljs-keyword">SetRegView</span> <span class="hljs-number">64</span>
     <span class="hljs-keyword">WriteRegExpandStr</span> <span class="hljs-built_in">HKLM</span> <span class="hljs-string">&quot;<span class="hljs-variable">${INSTALL_REGISTRY_KEY}</span>&quot;</span> InstallLocation <span class="hljs-string">&quot;C:\MyApp&quot;</span>
     <span class="hljs-keyword">WriteRegExpandStr</span> <span class="hljs-built_in">HKCU</span> <span class="hljs-string">&quot;<span class="hljs-variable">${INSTALL_REGISTRY_KEY}</span>&quot;</span> InstallLocation <span class="hljs-string">&quot;C:\MyApp&quot;</span>
@@ -733,7 +747,7 @@ It means that you <strong>should not change appId</strong> once your application
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"NSIS","level":"1.2.4.1","depth":3,"next":{"title":"AppX","level":"1.2.4.2","depth":3,"path":"configuration/appx.md","ref":"configuration/appx.md","articles":[]},"previous":{"title":"Windows","level":"1.2.4","depth":2,"path":"configuration/win.md","ref":"configuration/win.md","articles":[{"title":"NSIS","level":"1.2.4.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},{"title":"AppX","level":"1.2.4.2","depth":3,"path":"configuration/appx.md","ref":"configuration/appx.md","articles":[]},{"title":"Squirrel.Windows","level":"1.2.4.3","depth":3,"path":"configuration/squirrel-windows.md","ref":"configuration/squirrel-windows.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/nsis.md","mtime":"2018-01-27T14:36:11.633Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-02-02T18:06:48.967Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"NSIS","level":"1.2.4.1","depth":3,"next":{"title":"AppX","level":"1.2.4.2","depth":3,"path":"configuration/appx.md","ref":"configuration/appx.md","articles":[]},"previous":{"title":"Windows","level":"1.2.4","depth":2,"path":"configuration/win.md","ref":"configuration/win.md","articles":[{"title":"NSIS","level":"1.2.4.1","depth":3,"path":"configuration/nsis.md","ref":"configuration/nsis.md","articles":[]},{"title":"AppX","level":"1.2.4.2","depth":3,"path":"configuration/appx.md","ref":"configuration/appx.md","articles":[]},{"title":"Squirrel.Windows","level":"1.2.4.3","depth":3,"path":"configuration/squirrel-windows.md","ref":"configuration/squirrel-windows.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"configuration/nsis.md","mtime":"2018-02-05T12:17:42.894Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-04-27T07:27:54.945Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

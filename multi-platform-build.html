@@ -468,6 +468,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.4" data-path="tutorials/release-using-channels">
+            
+                <a href="tutorials/release-using-channels">
+            
+                    
+                    Release Using Channels
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -593,8 +606,8 @@ You don&apos;t need to clean dist output before build &#x2014; output directory 
 <h2 id="linux">Linux</h2>
 <p>You can use <a href="#docker">Docker</a> to avoid installing system dependencies.</p>
 <p>To build app in distributable format for Linux:</p>
-<pre><code>sudo apt-get install --no-install-recommends -y icnsutils
-</code></pre><p>To build rpm: <code>sudo apt-get install --no-install-recommends -y rpm</code>.</p>
+<pre><code>sudo apt-get install --no-install-recommends -y libopenjp2-tools
+</code></pre><p>To build rpm: <code>sudo apt-get install --no-install-recommends -y rpm</code> (or <code>sudo yum install rpm-build</code>).</p>
 <p>To build pacman: <code>sudo apt-get install --no-install-recommends -y bsdtar</code>.</p>
 <p>To build snap: <code>sudo apt-get install --no-install-recommends -y snapcraft</code>.</p>
 <h3 id="to-build-app-for-windows-on-linux">To build app for Windows on Linux:</h3>
@@ -606,7 +619,7 @@ You don&apos;t need to clean dist output before build &#x2014; output directory 
 <h3 id="to-build-app-in-32-bit-from-a-machine-with-64-bit">To build app in 32 bit from a machine with 64 bit:</h3>
 <pre><code>sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib
 </code></pre><h2 id="travis-linux">Travis Linux</h2>
-<p><a href="https://docs.travis-ci.com/user/trusty-ci-environment/" target="_blank">Trusty</a> is required &#x2014; default Travis Linux dist is outdated and <code>icnsutils</code> version is non-functional.</p>
+<p><a href="https://docs.travis-ci.com/user/trusty-ci-environment/" target="_blank">Trusty</a> is required.</p>
 <pre><code class="lang-yaml"><span class="hljs-attr">sudo:</span> required
 <span class="hljs-attr">dist:</span> trusty
 </code></pre>
@@ -615,7 +628,7 @@ You don&apos;t need to clean dist output before build &#x2014; output directory 
 <pre><code class="lang-yaml"><span class="hljs-attr">osx_image:</span> xcode9<span class="hljs-number">.0</span>
 </code></pre>
 <h2 id="docker">Docker</h2>
-<p>To build Linux or Windows on any platform. You cannot build for Windows using Docker if you have native dependencies and native dependency doesn&apos;t use <a href="https://www.npmjs.com/package/prebuild" target="_blank">prebuild</a>. </p>
+<p>To build Linux or Windows on any platform. You cannot build for Windows using Docker if you have native dependencies and native dependency doesn&apos;t use <a href="https://www.npmjs.com/package/prebuild" target="_blank">prebuild</a>.</p>
 <p>See example Docker usage on a CI server in the <a href="https://github.com/develar/onshape-desktop-shell/blob/master/.travis.yml" target="_blank">sample .travis.yml</a>.</p>
 <h3 id="build-electron-app-using-docker-on-a-local-machine">Build Electron App using Docker on a Local Machine</h3>
 <ol>
@@ -685,7 +698,7 @@ You don&apos;t need to clean dist output before build &#x2014; output directory 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Multi Platform Build","level":"1.4.4","depth":2,"next":{"title":"Tutorials","level":"1.5","depth":1,"ref":"","articles":[{"title":"Loading App Dependencies Manually","level":"1.5.1","depth":2,"path":"tutorials/loading-app-dependencies-manually.md","ref":"tutorials/loading-app-dependencies-manually.md","articles":[]},{"title":"Two package.json Structure","level":"1.5.2","depth":2,"path":"tutorials/two-package-structure.md","ref":"tutorials/two-package-structure.md","articles":[]},{"title":"macOS Kernel Extensions","level":"1.5.3","depth":2,"path":"tutorials/macos-kernel-extensions.md","ref":"tutorials/macos-kernel-extensions.md","articles":[]}]},"previous":{"title":"Code Signing","level":"1.4.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"multi-platform-build.md","mtime":"2018-02-01T22:15:37.896Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-02-02T18:06:48.967Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Multi Platform Build","level":"1.4.4","depth":2,"next":{"title":"Tutorials","level":"1.5","depth":1,"ref":"","articles":[{"title":"Loading App Dependencies Manually","level":"1.5.1","depth":2,"path":"tutorials/loading-app-dependencies-manually.md","ref":"tutorials/loading-app-dependencies-manually.md","articles":[]},{"title":"Two package.json Structure","level":"1.5.2","depth":2,"path":"tutorials/two-package-structure.md","ref":"tutorials/two-package-structure.md","articles":[]},{"title":"macOS Kernel Extensions","level":"1.5.3","depth":2,"path":"tutorials/macos-kernel-extensions.md","ref":"tutorials/macos-kernel-extensions.md","articles":[]},{"title":"Release Using Channels","level":"1.5.4","depth":2,"path":"tutorials/release-using-channels.md","ref":"tutorials/release-using-channels.md","articles":[]}]},"previous":{"title":"Code Signing","level":"1.4.3","depth":2,"path":"code-signing.md","ref":"code-signing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"multi-platform-build.md","mtime":"2018-03-06T07:28:44.808Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-04-27T07:27:54.945Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

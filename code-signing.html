@@ -470,6 +470,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.4" data-path="tutorials/release-using-channels">
+            
+                <a href="tutorials/release-using-channels">
+            
+                    
+                    Release Using Channels
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -566,7 +579,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <p>macOS and Windows code signing is supported. Windows is dual code-signed (SHA1 &amp; SHA256 hashing algorithms).</p>
-<p>On a macOS development machine valid and appropriate identity from your keychain will be automatically used.</p>
+<p>On a macOS development machine, a valid and appropriate identity from your keychain will be automatically used.</p>
 <table>
 <thead>
 <tr>
@@ -631,16 +644,16 @@ Please note &#x2014; Gatekeeper only recognises <a href="http://stackoverflow.co
 <li><code>Developer ID Application:</code> to sign app for macOS.</li>
 <li><code>3rd Party Mac Developer Application:</code> and <code>3rd Party Mac Developer Installer:</code> to sign app for MAS (Mac App Store).</li>
 <li><code>Developer ID Application:</code> and <code>Developer ID Installer</code> to sign app and installer for distribution outside of the Mac App Store.</li>
-<li><code>Mac Developer:</code> to sign development builds for testing Mac App Store submissions (<code>mas-dev</code> target). You also need a provisioning profile in the working directory that matches this certificated and the device being used for testing.</li>
+<li><code>Mac Developer:</code> to sign development builds for testing Mac App Store submissions (<code>mas-dev</code> target). You also need a provisioning profile in the working directory that matches this certificate and the device being used for testing.</li>
 </ul>
-<p>Please note &#x2013; you can select as many certificates, as need. No restrictions on electron-builder side.
+<p>Please note &#x2013; you can select as many certificates as needed. No restrictions on electron-builder side.
 All selected certificates will be imported into temporary keychain on CI server.</p>
 </li>
 <li>Open context menu and <code>Export</code>.</li>
 </ol>
 <h1 id="how-to-disable-code-signing-during-the-build-process-on-macos">How to Disable Code Signing During the Build Process on macOS</h1>
 <p>To disable Code Signing when building for macOS leave all the above vars unset except for <code>CSC_IDENTITY_AUTO_DISCOVERY</code> which needs to be set to <code>false</code>. This can be done by running <code>export CSC_IDENTITY_AUTO_DISCOVERY=false</code>. </p>
-<p>Another way &#x2014; set <code>mac.identity</code> to <code>null</code>. You can pass adiitional configuration using CLI as well: <code>-c.mac.identity=null</code>.</p>
+<p>Another way &#x2014; set <code>mac.identity</code> to <code>null</code>. You can pass aditional configuration using CLI as well: <code>-c.mac.identity=null</code>.</p>
 <script src="_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
@@ -684,7 +697,7 @@ All selected certificates will be imported into temporary keychain on CI server.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Code Signing","level":"1.4.3","depth":2,"next":{"title":"Multi Platform Build","level":"1.4.4","depth":2,"path":"multi-platform-build.md","ref":"multi-platform-build.md","articles":[]},"previous":{"title":"Auto Update","level":"1.4.2","depth":2,"path":"auto-update.md","ref":"auto-update.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"code-signing.md","mtime":"2018-01-27T14:36:11.630Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-02-02T18:06:48.967Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Code Signing","level":"1.4.3","depth":2,"next":{"title":"Multi Platform Build","level":"1.4.4","depth":2,"path":"multi-platform-build.md","ref":"multi-platform-build.md","articles":[]},"previous":{"title":"Auto Update","level":"1.4.2","depth":2,"path":"auto-update.md","ref":"auto-update.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","github","github-buttons","develar-toolbar-buttons","analytics"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/electron-userland/electron-builder"},"analytics":{"context":[{"token":"UA-105592680-1","base":["https"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"develar-toolbar-buttons":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"electron-userland/electron-builder","types":["star"],"size":"small"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/electron-userland/electron-builder/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"electron-builder","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"code-signing.md","mtime":"2018-02-20T09:32:09.537Z","type":"markdown"},"gitbook":{"version":"3.2.11","time":"2018-04-27T07:27:54.945Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
