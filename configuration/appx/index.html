@@ -1,0 +1,1088 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
+    
+    
+      
+        <title>AppX - electron-builder</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.ba0fd1a6.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#appx-package-code-signing" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="electron-builder" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">build</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                electron-builder
+              </span>
+              <span class="md-header-nav__topic">
+                AppX
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/electron-userland/electron-builder" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      electron-userland/electron-builder
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Introduction" class="md-tabs__link">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../configuration/" title="Configuration" class="md-tabs__link md-tabs__link--active">
+          Configuration
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tutorials/loading-app-dependencies-manually/" title="Tutorials" class="md-tabs__link">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../icons/" title="Guides" class="md-tabs__link">
+          Guides
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon">build</i>
+      
+    </span>
+    electron-builder
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/electron-userland/electron-builder" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      electron-userland/electron-builder
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Configuration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/" title="Common Configuration" class="md-nav__link">
+      Common Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contents/" title="Application Contents" class="md-nav__link">
+      Application Contents
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-patterns/" title="File Patterns" class="md-nav__link">
+      File Patterns
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      macOS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        macOS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mac/" title="Any macOS Target" class="md-nav__link">
+      Any macOS Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dmg/" title="DMG" class="md-nav__link">
+      DMG
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mas/" title="MAS" class="md-nav__link">
+      MAS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pkg/" title="PKG" class="md-nav__link">
+      PKG
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" checked>
+    
+    <label class="md-nav__link" for="nav-2-5">
+      Windows
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        Windows
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../win/" title="Any Windows Target" class="md-nav__link">
+      Any Windows Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nsis/" title="NSIS" class="md-nav__link">
+      NSIS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        AppX
+      </label>
+    
+    <a href="./" title="AppX" class="md-nav__link md-nav__link--active">
+      AppX
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#appx-package-code-signing" title="AppX Package Code Signing" class="md-nav__link">
+    AppX Package Code Signing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appx-assets" title="AppX Assets" class="md-nav__link">
+    AppX Assets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-publish-your-electron-app-to-the-windows-app-store" title="How to publish your Electron App to the Windows App Store" class="md-nav__link">
+    How to publish your Electron App to the Windows App Store
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-appx-on-macos" title="Building AppX on macOS" class="md-nav__link">
+    Building AppX on macOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-questions" title="Common Questions" class="md-nav__link">
+    Common Questions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-install-appx-without-trusted-certificate" title="How do install AppX without trusted certificate?" class="md-nav__link">
+    How do install AppX without trusted certificate?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../squirrel-windows/" title="Squirrel.Windows" class="md-nav__link">
+      Squirrel.Windows
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux/" title="Any Linux Target" class="md-nav__link">
+      Any Linux Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appimage/" title="AppImage" class="md-nav__link">
+      AppImage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../snap/" title="Snap" class="md-nav__link">
+      Snap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../target/" title="Target" class="md-nav__link">
+      Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../publish/" title="Publish" class="md-nav__link">
+      Publish
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/loading-app-dependencies-manually/" title="Loading App Dependencies Manually" class="md-nav__link">
+      Loading App Dependencies Manually
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/two-package-structure/" title="Two package.json Structure" class="md-nav__link">
+      Two package.json Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/macos-kernel-extensions/" title="macOS Kernel Extensions" class="md-nav__link">
+      macOS Kernel Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/release-using-channels/" title="Release Using Channels" class="md-nav__link">
+      Release Using Channels
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../icons/" title="Icons" class="md-nav__link">
+      Icons
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../auto-update/" title="Auto Update" class="md-nav__link">
+      Auto Update
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../code-signing/" title="Code Signing" class="md-nav__link">
+      Code Signing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../multi-platform-build/" title="Multi Platform Build" class="md-nav__link">
+      Multi Platform Build
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../cli/" title="Command Line Interface (CLI)" class="md-nav__link">
+      Command Line Interface (CLI)
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../api/electron-builder/" title="Programmatic API" class="md-nav__link">
+      Programmatic API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../donate/" title="Donate" class="md-nav__link">
+      Donate
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#appx-package-code-signing" title="AppX Package Code Signing" class="md-nav__link">
+    AppX Package Code Signing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appx-assets" title="AppX Assets" class="md-nav__link">
+    AppX Assets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-publish-your-electron-app-to-the-windows-app-store" title="How to publish your Electron App to the Windows App Store" class="md-nav__link">
+    How to publish your Electron App to the Windows App Store
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-appx-on-macos" title="Building AppX on macOS" class="md-nav__link">
+    Building AppX on macOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-questions" title="Common Questions" class="md-nav__link">
+    Common Questions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-install-appx-without-trusted-certificate" title="How do install AppX without trusted certificate?" class="md-nav__link">
+    How do install AppX without trusted certificate?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>AppX</h1>
+                
+                <p>The top-level <a href="../configuration/#Configuration-appx">appx</a> key contains set of options instructing electron-builder on how it should build AppX (Windows Store).</p>
+<p>All options are optional. All required for AppX configuration is inferred and computed automatically.</p>
+<!-- do not edit. start of generated block -->
+
+<ul>
+<li><code id="AppXOptions-applicationId">applicationId</code> String - The application id. Defaults to <code>identityName</code>. Can’t start with numbers.</li>
+<li><code id="AppXOptions-backgroundColor">backgroundColor</code> = <code>#464646</code> String - The background color of the app tile. See <a href="https://msdn.microsoft.com/en-us/library/windows/apps/br211471.aspx">Visual Elements</a>.</li>
+<li><code id="AppXOptions-displayName">displayName</code> String - A friendly name that can be displayed to users. Corresponds to <a href="https://msdn.microsoft.com/en-us/library/windows/apps/br211432.aspx">Properties.DisplayName</a>. Defaults to the application product name.</li>
+<li><code id="AppXOptions-identityName">identityName</code> String - The name. Corresponds to <a href="https://msdn.microsoft.com/en-us/library/windows/apps/br211441.aspx">Identity.Name</a>. Defaults to the <a href="../../configuration/configuration#Metadata-name">application name</a>.</li>
+<li><code id="AppXOptions-publisher">publisher</code> String - The Windows Store publisher. Not used if AppX is build for testing. See <a href="#appx-package-code-signing">AppX Package Code Signing</a> below.</li>
+<li><code id="AppXOptions-publisherDisplayName">publisherDisplayName</code> String - A friendly name for the publisher that can be displayed to users. Corresponds to <a href="https://msdn.microsoft.com/en-us/library/windows/apps/br211460.aspx">Properties.PublisherDisplayName</a>. Defaults to company name from the application metadata.</li>
+<li><code id="AppXOptions-languages">languages</code> Array&lt;String&gt; | String - The list of <a href="https://docs.microsoft.com/en-us/windows/uwp/globalizing/manage-language-and-region#specify-the-supported-languages-in-the-apps-manifest">supported languages</a> that will be listed in the Windows Store. The first entry (index 0) will be the default language. Defaults to en-US if omitted.</li>
+</ul>
+<p>Inherited from <code>TargetSpecificOptions</code>:</p>
+<ul>
+<li><code id="AppXOptions-artifactName">artifactName</code> String - The <a href="../configuration/#artifact-file-name-template">artifact file name template</a>.</li>
+<li><code id="AppXOptions-publish">publish</code> The <a href="../publish/">publish</a> options.
+<!-- end of generated block --></li>
+</ul>
+<h2 id="appx-package-code-signing">AppX Package Code Signing<a class="headerlink" href="#appx-package-code-signing" title="Permanent link">&para;</a></h2>
+<ul>
+<li>If the AppX package is meant for enterprise or self-made distribution (manually install the app without using the Store for testing or for enterprise distribution), it must be <a href="../../code-signing/">signed</a>.</li>
+<li>If the AppX package is meant for Windows Store distribution, no need to sign the package with any certificate. The Windows Store will take care of signing it with a Microsoft certificate during the submission process.</li>
+</ul>
+<h2 id="appx-assets">AppX Assets<a class="headerlink" href="#appx-assets" title="Permanent link">&para;</a></h2>
+<p>AppX assets need to be placed in the <code>appx</code> folder in the <a href="../configuration/#MetadataDirectories-buildResources">build</a> directory.</p>
+<p>The assets should follow these naming conventions:</p>
+<ul>
+<li>Logo: <code>StoreLogo.png</code></li>
+<li>Square150x150Logo: <code>Square150x150Logo.png</code></li>
+<li>Square44x44Logo: <code>Square44x44Logo.png</code></li>
+<li>Wide310x150Logo: <code>Wide310x150Logo.png</code></li>
+<li><em>Optional</em> BadgeLogo: <code>BadgeLogo.png</code></li>
+<li><em>Optional</em> Square310x310Logo: <code>LargeTile.png</code></li>
+<li><em>Optional</em> Square71x71Logo: <code>SmallTile.png</code></li>
+<li><em>Optional</em> SplashScreen: <code>SplashScreen.png</code></li>
+</ul>
+<p>All official AppX asset types are supported by the build process. These assets can include scaled assets by using <code>target size</code> and <code>scale</code> in the name.
+See <a href="https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets">Guidelines for tile and icon assets</a> for more information.</p>
+<p>Default assets will be used for <code>Logo</code>, <code>Square150x150Logo</code>, <code>Square44x44Logo</code> and <code>Wide310x150Logo</code> if not provided. For assets marked <code>Optional</code>, these assets will not be listed in the manifest file if not provided.</p>
+<h2 id="how-to-publish-your-electron-app-to-the-windows-app-store">How to publish your Electron App to the Windows App Store<a class="headerlink" href="#how-to-publish-your-electron-app-to-the-windows-app-store" title="Permanent link">&para;</a></h2>
+<ol>
+<li>You&rsquo;ll need a microsoft developer account (pay some small fee). Use your favourite search engine to find the registration form.</li>
+<li>Register you app for the desktop bridge <a href="https://developer.microsoft.com/en-us/windows/projects/campaigns/desktop-bridge">here</a>.</li>
+<li>Wait for MS to answer and further guide you.</li>
+<li>In the meantime, build and test your appx. It&rsquo;s dead simple. </li>
+</ol>
+<p><code>json 
+   &quot;win&quot;: {
+     &quot;target&quot;: &quot;appx&quot;,
+   },</code>
+5. The rest should be pretty straight forward — upload the appx to the store and wait for approval.</p>
+<h2 id="building-appx-on-macos">Building AppX on macOS<a class="headerlink" href="#building-appx-on-macos" title="Permanent link">&para;</a></h2>
+<p>The only solution for now — using <a href="http://www.parallels.com/products/desktop/">Parallels Desktop for Mac</a> (<a href="https://forum.parallels.com/threads/prlctl-is-now-a-pro-or-business-version-tool-only.330290/">Pro Edition</a> is required). Create Windows 10 virtual machine and start it. It will be detected and used automatically to build AppX on your macOS machine. Nothing is required to setup on Windows. It allows you to not copy project to Windows and to not setup build environment on Windows.</p>
+<h2 id="common-questions">Common Questions<a class="headerlink" href="#common-questions" title="Permanent link">&para;</a></h2>
+<h4 id="how-do-install-appx-without-trusted-certificate">How do install AppX without trusted certificate?<a class="headerlink" href="#how-do-install-appx-without-trusted-certificate" title="Permanent link">&para;</a></h4>
+<p>If you use self-signed certificate, you need to add it to &ldquo;Trusted People&rdquo;. See <a href="https://stackoverflow.com/a/24372483/1910191">Install the certificate</a>.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../nsis/" title="NSIS" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                NSIS
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../squirrel-windows/" title="Squirrel.Windows" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Squirrel.Windows
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.a59e2a89.js"></script>
+      
+      <script>app.initialize({version:"0.17.5",url:{base:"../.."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-105592680-1","www.electron.build"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1507 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
+    
+    
+      
+        <title>Auto Update - electron-builder</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.ba0fd1a6.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#differences-between-electron-updater-and-built-in-autoupdater" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="electron-builder" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">build</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                electron-builder
+              </span>
+              <span class="md-header-nav__topic">
+                Auto Update
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/electron-userland/electron-builder" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      electron-userland/electron-builder
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="Introduction" class="md-tabs__link">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../configuration/configuration/" title="Configuration" class="md-tabs__link">
+          Configuration
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../tutorials/loading-app-dependencies-manually/" title="Tutorials" class="md-tabs__link">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../icons/" title="Guides" class="md-tabs__link md-tabs__link--active">
+          Guides
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon">build</i>
+      
+    </span>
+    electron-builder
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/electron-userland/electron-builder" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      electron-userland/electron-builder
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Configuration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/configuration/" title="Common Configuration" class="md-nav__link">
+      Common Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/contents/" title="Application Contents" class="md-nav__link">
+      Application Contents
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-patterns/" title="File Patterns" class="md-nav__link">
+      File Patterns
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      macOS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        macOS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/mac/" title="Any macOS Target" class="md-nav__link">
+      Any macOS Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/dmg/" title="DMG" class="md-nav__link">
+      DMG
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/mas/" title="MAS" class="md-nav__link">
+      MAS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/pkg/" title="PKG" class="md-nav__link">
+      PKG
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      Windows
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        Windows
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/win/" title="Any Windows Target" class="md-nav__link">
+      Any Windows Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/nsis/" title="NSIS" class="md-nav__link">
+      NSIS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/appx/" title="AppX" class="md-nav__link">
+      AppX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/squirrel-windows/" title="Squirrel.Windows" class="md-nav__link">
+      Squirrel.Windows
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/linux/" title="Any Linux Target" class="md-nav__link">
+      Any Linux Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/appimage/" title="AppImage" class="md-nav__link">
+      AppImage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/snap/" title="Snap" class="md-nav__link">
+      Snap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/target/" title="Target" class="md-nav__link">
+      Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/publish/" title="Publish" class="md-nav__link">
+      Publish
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/loading-app-dependencies-manually/" title="Loading App Dependencies Manually" class="md-nav__link">
+      Loading App Dependencies Manually
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/two-package-structure/" title="Two package.json Structure" class="md-nav__link">
+      Two package.json Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/macos-kernel-extensions/" title="macOS Kernel Extensions" class="md-nav__link">
+      macOS Kernel Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/release-using-channels/" title="Release Using Channels" class="md-nav__link">
+      Release Using Channels
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../icons/" title="Icons" class="md-nav__link">
+      Icons
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Auto Update
+      </label>
+    
+    <a href="./" title="Auto Update" class="md-nav__link md-nav__link--active">
+      Auto Update
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#differences-between-electron-updater-and-built-in-autoupdater" title="Differences between electron-updater and built-in autoUpdater" class="md-nav__link">
+    Differences between electron-updater and built-in autoUpdater
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-setup-guide" title="Quick Setup Guide" class="md-nav__link">
+    Quick Setup Guide
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" title="Debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#staged-rollouts" title="Staged Rollouts" class="md-nav__link">
+    Staged Rollouts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-generated-and-uploaded-in-addition" title="File Generated and Uploaded in Addition" class="md-nav__link">
+    File Generated and Uploaded in Addition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-github-update-repo" title="Private GitHub Update Repo" class="md-nav__link">
+    Private GitHub Update Repo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" title="Events" class="md-nav__link">
+    Events
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-error" title="Event: error" class="md-nav__link">
+    Event: error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-checking-for-update" title="Event: checking-for-update" class="md-nav__link">
+    Event: checking-for-update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-update-available" title="Event: update-available" class="md-nav__link">
+    Event: update-available
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-update-not-available" title="Event: update-not-available" class="md-nav__link">
+    Event: update-not-available
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-download-progress" title="Event: download-progress" class="md-nav__link">
+    Event: download-progress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-update-downloaded" title="Event: update-downloaded" class="md-nav__link">
+    Event: update-downloaded
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appupdater-eventemitter" title="AppUpdater ⇐ EventEmitter" class="md-nav__link">
+    AppUpdater ⇐ EventEmitter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logger" title="Logger" class="md-nav__link">
+    Logger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updateinfo" title="UpdateInfo" class="md-nav__link">
+    UpdateInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatecheckresult" title="UpdateCheckResult" class="md-nav__link">
+    UpdateCheckResult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatersignal" title="UpdaterSignal" class="md-nav__link">
+    UpdaterSignal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../code-signing/" title="Code Signing" class="md-nav__link">
+      Code Signing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../multi-platform-build/" title="Multi Platform Build" class="md-nav__link">
+      Multi Platform Build
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cli/" title="Command Line Interface (CLI)" class="md-nav__link">
+      Command Line Interface (CLI)
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../api/electron-builder/" title="Programmatic API" class="md-nav__link">
+      Programmatic API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../donate/" title="Donate" class="md-nav__link">
+      Donate
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#differences-between-electron-updater-and-built-in-autoupdater" title="Differences between electron-updater and built-in autoUpdater" class="md-nav__link">
+    Differences between electron-updater and built-in autoUpdater
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-setup-guide" title="Quick Setup Guide" class="md-nav__link">
+    Quick Setup Guide
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" title="Debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#staged-rollouts" title="Staged Rollouts" class="md-nav__link">
+    Staged Rollouts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-generated-and-uploaded-in-addition" title="File Generated and Uploaded in Addition" class="md-nav__link">
+    File Generated and Uploaded in Addition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-github-update-repo" title="Private GitHub Update Repo" class="md-nav__link">
+    Private GitHub Update Repo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" title="Events" class="md-nav__link">
+    Events
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-error" title="Event: error" class="md-nav__link">
+    Event: error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-checking-for-update" title="Event: checking-for-update" class="md-nav__link">
+    Event: checking-for-update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-update-available" title="Event: update-available" class="md-nav__link">
+    Event: update-available
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-update-not-available" title="Event: update-not-available" class="md-nav__link">
+    Event: update-not-available
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-download-progress" title="Event: download-progress" class="md-nav__link">
+    Event: download-progress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-update-downloaded" title="Event: update-downloaded" class="md-nav__link">
+    Event: update-downloaded
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appupdater-eventemitter" title="AppUpdater ⇐ EventEmitter" class="md-nav__link">
+    AppUpdater ⇐ EventEmitter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logger" title="Logger" class="md-nav__link">
+    Logger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updateinfo" title="UpdateInfo" class="md-nav__link">
+    UpdateInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatecheckresult" title="UpdateCheckResult" class="md-nav__link">
+    UpdateCheckResult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatersignal" title="UpdaterSignal" class="md-nav__link">
+    UpdaterSignal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Auto Update</h1>
+                
+                <p>See <a href="../configuration/publish/">publish configuration</a> for information on how to configure your local or CI environment for automated deployments.</p>
+<p>Simplified auto-update is supported on Windows if you use the default NSIS target, but is not supported for Squirrel.Windows.</p>
+<h2 id="differences-between-electron-updater-and-built-in-autoupdater">Differences between electron-updater and built-in autoUpdater<a class="headerlink" href="#differences-between-electron-updater-and-built-in-autoupdater" title="Permanent link">&para;</a></h2>
+<ul>
+<li>It doesn&rsquo;t require a dedicated release server.</li>
+<li>Code signature validation not only on macOS, but also on Windows.</li>
+<li>electron-builder produces and publishes all required metadata files and artifacts.</li>
+<li>Download progress supported on all platforms.</li>
+<li><a href="#staged-rollouts">Staged rollouts</a> supported on all platforms.</li>
+<li>Actually, built-in autoUpdater is used inside on macOS.</li>
+<li>Different providers supported out of the box (<a href="https://help.github.com/articles/about-releases/">GitHub Releases</a>, <a href="https://aws.amazon.com/s3/">Amazon S3</a>, <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-digitalocean-spaces">DigitalOcean Spaces</a>, <a href="https://bintray.com">Bintray</a> and generic HTTP(s) server).</li>
+<li>You need only 2 lines of code to make it work.</li>
+</ul>
+<h2 id="quick-setup-guide">Quick Setup Guide<a class="headerlink" href="#quick-setup-guide" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Install <a href="https://yarn.pm/electron-updater">electron-updater</a> as an app dependency.</p>
+</li>
+<li>
+<p><a href="../configuration/publish/">Configure publish</a>.</p>
+</li>
+<li>
+<p>Use <code>autoUpdater</code> from <code>electron-updater</code> instead of <code>electron</code>:</p>
+<div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">autoUpdater</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;electron-updater&quot;</span>
+</pre></div>
+
+<p>Or if you don&rsquo;t use ES6: <code>const { autoUpdater } = require(&quot;electron-updater&quot;)</code></p>
+</li>
+<li>
+<p>Call <code>autoUpdater.checkForUpdatesAndNotify()</code>. Or, if you need custom behaviour, implement <code>electron-updater</code> events, check examples below.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol>
+<li>Do not call <a href="#appupdatersetfeedurloptions">setFeedURL</a>. electron-builder automatically creates <code>app-update.yml</code> file for you on build in the <code>resources</code> (this file is internal, you don&rsquo;t need to be aware of it).</li>
+<li><code>zip</code> target for macOS is <strong>required</strong> for Squirrel.Mac, otherwise <code>latest-mac.yml</code> cannot be created, which causes <code>autoUpdater</code> error. Default <a href="../configuration/mac/#MacOptions-target">target</a> for macOS is <code>dmg</code>+<code>zip</code>, so there is no need to explicitly specify target.</li>
+</ol>
+</div>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/develar/onshape-desktop-shell/blob/master/src/AppUpdater.ts">Example in Typescript</a> using system notifications.</li>
+<li>A <a href="https://github.com/iffy/electron-updater-example">complete example</a> showing how to use.</li>
+<li>An <a href="https://github.com/electron-userland/electron-builder/blob/master/docs/encapsulated%20manual%20update%20via%20menu.js">encapsulated manual update via menu</a>.</li>
+</ul>
+<h2 id="debugging">Debugging<a class="headerlink" href="#debugging" title="Permanent link">&para;</a></h2>
+<p>You don&rsquo;t need to listen all events to understand what&rsquo;s wrong. Just set <code>logger</code>.
+<a href="https://github.com/megahertz/electron-log">electron-log</a> is recommended (it is an additional dependency that you can install if needed).</p>
+<div class="highlight"><pre><span></span><span class="nx">autoUpdater</span><span class="p">.</span><span class="nx">logger</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;electron-log&quot;</span><span class="p">)</span>
+<span class="nx">autoUpdater</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">transports</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">level</span> <span class="o">=</span> <span class="s2">&quot;info&quot;</span>
+</pre></div>
+
+<p>Note that in order to develop/test UI/UX of updating without packaging the application you need to have a file named <code>dev-app-update.yml</code> in the root of your project, which matches your <code>publish</code> setting from electron-builder config (but in <a href="https://www.json2yaml.com">YAML</a> format).</p>
+<h2 id="staged-rollouts">Staged Rollouts<a class="headerlink" href="#staged-rollouts" title="Permanent link">&para;</a></h2>
+<p>Staged rollouts allow you to distribute the latest version of your app to a subset of users that you can increase over time, similar to rollouts on platforms like Google Play.</p>
+<p>Staged rollouts are controlled by manually editing your <code>latest.yml</code> / <code>latest-mac.yml</code> (channel update info file).</p>
+<div class="highlight"><pre><span></span>version: 1.1.0
+path: TestApp Setup 1.1.0.exe
+sha512: Dj51I0q8aPQ3ioaz9LMqGYujAYRbDNblAQbodDRXAMxmY6hsHqEl3F6SvhfJj5oPhcqdX1ldsgEvfMNXGUXBIw==
+stagingPercentage: 10
+</pre></div>
+
+<p>Update will be shipped to 10% of userbase.</p>
+<p>If you want to pull a staged release because it hasn&rsquo;t gone well, you <strong>must</strong> increment the version number higher than your broken release.
+Because some of your users will be on the broken 1.0.1, releasing a new 1.0.1 would result in them staying on a broken version.</p>
+<h2 id="file-generated-and-uploaded-in-addition">File Generated and Uploaded in Addition<a class="headerlink" href="#file-generated-and-uploaded-in-addition" title="Permanent link">&para;</a></h2>
+<p><code>latest.yml</code> (or <code>latest-mac.yml</code> for macOS, or <code>latest-linux.yml</code> for Linux) will be generated and uploaded for all providers except <code>bintray</code> (because not required, <code>bintray</code> doesn&rsquo;t use <code>latest.yml</code>).</p>
+<h2 id="private-github-update-repo">Private GitHub Update Repo<a class="headerlink" href="#private-github-update-repo" title="Permanent link">&para;</a></h2>
+<p>You can use a private repository for updates with electron-updater by setting the <code>GH_TOKEN</code> environment variable (on user machine) and <code>private</code> option.
+If <code>GH_TOKEN</code> is set, electron-updater will use the GitHub API for updates allowing private repositories to work.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Private GitHub provider only for <a href="https://github.com/electron-userland/electron-builder/issues/1393#issuecomment-288191885">very special</a> cases — not intended and not suitable for all users.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The GitHub API currently has a rate limit of 5000 requests per user per hour. An update check uses up to 3 requests per check.</p>
+</div>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<p>The <code>autoUpdater</code> object emits the following events:</p>
+<h4 id="event-error">Event: <code>error</code><a class="headerlink" href="#event-error" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>error</code> Error</li>
+</ul>
+<p>Emitted when there is an error while updating.</p>
+<h4 id="event-checking-for-update">Event: <code>checking-for-update</code><a class="headerlink" href="#event-checking-for-update" title="Permanent link">&para;</a></h4>
+<p>Emitted when checking if an update has started.</p>
+<h4 id="event-update-available">Event: <code>update-available</code><a class="headerlink" href="#event-update-available" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>info</code> <a href="#UpdateInfo">UpdateInfo</a> (for generic and github providers) | <a href="#VersionInfo">VersionInfo</a> (for Bintray provider)</li>
+</ul>
+<p>Emitted when there is an available update. The update is downloaded automatically if <code>autoDownload</code> is <code>true</code>.</p>
+<h4 id="event-update-not-available">Event: <code>update-not-available</code><a class="headerlink" href="#event-update-not-available" title="Permanent link">&para;</a></h4>
+<p>Emitted when there is no available update.</p>
+<ul>
+<li><code>info</code> <a href="#UpdateInfo">UpdateInfo</a> (for generic and github providers) | <a href="#VersionInfo">VersionInfo</a> (for Bintray provider)</li>
+</ul>
+<h4 id="event-download-progress">Event: <code>download-progress</code><a class="headerlink" href="#event-download-progress" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>progress</code> ProgressInfo</li>
+<li><code>bytesPerSecond</code></li>
+<li><code>percent</code></li>
+<li><code>total</code></li>
+<li><code>transferred</code></li>
+</ul>
+<p>Emitted on progress.</p>
+<h4 id="event-update-downloaded">Event: <code>update-downloaded</code><a class="headerlink" href="#event-update-downloaded" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>info</code> <a href="#UpdateInfo">UpdateInfo</a> — for generic and github providers. <a href="#VersionInfo">VersionInfo</a> for Bintray provider.</li>
+</ul>
+<!-- do not edit. start of generated block -->
+
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#AppUpdater">AppUpdater</a> ⇐ <a href="https://nodejs.org/api/events.html#events_class_eventemitter">EventEmitter</a></li>
+<li><a href="#Logger">Logger</a></li>
+<li><a href="#UpdateInfo">UpdateInfo</a></li>
+<li><a href="#UpdateCheckResult">UpdateCheckResult</a></li>
+<li><a href="#UpdaterSignal">UpdaterSignal</a></li>
+</ul>
+<p><a name="AppUpdater"></a></p>
+<h4 id="appupdater-eventemitter">AppUpdater ⇐ <code><a href="https://nodejs.org/api/events.html#events_class_eventemitter">EventEmitter</a></code><a class="headerlink" href="#appupdater-eventemitter" title="Permanent link">&para;</a></h4>
+<p><strong>Kind</strong>: class of <a href="#module_electron-updater"><code>electron-updater</code></a><br/>
+<strong>Extends</strong>: <code><a href="https://nodejs.org/api/events.html#events_class_eventemitter">EventEmitter</a></code><br />
+<strong>Properties</strong></p>
+<ul>
+<li><code id="AppUpdater-autoDownload">autoDownload</code> = <code>true</code> Boolean - Whether to automatically download an update when it is found.</li>
+<li>
+<p><code id="AppUpdater-autoInstallOnAppQuit">autoInstallOnAppQuit</code> = <code>true</code> Boolean - Whether to automatically install a downloaded update on app quit (if <code>quitAndInstall</code> was not called before).</p>
+<p>Applicable only on Windows and Linux.</p>
+</li>
+<li>
+<p><code id="AppUpdater-allowPrerelease">allowPrerelease</code> = <code>false</code> Boolean - <em>GitHub provider only.</em> Whether to allow update to pre-release versions. Defaults to <code>true</code> if application version contains prerelease components (e.g. <code>0.12.1-alpha.1</code>, here <code>alpha</code> is a prerelease component), otherwise <code>false</code>.</p>
+<p>If <code>true</code>, downgrade will be allowed (<code>allowDowngrade</code> will be set to <code>true</code>).</p>
+</li>
+<li>
+<p><code id="AppUpdater-fullChangelog">fullChangelog</code> = <code>false</code> Boolean - <em>GitHub provider only.</em> Get all release notes (from current version to latest), not just the latest.</p>
+</li>
+<li><code id="AppUpdater-allowDowngrade">allowDowngrade</code> = <code>false</code> Boolean - Whether to allow version downgrade (when a user from the beta channel wants to go back to the stable channel).</li>
+<li><code id="AppUpdater-currentVersion">currentVersion</code> String - The current application version.</li>
+<li><code id="AppUpdater-channel">channel</code> String - Get the update channel. Not applicable for GitHub. Doesn&rsquo;t return <code>channel</code> from the update configuration, only if was previously set.</li>
+<li><code id="AppUpdater-requestHeaders">requestHeaders</code> [key: string]: string - The request headers.</li>
+<li><code id="AppUpdater-logger">logger</code> <a href="#Logger">Logger</a> - The logger. You can pass <a href="https://github.com/megahertz/electron-log">electron-log</a>, <a href="https://github.com/winstonjs/winston">winston</a> or another logger with the following interface: <code>{ info(), warn(), error() }</code>. Set it to <code>null</code> if you would like to disable a logging feature.</li>
+<li><code id="AppUpdater-signals">signals</code> = <code>new UpdaterSignal(this)</code> <a href="#UpdaterSignal">UpdaterSignal</a> - For type safety you can use signals, e.g. <code>autoUpdater.signals.updateDownloaded(() =&gt; {})</code> instead of <code>autoUpdater.on('update-available', () =&gt; {})</code></li>
+</ul>
+<p><strong>Methods</strong></p>
+<ul>
+<li><a href="#AppUpdater">.AppUpdater</a> ⇐ <code><a href="https://nodejs.org/api/events.html#events_class_eventemitter">EventEmitter</a></code><ul>
+<li><a href="#module_electron-updater.AppUpdater+checkForUpdates"><code>.checkForUpdates()</code></a> ⇒ <code>Promise&lt;<a href="#UpdateCheckResult">UpdateCheckResult</a>&gt;</code></li>
+<li><a href="#module_electron-updater.AppUpdater+checkForUpdatesAndNotify"><code>.checkForUpdatesAndNotify()</code></a> ⇒ <code>Promise&lt; | <a href="#UpdateCheckResult">UpdateCheckResult</a>&gt;</code></li>
+<li><a href="#module_electron-updater.AppUpdater+downloadUpdate"><code>.downloadUpdate(cancellationToken)</code></a> ⇒ <code>Promise&lt;any&gt;</code></li>
+<li><a href="#module_electron-updater.AppUpdater+getFeedURL"><code>.getFeedURL()</code></a> ⇒ <code>undefined</code> | <code>null</code> | <code>String</code></li>
+<li><a href="#module_electron-updater.AppUpdater+setFeedURL"><code>.setFeedURL(options)</code></a></li>
+<li><a href="#module_electron-updater.AppUpdater+quitAndInstall"><code>.quitAndInstall(isSilent, isForceRunAfter)</code></a></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_electron-updater.AppUpdater+checkForUpdates"></a>
+<strong><code>appUpdater.checkForUpdates()</code> ⇒ <code>Promise&lt;<a href="#UpdateCheckResult">UpdateCheckResult</a>&gt;</code></strong></p>
+<p>Asks the server whether there is an update.</p>
+<p><a name="module_electron-updater.AppUpdater+checkForUpdatesAndNotify"></a>
+<strong><code>appUpdater.checkForUpdatesAndNotify()</code> ⇒ <code>Promise&lt; | <a href="#UpdateCheckResult">UpdateCheckResult</a>&gt;</code></strong></p>
+<p>Asks the server whether there is an update, download and notify if update available.</p>
+<p><a name="module_electron-updater.AppUpdater+downloadUpdate"></a>
+<strong><code>appUpdater.downloadUpdate(cancellationToken)</code> ⇒ <code>Promise&lt;any&gt;</code></strong></p>
+<p>Start downloading update manually. You can use this method if <code>autoDownload</code> option is set to <code>false</code>.</p>
+<p><strong>Returns</strong>: <code>Promise&lt;any&gt;</code> - Path to downloaded file.  </p>
+<ul>
+<li>cancellationToken <code>CancellationToken</code></li>
+</ul>
+<p><a name="module_electron-updater.AppUpdater+getFeedURL"></a>
+<strong><code>appUpdater.getFeedURL()</code> ⇒ <code>undefined</code> | <code>null</code> | <code>String</code></strong>
+<a name="module_electron-updater.AppUpdater+setFeedURL"></a>
+<strong><code>appUpdater.setFeedURL(options)</code></strong></p>
+<p>Configure update provider. If value is <code>string</code>, <a href="../configuration/publish/#genericserveroptions">GenericServerOptions</a> will be set with value as <code>url</code>.</p>
+<ul>
+<li>options <code><a href="../configuration/publish/#publishconfiguration">PublishConfiguration</a></code> | <code>String</code> | <code><a href="../configuration/publish/#githuboptions">GithubOptions</a></code> | <code><a href="../configuration/publish/#s3options">S3Options</a></code> | <code><a href="../configuration/publish/#spacesoptions">SpacesOptions</a></code> | <code><a href="../configuration/publish/#genericserveroptions">GenericServerOptions</a></code> | <code><a href="../configuration/publish/#bintrayoptions">BintrayOptions</a></code> - If you want to override configuration in the <code>app-update.yml</code>.</li>
+</ul>
+<p><a name="module_electron-updater.AppUpdater+channel"></a>
+<strong><code>appUpdater.channel</code> (getter and setter)</strong></p>
+<p>Define the channel which the Auto-Updater will follow (see <a href="../tutorials/release-using-channels/#release_using_channels">the auto-update with channels tutorial</a>) using <code>appUpdater.channel = 'beta'</code> or get the current channel with <code>currentChannel = appUpdater.channel</code>.</p>
+<p><a name="module_electron-updater.AppUpdater+quitAndInstall"></a>
+<strong><code>appUpdater.quitAndInstall(isSilent, isForceRunAfter)</code></strong></p>
+<p>Restarts the app and installs the update after it has been downloaded.
+It should only be called after <code>update-downloaded</code> has been emitted.</p>
+<p><strong>Note:</strong> <code>autoUpdater.quitAndInstall()</code> will close all application windows first and only emit <code>before-quit</code> event on <code>app</code> after that.
+This is different from the normal quit event sequence.</p>
+<ul>
+<li>isSilent <code>Boolean</code> - <em>windows-only</em> Runs the installer in silent mode. Defaults to <code>false</code>.</li>
+<li>isForceRunAfter <code>Boolean</code> - Run the app after finish even on silent install. Not applicable for macOS. Ignored if <code>isSilent</code> is set to <code>false</code>.</li>
+</ul>
+<hr />
+<h4 id="logger"><code>Logger</code><a class="headerlink" href="#logger" title="Permanent link">&para;</a></h4>
+<p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br/></p>
+<p><a name="module_electron-updater.Logger+debug"></a>
+<strong><code>logger.debug(message)</code></strong></p>
+<ul>
+<li>message <code>String</code></li>
+</ul>
+<p><a name="module_electron-updater.Logger+error"></a>
+<strong><code>logger.error(message)</code></strong></p>
+<ul>
+<li>message <code>any</code></li>
+</ul>
+<p><a name="module_electron-updater.Logger+info"></a>
+<strong><code>logger.info(message)</code></strong></p>
+<ul>
+<li>message <code>any</code></li>
+</ul>
+<p><a name="module_electron-updater.Logger+warn"></a>
+<strong><code>logger.warn(message)</code></strong></p>
+<ul>
+<li>message <code>any</code></li>
+</ul>
+<hr />
+<h4 id="updateinfo"><code>UpdateInfo</code><a class="headerlink" href="#updateinfo" title="Permanent link">&para;</a></h4>
+<p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br/>
+<strong>Properties</strong></p>
+<ul>
+<li><strong><code id="UpdateInfo-version">version</code></strong> String - The version.</li>
+<li><strong><code id="UpdateInfo-files">files</code></strong> Array&lt;module:builder-util-runtime.UpdateFileInfo&gt;</li>
+<li><strong><code id="UpdateInfo-path">path</code></strong> String - Deprecated: {tag.description}</li>
+<li><strong><code id="UpdateInfo-sha512">sha512</code></strong> String - Deprecated: {tag.description}</li>
+<li><code id="UpdateInfo-releaseName">releaseName</code> String - The release name.</li>
+<li><code id="UpdateInfo-releaseNotes">releaseNotes</code> String | Array&lt;module:builder-util-runtime.ReleaseNoteInfo&gt; - The release notes. List if <code>updater.fullChangelog</code> is set to <code>true</code>, <code>string</code> otherwise.</li>
+<li><strong><code id="UpdateInfo-releaseDate">releaseDate</code></strong> String - The release date.</li>
+<li><code id="UpdateInfo-stagingPercentage">stagingPercentage</code> Number - The <a href="./#staged-rollouts">staged rollout</a> percentage, 0-100.</li>
+</ul>
+<hr />
+<h4 id="updatecheckresult"><code>UpdateCheckResult</code><a class="headerlink" href="#updatecheckresult" title="Permanent link">&para;</a></h4>
+<p><strong>Kind</strong>: interface of <a href="#module_electron-updater"><code>electron-updater</code></a><br/>
+<strong>Properties</strong></p>
+<ul>
+<li><strong><code id="UpdateCheckResult-updateInfo">updateInfo</code></strong> module:builder-util-runtime.UpdateInfo</li>
+<li><code id="UpdateCheckResult-downloadPromise">downloadPromise</code> Promise&lt;Array&lt;String&gt;&gt;</li>
+<li><code id="UpdateCheckResult-cancellationToken">cancellationToken</code> CancellationToken</li>
+<li><strong><code id="UpdateCheckResult-versionInfo">versionInfo</code></strong> module:builder-util-runtime.UpdateInfo - Deprecated: {tag.description}</li>
+</ul>
+<hr />
+<h4 id="updatersignal"><code>UpdaterSignal</code><a class="headerlink" href="#updatersignal" title="Permanent link">&para;</a></h4>
+<p><code id="UpdaterSignal+login"><strong><code>updaterSignal.login(handler)</code></strong></code></p>
+<p>Emitted when an authenticating proxy is <a href="https://github.com/electron/electron/blob/master/docs/api/client-request.md#event-login">asking for user credentials</a>.</p>
+<ul>
+<li>handler - callback</li>
+</ul>
+<p><code id="UpdaterSignal+progress"><strong>updaterSignal.progress(handler)</strong></code></p>
+<ul>
+<li>handler - callback</li>
+</ul>
+<p><code id="UpdaterSignal+updateCancelled"><strong><code>updaterSignal.updateCancelled(handler)</code></strong></code></p>
+<ul>
+<li>handler - callback</li>
+</ul>
+<p><code id="UpdaterSignal+updateDownloaded"><strong><code>updaterSignal.updateDownloaded(handler)</code></strong></code></p>
+<ul>
+<li><code>handler</code> - callback</li>
+</ul>
+<!-- end of generated block -->
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../icons/" title="Icons" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Icons
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../code-signing/" title="Code Signing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Code Signing
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.a59e2a89.js"></script>
+      
+      <script>app.initialize({version:"0.17.5",url:{base:".."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-105592680-1","www.electron.build"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

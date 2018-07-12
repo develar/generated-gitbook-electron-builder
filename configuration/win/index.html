@@ -1,0 +1,1078 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
+    
+    
+      
+        <title>Any Windows Target - electron-builder</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.ba0fd1a6.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#common-questions" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="electron-builder" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">build</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                electron-builder
+              </span>
+              <span class="md-header-nav__topic">
+                Any Windows Target
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/electron-userland/electron-builder" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      electron-userland/electron-builder
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Introduction" class="md-tabs__link">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../configuration/" title="Configuration" class="md-tabs__link md-tabs__link--active">
+          Configuration
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tutorials/loading-app-dependencies-manually/" title="Tutorials" class="md-tabs__link">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../icons/" title="Guides" class="md-tabs__link">
+          Guides
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon">build</i>
+      
+    </span>
+    electron-builder
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/electron-userland/electron-builder" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      electron-userland/electron-builder
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Configuration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/" title="Common Configuration" class="md-nav__link">
+      Common Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contents/" title="Application Contents" class="md-nav__link">
+      Application Contents
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-patterns/" title="File Patterns" class="md-nav__link">
+      File Patterns
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      macOS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        macOS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mac/" title="Any macOS Target" class="md-nav__link">
+      Any macOS Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dmg/" title="DMG" class="md-nav__link">
+      DMG
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mas/" title="MAS" class="md-nav__link">
+      MAS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pkg/" title="PKG" class="md-nav__link">
+      PKG
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" checked>
+    
+    <label class="md-nav__link" for="nav-2-5">
+      Windows
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        Windows
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Any Windows Target
+      </label>
+    
+    <a href="./" title="Any Windows Target" class="md-nav__link md-nav__link--active">
+      Any Windows Target
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-questions" title="Common Questions" class="md-nav__link">
+    Common Questions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-delegate-code-signing" title="How do delegate code signing?" class="md-nav__link">
+    How do delegate code signing?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-create-parallels-windows-10-virtual-machine" title="How do create Parallels Windows 10 Virtual Machine?" class="md-nav__link">
+    How do create Parallels Windows 10 Virtual Machine?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-create-virtualbox-windows-10-virtual-machine" title="How do create VirtualBox Windows 10 Virtual Machine?" class="md-nav__link">
+    How do create VirtualBox Windows 10 Virtual Machine?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nsis/" title="NSIS" class="md-nav__link">
+      NSIS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appx/" title="AppX" class="md-nav__link">
+      AppX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../squirrel-windows/" title="Squirrel.Windows" class="md-nav__link">
+      Squirrel.Windows
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux/" title="Any Linux Target" class="md-nav__link">
+      Any Linux Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appimage/" title="AppImage" class="md-nav__link">
+      AppImage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../snap/" title="Snap" class="md-nav__link">
+      Snap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../target/" title="Target" class="md-nav__link">
+      Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../publish/" title="Publish" class="md-nav__link">
+      Publish
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/loading-app-dependencies-manually/" title="Loading App Dependencies Manually" class="md-nav__link">
+      Loading App Dependencies Manually
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/two-package-structure/" title="Two package.json Structure" class="md-nav__link">
+      Two package.json Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/macos-kernel-extensions/" title="macOS Kernel Extensions" class="md-nav__link">
+      macOS Kernel Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/release-using-channels/" title="Release Using Channels" class="md-nav__link">
+      Release Using Channels
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../icons/" title="Icons" class="md-nav__link">
+      Icons
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../auto-update/" title="Auto Update" class="md-nav__link">
+      Auto Update
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../code-signing/" title="Code Signing" class="md-nav__link">
+      Code Signing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../multi-platform-build/" title="Multi Platform Build" class="md-nav__link">
+      Multi Platform Build
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../cli/" title="Command Line Interface (CLI)" class="md-nav__link">
+      Command Line Interface (CLI)
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../api/electron-builder/" title="Programmatic API" class="md-nav__link">
+      Programmatic API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../donate/" title="Donate" class="md-nav__link">
+      Donate
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-questions" title="Common Questions" class="md-nav__link">
+    Common Questions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-delegate-code-signing" title="How do delegate code signing?" class="md-nav__link">
+    How do delegate code signing?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-create-parallels-windows-10-virtual-machine" title="How do create Parallels Windows 10 Virtual Machine?" class="md-nav__link">
+    How do create Parallels Windows 10 Virtual Machine?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-create-virtualbox-windows-10-virtual-machine" title="How do create VirtualBox Windows 10 Virtual Machine?" class="md-nav__link">
+    How do create VirtualBox Windows 10 Virtual Machine?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Any Windows Target</h1>
+                
+                <p>The top-level <a href="../configuration/#Configuration-win">win</a> key contains set of options instructing electron-builder on how it should build Windows targets. These options applicable for any Windows target.</p>
+<!-- do not edit. start of generated block -->
+
+<ul>
+<li>
+<p><code id="WindowsConfiguration-target">target</code> = <code>nsis</code> String | <a href="../target/#targetconfiguration">TargetConfiguration</a> - The target package type: list of <code>nsis</code>, <code>nsis-web</code> (Web installer), <code>portable</code> (portable app without installation), <code>appx</code>, <code>msi</code>, <code>squirrel</code>, <code>7z</code>, <code>zip</code>, <code>tar.xz</code>, <code>tar.lz</code>, <code>tar.gz</code>, <code>tar.bz2</code>, <code>dir</code>. AppX package can be built only on Windows 10.</p>
+<p>To use Squirrel.Windows please install <code>electron-builder-squirrel-windows</code> dependency.</p>
+<p>For <code>portable</code> app, <code>PORTABLE_EXECUTABLE_DIR</code> env is set (dir where portable executable located).</p>
+</li>
+<li>
+<p><code id="WindowsConfiguration-icon">icon</code> = <code>build/icon.ico</code> String - The path to application icon.</p>
+</li>
+<li><code id="WindowsConfiguration-legalTrademarks">legalTrademarks</code> String - The trademarks and registered trademarks.</li>
+</ul>
+<hr />
+<ul>
+<li><code id="WindowsConfiguration-signingHashAlgorithms">signingHashAlgorithms</code> = <code>['sha1', 'sha256']</code> Array&lt;&ldquo;sha1&rdquo; | &ldquo;sha256&rdquo;&gt; - Array of signing algorithms used. For AppX <code>sha256</code> is always used.</li>
+<li><code id="WindowsConfiguration-sign">sign</code> String | (configuration: CustomWindowsSignTaskConfiguration) =&gt; Promise - The custom function (or path to file or module id) to sign Windows executable.</li>
+<li><code id="WindowsConfiguration-certificateFile">certificateFile</code> String - The path to the *.pfx certificate you want to sign with. Please use it only if you cannot use env variable <code>CSC_LINK</code> (<code>WIN_CSC_LINK</code>) for some reason. Please see <a href="../../code-signing/">Code Signing</a>.</li>
+<li><code id="WindowsConfiguration-certificatePassword">certificatePassword</code> String - The password to the certificate provided in <code>certificateFile</code>. Please use it only if you cannot use env variable <code>CSC_KEY_PASSWORD</code> (<code>WIN_CSC_KEY_PASSWORD</code>) for some reason. Please see <a href="../../code-signing/">Code Signing</a>.</li>
+<li><code id="WindowsConfiguration-certificateSubjectName">certificateSubjectName</code> String - The name of the subject of the signing certificate. Required only for EV Code Signing and works only on Windows (or on macOS if <a href="https://www.parallels.com/products/desktop/">Parallels Desktop</a> Windows 10 virtual machines exits).</li>
+<li><code id="WindowsConfiguration-certificateSha1">certificateSha1</code> String - The SHA1 hash of the signing certificate. The SHA1 hash is commonly specified when multiple certificates satisfy the criteria specified by the remaining switches. Works only on Windows (or on macOS if <a href="https://www.parallels.com/products/desktop/">Parallels Desktop</a> Windows 10 virtual machines exits).</li>
+<li><code id="WindowsConfiguration-additionalCertificateFile">additionalCertificateFile</code> String - The path to an additional certificate file you want to add to the signature block.</li>
+<li><code id="WindowsConfiguration-rfc3161TimeStampServer">rfc3161TimeStampServer</code> = <code>http://timestamp.comodoca.com/rfc3161</code> String - The URL of the RFC 3161 time stamp server.</li>
+<li><code id="WindowsConfiguration-timeStampServer">timeStampServer</code> = <code>http://timestamp.verisign.com/scripts/timstamp.dll</code> String - The URL of the time stamp server.</li>
+</ul>
+<hr />
+<ul>
+<li><code id="WindowsConfiguration-publisherName">publisherName</code> String | Array&lt;String&gt; - <a href="https://github.com/electron-userland/electron-builder/issues/1187#issuecomment-278972073">The publisher name</a>, exactly as in your code signed certificate. Several names can be provided. Defaults to common name from your code signing certificate.</li>
+<li><code id="WindowsConfiguration-verifyUpdateCodeSignature">verifyUpdateCodeSignature</code> = <code>true</code> Boolean - Whether to verify the signature of an available update before installation. The <a href="#publisherName">publisher name</a> will be used for the signature verification.</li>
+<li><code id="WindowsConfiguration-requestedExecutionLevel">requestedExecutionLevel</code> = <code>asInvoker</code> &ldquo;asInvoker&rdquo; | &ldquo;highestAvailable&rdquo; | &ldquo;requireAdministrator&rdquo; - The <a href="https://msdn.microsoft.com/en-us/library/6ad1fshk.aspx#Anchor_9">security level</a> at which the application requests to be executed. Cannot be specified per target, allowed only in the <code>win</code>.</li>
+<li><code id="WindowsConfiguration-signAndEditExecutable">signAndEditExecutable</code> = <code>true</code> Boolean - Whether to sign and add metadata to executable. Advanced option.</li>
+<li><code id="WindowsConfiguration-signDlls">signDlls</code> = <code>false</code> Boolean - Whether to sign DLL files. Advanced option. See: https://github.com/electron-userland/electron-builder/issues/3101#issuecomment-404212384</li>
+<li>
+<p><code id="WindowsConfiguration-electronUpdaterCompatibility">electronUpdaterCompatibility</code> String - The electron-updater compatibility semver range. e.g. <code>&gt;= 2.16</code>, <code>&gt;=1.0.0</code>. Defaults to <code>&gt;=1.0.0</code></p>
+<p>1.0.0 sha2 2.15.0 path 2.16.0 files</p>
+</li>
+</ul>
+<!-- end of generated block -->
+
+<hr />
+<h2 id="common-questions">Common Questions<a class="headerlink" href="#common-questions" title="Permanent link">&para;</a></h2>
+<h4 id="how-do-delegate-code-signing">How do delegate code signing?<a class="headerlink" href="#how-do-delegate-code-signing" title="Permanent link">&para;</a></h4>
+<p>Use <a href="#WindowsConfiguration-sign">sign</a> option.</p>
+<div class="highlight"><pre><span></span><span class="s2">&quot;win&quot;</span><span class="err">:</span> <span class="p">{</span>
+  <span class="nt">&quot;sign&quot;</span><span class="p">:</span> <span class="s2">&quot;./customSign.js&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>File <code>customSign.js</code> in the project root directory:
+<div class="highlight"><pre><span></span><span class="nx">exports</span><span class="p">.</span><span class="k">default</span> <span class="o">=</span> <span class="nx">async</span> <span class="kd">function</span><span class="p">(</span><span class="nx">configuration</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// your custom code</span>
+<span class="p">}</span>
+</pre></div></p>
+<h4 id="how-do-create-parallels-windows-10-virtual-machine">How do create Parallels Windows 10 Virtual Machine?<a class="headerlink" href="#how-do-create-parallels-windows-10-virtual-machine" title="Permanent link">&para;</a></h4>
+<p>You don&rsquo;t need to have Windows 10 license. Free is provided (expire after 90 days, but it is not a problem because no additional setup is required).</p>
+<ol>
+<li>Open Parallels Desktop.</li>
+<li>File -&gt; New.</li>
+<li>Select &ldquo;Modern.IE&rdquo; in the &ldquo;Free Systems&rdquo;.</li>
+<li>Continue, Continue, Accept software license agreement.</li>
+<li>Select &ldquo;Microsoft Edge on Windows 10&rdquo;.</li>
+<li>The next steps are general, see <a href="http://kb.parallels.com/4729">Installing Windows on your Mac using Parallels Desktop</a> from &ldquo;Step 6: Specify a name and location&rdquo;.</li>
+</ol>
+<p>Parallels Windows 10 VM will be used automatically to build AppX on macOS. No need even start VM — it will be started automatically on demand and suspended after build. No need to specify VM — it will be detected automatically (first Windows 10 VM will be used).</p>
+<h4 id="how-do-create-virtualbox-windows-10-virtual-machine">How do create VirtualBox Windows 10 Virtual Machine?<a class="headerlink" href="#how-do-create-virtualbox-windows-10-virtual-machine" title="Permanent link">&para;</a></h4>
+<p>If you are not on macOS or don&rsquo;t want to buy <a href="https://www.parallels.com/products/desktop/">Parallels Desktop</a>, you can use free <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a>.</p>
+<ol>
+<li>Open <a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/">Download virtual machines</a>.</li>
+<li>Select &ldquo;MSEdge on Win10 (x64) Stable&rdquo;.</li>
+<li>Select &ldquo;VirtualBox&rdquo; platform.</li>
+<li>Download. See <a href="https://az792536.vo.msecnd.net/vms/release_notes_license_terms_8_1_15.pdf">installation instructions</a>.</li>
+</ol>
+<p>The password to your VM is <code>Passw0rd!</code>.</p>
+<p>VirtualBox is not supported by electron-builder for now, so, you need to setup build environment on Windows if you want to use VirtualBox to build AppX (and other Windows-only tasks).</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../pkg/" title="PKG" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                PKG
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../nsis/" title="NSIS" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                NSIS
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.a59e2a89.js"></script>
+      
+      <script>app.initialize({version:"0.17.5",url:{base:"../.."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-105592680-1","www.electron.build"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

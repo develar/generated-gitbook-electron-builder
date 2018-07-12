@@ -1,0 +1,1252 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
+    
+    
+      
+        <title>Common Configuration - electron-builder</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.ba0fd1a6.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#artifact-file-name-template" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="electron-builder" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">build</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                electron-builder
+              </span>
+              <span class="md-header-nav__topic">
+                Common Configuration
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/electron-userland/electron-builder" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      electron-userland/electron-builder
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Introduction" class="md-tabs__link">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="Configuration" class="md-tabs__link md-tabs__link--active">
+          Configuration
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tutorials/loading-app-dependencies-manually/" title="Tutorials" class="md-tabs__link">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../icons/" title="Guides" class="md-tabs__link">
+          Guides
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon">build</i>
+      
+    </span>
+    electron-builder
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/electron-userland/electron-builder" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      electron-userland/electron-builder
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Configuration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Common Configuration
+      </label>
+    
+    <a href="./" title="Common Configuration" class="md-nav__link md-nav__link--active">
+      Common Configuration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-file-name-template" title="Artifact File Name Template" class="md-nav__link">
+    Artifact File Name Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables-from-file" title="Environment Variables from File" class="md-nav__link">
+    Environment Variables from File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-read-docs" title="How to Read Docs" class="md-nav__link">
+    How to Read Docs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata" title="Metadata" class="md-nav__link">
+    Metadata
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-version-management" title="Build Version Management" class="md-nav__link">
+    Build Version Management
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contents/" title="Application Contents" class="md-nav__link">
+      Application Contents
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-patterns/" title="File Patterns" class="md-nav__link">
+      File Patterns
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      macOS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        macOS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mac/" title="Any macOS Target" class="md-nav__link">
+      Any macOS Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dmg/" title="DMG" class="md-nav__link">
+      DMG
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mas/" title="MAS" class="md-nav__link">
+      MAS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pkg/" title="PKG" class="md-nav__link">
+      PKG
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      Windows
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        Windows
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../win/" title="Any Windows Target" class="md-nav__link">
+      Any Windows Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nsis/" title="NSIS" class="md-nav__link">
+      NSIS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appx/" title="AppX" class="md-nav__link">
+      AppX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../squirrel-windows/" title="Squirrel.Windows" class="md-nav__link">
+      Squirrel.Windows
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux/" title="Any Linux Target" class="md-nav__link">
+      Any Linux Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appimage/" title="AppImage" class="md-nav__link">
+      AppImage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../snap/" title="Snap" class="md-nav__link">
+      Snap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../target/" title="Target" class="md-nav__link">
+      Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../publish/" title="Publish" class="md-nav__link">
+      Publish
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/loading-app-dependencies-manually/" title="Loading App Dependencies Manually" class="md-nav__link">
+      Loading App Dependencies Manually
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/two-package-structure/" title="Two package.json Structure" class="md-nav__link">
+      Two package.json Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/macos-kernel-extensions/" title="macOS Kernel Extensions" class="md-nav__link">
+      macOS Kernel Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/release-using-channels/" title="Release Using Channels" class="md-nav__link">
+      Release Using Channels
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../icons/" title="Icons" class="md-nav__link">
+      Icons
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../auto-update/" title="Auto Update" class="md-nav__link">
+      Auto Update
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../code-signing/" title="Code Signing" class="md-nav__link">
+      Code Signing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../multi-platform-build/" title="Multi Platform Build" class="md-nav__link">
+      Multi Platform Build
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../cli/" title="Command Line Interface (CLI)" class="md-nav__link">
+      Command Line Interface (CLI)
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../api/electron-builder/" title="Programmatic API" class="md-nav__link">
+      Programmatic API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../donate/" title="Donate" class="md-nav__link">
+      Donate
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-file-name-template" title="Artifact File Name Template" class="md-nav__link">
+    Artifact File Name Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables-from-file" title="Environment Variables from File" class="md-nav__link">
+    Environment Variables from File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-read-docs" title="How to Read Docs" class="md-nav__link">
+    How to Read Docs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata" title="Metadata" class="md-nav__link">
+    Metadata
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-version-management" title="Build Version Management" class="md-nav__link">
+    Build Version Management
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Common Configuration</h1>
+                
+                <p>electron-builder <a href="#configuration">configuration</a> can be defined</p>
+<ul>
+<li>in the <code>package.json</code> file of your project using the <code>build</code> key on the top level:
+   <div class="highlight"><pre><span></span><span class="s2">&quot;build&quot;</span><span class="err">:</span> <span class="p">{</span>
+  <span class="nt">&quot;appId&quot;</span><span class="p">:</span> <span class="s2">&quot;com.example.app&quot;</span>
+<span class="p">}</span>
+</pre></div></li>
+<li>or through the <code>--config &lt;path/to/yml-or-json5-or-toml&gt;</code> option (defaults to <code>electron-builder.yml</code> (or <code>json</code>, or <a href="http://json5.org">json5</a>, or <a href="https://github.com/toml-lang/toml">toml</a>)).
+   <div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">appId</span><span class="p p-Indicator">:</span> <span class="s">&quot;com.example.app&quot;</span>
+</pre></div></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you want to use <a href="https://en.wikipedia.org/wiki/TOML">toml</a>, please install <code>yarn add toml --dev</code>.</p>
+</div>
+<p>Most of the options accept <code>null</code> — for example, to explicitly set that DMG icon must be default volume icon from the OS and default rules must be not applied (i.e. use application icon as DMG icon), set <code>dmg.icon</code> to <code>null</code>.</p>
+<h2 id="artifact-file-name-template">Artifact File Name Template<a class="headerlink" href="#artifact-file-name-template" title="Permanent link">&para;</a></h2>
+<p><code>${ext}</code> macro is supported in addition to <a href="../../file-patterns/#file-macros">file macros</a>.</p>
+<h2 id="environment-variables-from-file">Environment Variables from File<a class="headerlink" href="#environment-variables-from-file" title="Permanent link">&para;</a></h2>
+<p>Env file <code>electron-builder.env</code> in the current dir (<a href="https://github.com/motdotla/dotenv-expand/blob/master/test/.env">example</a>). Supported only for CLI usage.</p>
+<h2 id="how-to-read-docs">How to Read Docs<a class="headerlink" href="#how-to-read-docs" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Name of optional property is normal, <strong>required</strong> is bold.</li>
+<li>Type is specified after property name: <code>Array&lt;String&gt; | String</code>. Union like this means that you can specify or string (<code>**/*</code>), or array of strings (<code>[&quot;**/*&quot;, &quot;!foo.js&quot;]</code>).</li>
+</ul>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<!-- do not edit. start of generated block -->
+
+<ul>
+<li><code id="Configuration-appId">appId</code> = <code>com.electron.${name}</code> String - The application id. Used as <a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/20001431-102070">CFBundleIdentifier</a> for MacOS and as <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd378459(v=vs.85).aspx">Application User Model ID</a> for Windows (NSIS target only, Squirrel.Windows not supported). It is strongly recommended that an explicit ID is set.</li>
+<li><code id="Configuration-productName">productName</code> String - As <a href="#Metadata-name">name</a>, but allows you to specify a product name for your executable which contains spaces and other special characters not allowed in the <a href="https://docs.npmjs.com/files/package.json#name">name property</a>.</li>
+<li><code id="Configuration-copyright">copyright</code> = <code>Copyright © year ${author}</code> String - The human-readable copyright line for the app.</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p><code id="Configuration-directories">directories</code><a name="MetadataDirectories"></a></p>
+<ul>
+<li>
+<p><code id="MetadataDirectories-buildResources">buildResources</code> = <code>build</code> String - The path to build resources.</p>
+<p>Please note — build resources is not packed into the app. If you need to use some files, e.g. as tray icon, please include required files explicitly: <code>&quot;files&quot;: [&quot;**/*&quot;, &quot;build/icon.*&quot;]</code></p>
+</li>
+<li>
+<p><code id="MetadataDirectories-output">output</code> = <code>dist</code> String - The output directory. <a href="../../file-patterns/#file-macros">File macros</a> are supported.</p>
+</li>
+<li><code id="MetadataDirectories-app">app</code> String - The application directory (containing the application package.json), defaults to <code>app</code>, <code>www</code> or working directory.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li><code id="Configuration-mac">mac</code> <a href="../mac/">MacConfiguration</a> - Options related to how build macOS targets.</li>
+<li><code id="Configuration-mas">mas</code> <a href="../mas/">MasConfiguration</a> - MAS (Mac Application Store) options.</li>
+<li><code id="Configuration-dmg">dmg</code> <a href="../dmg/">DmgOptions</a> - macOS DMG options.</li>
+<li><code id="Configuration-pkg">pkg</code> <a href="../pkg/">PkgOptions</a> - macOS PKG options.</li>
+</ul>
+<hr />
+<ul>
+<li><code id="Configuration-win">win</code> <a href="../win/">WindowsConfiguration</a> - Options related to how build Windows targets.</li>
+<li><code id="Configuration-nsis">nsis</code> <a href="../nsis/">NsisOptions</a></li>
+<li>
+<p><code id="Configuration-nsisWeb">nsisWeb</code><a name="NsisWebOptions"></a> - Web Installer options.
+    Inherits <a href="../nsis/">NsisOptions</a> options.</p>
+<ul>
+<li>
+<p><code id="NsisWebOptions-appPackageUrl">appPackageUrl</code> String - The application package download URL. Optional — by default computed using publish configuration.</p>
+<p>URL like <code>https://example.com/download/latest</code> allows web installer to be version independent (installer will download latest application package). Please note — it is <a href="https://github.com/electron-userland/electron-builder/issues/1810#issuecomment-317650878">full URL</a>.</p>
+<p>Custom <code>X-Arch</code> http header is set to <code>32</code> or <code>64</code>.</p>
+</li>
+<li>
+<p><code id="NsisWebOptions-artifactName">artifactName</code> String - The <a href="./#artifact-file-name-template">artifact file name template</a>. Defaults to <code>${productName} Web Setup ${version}.${ext}</code>.</p>
+</li>
+<li><code id="Configuration-portable">portable</code><a name="PortableOptions"></a> - Portable options.</li>
+<li><code id="PortableOptions-requestExecutionLevel">requestExecutionLevel</code> = <code>user</code> &ldquo;user&rdquo; | &ldquo;highest&rdquo; | &ldquo;admin&rdquo; - The <a href="http://nsis.sourceforge.net/Reference/RequestExecutionLevel">requested execution level</a> for Windows.</li>
+<li><code id="Configuration-appx">appx</code> <a href="../appx/">AppXOptions</a></li>
+<li><code id="Configuration-squirrelWindows">squirrelWindows</code> <a href="../squirrel-windows/">SquirrelWindowsOptions</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li><code id="Configuration-linux">linux</code> <a href="../linux/">LinuxConfiguration</a> - Options related to how build Linux targets.</li>
+<li><code id="Configuration-deb">deb</code> <a href="../linux/#de">DebOptions</a> - Debian package options.</li>
+<li><code id="Configuration-snap">snap</code> <a href="../snap/">SnapOptions</a> - Snap options.</li>
+<li><code id="Configuration-appImage">appImage</code> <a href="../linux/#appimageoptions">AppImageOptions</a> - AppImage options.</li>
+<li><code id="Configuration-pacman">pacman</code> <a href="../linux/#LinuxTargetSpecificOptions">LinuxTargetSpecificOptions</a></li>
+<li><code id="Configuration-rpm">rpm</code> <a href="../linux/#LinuxTargetSpecificOptions">LinuxTargetSpecificOptions</a></li>
+<li><code id="Configuration-freebsd">freebsd</code> <a href="../linux/#LinuxTargetSpecificOptions">LinuxTargetSpecificOptions</a></li>
+<li><code id="Configuration-p5p">p5p</code> <a href="../linux/#LinuxTargetSpecificOptions">LinuxTargetSpecificOptions</a></li>
+<li><code id="Configuration-apk">apk</code> <a href="../linux/#LinuxTargetSpecificOptions">LinuxTargetSpecificOptions</a></li>
+</ul>
+<hr />
+<ul>
+<li><code id="Configuration-buildDependenciesFromSource">buildDependenciesFromSource</code> = <code>false</code> Boolean - Whether to build the application native dependencies from source.</li>
+<li>
+<p><code id="Configuration-nodeGypRebuild">nodeGypRebuild</code> = <code>false</code> Boolean - Whether to execute <code>node-gyp rebuild</code> before starting to package the app.</p>
+<p>Don&rsquo;t <a href="https://github.com/electron-userland/electron-builder/issues/683#issuecomment-241214075">use</a> <a href="http://electron.atom.io/docs/tutorial/using-native-node-modules/#using-npm">npm</a> (neither <code>.npmrc</code>) for configuring electron headers. Use <code>electron-builder node-gyp-rebuild</code> instead.</p>
+</li>
+<li>
+<p><code id="Configuration-npmArgs">npmArgs</code> Array&lt;String&gt; | String - Additional command line arguments to use when installing app native deps.</p>
+</li>
+<li><code id="Configuration-npmRebuild">npmRebuild</code> = <code>true</code> Boolean - Whether to <a href="https://docs.npmjs.com/cli/rebuild">rebuild</a> native dependencies before starting to package the app.</li>
+</ul>
+<hr />
+<ul>
+<li><code id="Configuration-buildVersion">buildVersion</code> String - The build version. Maps to the <code>CFBundleVersion</code> on macOS, and <code>FileVersion</code> metadata property on Windows. Defaults to the <code>version</code>. If <code>TRAVIS_BUILD_NUMBER</code> or <code>APPVEYOR_BUILD_NUMBER</code> or <code>CIRCLE_BUILD_NUM</code> or <code>BUILD_NUMBER</code> or <code>bamboo.buildNumber</code> env defined, it will be used as a build version (<code>version.build_number</code>).</li>
+<li><code id="Configuration-electronCompile">electronCompile</code> Boolean - Whether to use <a href="http://github.com/electron/electron-compile">electron-compile</a> to compile app. Defaults to <code>true</code> if <code>electron-compile</code> in the dependencies. And <code>false</code> if in the <code>devDependencies</code> or doesn&rsquo;t specified.</li>
+<li><code id="Configuration-electronDist">electronDist</code> String - The path to custom Electron build (e.g. <code>~/electron/out/R</code>).</li>
+<li><code id="Configuration-electronDownload">electronDownload</code><a name="ElectronDownloadOptions"></a> - The <a href="https://github.com/electron-userland/electron-download#usage">electron-download</a> options.<ul>
+<li><code id="ElectronDownloadOptions-version">version</code> String</li>
+<li><code id="ElectronDownloadOptions-cache">cache</code> String - The <a href="https://github.com/electron-userland/electron-download#cache-location">cache location</a>.</li>
+<li><code id="ElectronDownloadOptions-mirror">mirror</code> String - The mirror.</li>
+<li><code id="ElectronDownloadOptions-quiet">quiet</code> Boolean</li>
+<li><code id="ElectronDownloadOptions-strictSSL">strictSSL</code> Boolean</li>
+<li><code id="ElectronDownloadOptions-isVerifyChecksum">isVerifyChecksum</code> Boolean</li>
+<li><code id="ElectronDownloadOptions-platform">platform</code> &ldquo;darwin&rdquo; | &ldquo;linux&rdquo; | &ldquo;win32&rdquo; | &ldquo;mas&rdquo;</li>
+<li><code id="ElectronDownloadOptions-arch">arch</code> String</li>
+</ul>
+</li>
+<li><code id="Configuration-electronVersion">electronVersion</code> String - The version of electron you are packaging for. Defaults to version of <code>electron</code>, <code>electron-prebuilt</code> or <code>electron-prebuilt-compile</code> dependency.</li>
+<li>
+<p><code id="Configuration-extends">extends</code> String - The name of a built-in configuration preset or path to config file (relative to project dir). Currently, only <code>react-cra</code> is supported.</p>
+<p>If <code>react-scripts</code> in the app dependencies, <code>react-cra</code> will be set automatically. Set to <code>null</code> to disable automatic detection.</p>
+</li>
+<li>
+<p><code id="Configuration-extraMetadata">extraMetadata</code> any - Inject properties to <code>package.json</code>.</p>
+</li>
+<li><code id="Configuration-readonly">readonly</code> = <code>false</code> Boolean - Whether to fail if the application is not signed (to prevent unsigned app if code signing configuration is not correct).</li>
+<li><code id="Configuration-muonVersion">muonVersion</code> String - The version of muon you are packaging for.</li>
+<li><code id="Configuration-protonNodeVersion">protonNodeVersion</code> String - <em>Proton Native only</em> The version of NodeJS you are packaging for. You can set it to <code>current</code> to set the Node.js version that you use to run electron-builder.</li>
+</ul>
+<hr />
+<ul>
+<li><code id="Configuration-afterPack">afterPack</code> (context: AfterPackContext) =&gt; Promise | null - The function (or path to file or module id) to be run after pack (but before pack into distributable format and sign).</li>
+</ul>
+<hr />
+<ul>
+<li><code id="Configuration-afterSign">afterSign</code> (context: AfterPackContext) =&gt; Promise | null - The function (or path to file or module id) to be run after pack and sign (but before pack into distributable format).</li>
+<li><code id="Configuration-onNodeModuleFile">onNodeModuleFile</code> module:electron-builder-lib/out/configuration.__type | String - The function (or path to file or module id) to be run on each node module file.</li>
+<li>
+<p><code id="Configuration-beforeBuild">beforeBuild</code> (context: BeforeBuildContext) =&gt; Promise | null - The function (or path to file or module id) to be run before dependencies are installed or rebuilt. Works when <code>npmRebuild</code> is set to <code>true</code>. Resolving to <code>false</code> will skip dependencies install or rebuild.</p>
+<p>If provided and <code>node_modules</code> are missing, it will not invoke production dependencies check.</p>
+</li>
+<li>
+<p><code id="Configuration-remoteBuild">remoteBuild</code> = <code>true</code> Boolean - Whether to build using Electron Build Service if target not supported on current OS.</p>
+</li>
+<li><code id="Configuration-includePdb">includePdb</code> = <code>false</code> Boolean - Whether to include PDB files.</li>
+<li><code id="Configuration-removePackageScripts">removePackageScripts</code> = <code>true</code> Boolean - Whether to remove <code>scripts</code> field from <code>package.json</code> files.
+<!-- end of generated block --></li>
+</ul>
+<hr />
+<p>Following options can be set also per platform (top-level keys <a href="../mac/">mac</a>, <a href="../linux/">linux</a> and <a href="../win/">win</a>).</p>
+<ul>
+<li><code id="PlatformSpecificBuildOptions-artifactName">artifactName</code> String - The <a href="./#artifact-file-name-template">artifact file name template</a>. Defaults to <code>${productName}-${version}.${ext}</code> (some target can have other defaults, see corresponding options).</li>
+<li><code id="PlatformSpecificBuildOptions-compression">compression</code> = <code>normal</code> &ldquo;store&rdquo; | &ldquo;normal&rdquo; | &ldquo;maximum&rdquo; - The compression level. If you want to rapidly test build, <code>store</code> can reduce build time significantly. <code>maximum</code> doesn&rsquo;t lead to noticeable size difference, but increase build time.</li>
+<li><code id="PlatformSpecificBuildOptions-files">files</code> The <a href="../contents/#files">files</a> configuration.</li>
+<li><code id="PlatformSpecificBuildOptions-extraResources">extraResources</code> The <a href="../contents/#extraresources">extra resources</a> configuration.</li>
+<li><code id="PlatformSpecificBuildOptions-extraFiles">extraFiles</code> The <a href="../contents/#extrafiles">extra files</a> configuration.</li>
+<li>
+<p><code id="PlatformSpecificBuildOptions-asar">asar</code> = <code>true</code> AsarOptions | Boolean<a name="AsarOptions"></a> - Whether to package the application&rsquo;s source code into an archive, using <a href="http://electron.atom.io/docs/tutorial/application-packaging/">Electron&rsquo;s archive format</a>.</p>
+<p>Node modules, that must be unpacked, will be detected automatically, you don&rsquo;t need to explicitly set <a href="#configuration-asarUnpack">asarUnpack</a> - please file an issue if this doesn&rsquo;t work.</p>
+<ul>
+<li><code id="AsarOptions-smartUnpack">smartUnpack</code> = <code>true</code> Boolean - Whether to automatically unpack executables files.</li>
+<li><code id="AsarOptions-ordering">ordering</code> String</li>
+<li><code id="PlatformSpecificBuildOptions-asarUnpack">asarUnpack</code> Array&lt;String&gt; | String - A <a href="../../file-patterns/">glob patterns</a> relative to the <a href="#MetadataDirectories-app">app directory</a>, which specifies which files to unpack when creating the <a href="http://electron.atom.io/docs/tutorial/application-packaging/">asar</a> archive.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p><code id="PlatformSpecificBuildOptions-fileAssociations">fileAssociations</code> Array&lt;FileAssociation&gt; | FileAssociation<a name="FileAssociation"></a> - The file associations.</p>
+<ul>
+<li><strong><code id="FileAssociation-ext">ext</code></strong> String | Array&lt;String&gt; - The extension (minus the leading period). e.g. <code>png</code>.</li>
+<li><code id="FileAssociation-name">name</code> String - The name. e.g. <code>PNG</code>. Defaults to <code>ext</code>.</li>
+<li><code id="FileAssociation-description">description</code> String - <em>windows-only.</em> The description.</li>
+<li><code id="FileAssociation-mimeType">mimeType</code> String - <em>linux-only.</em> The mime-type.</li>
+<li>
+<p><code id="FileAssociation-icon">icon</code> String - The path to icon (<code>.icns</code> for MacOS and <code>.ico</code> for Windows), relative to <code>build</code> (build resources directory). Defaults to <code>${firstExt}.icns</code>/<code>${firstExt}.ico</code> (if several extensions specified, first is used) or to application icon.</p>
+<p>Not supported on Linux, file issue if need (default icon will be <code>x-office-document</code>).</p>
+</li>
+<li>
+<p><code id="FileAssociation-role">role</code> = <code>Editor</code> String - <em>macOS-only</em> The app’s role with respect to the type. The value can be <code>Editor</code>, <code>Viewer</code>, <code>Shell</code>, or <code>None</code>. Corresponds to <code>CFBundleTypeRole</code>.</p>
+</li>
+<li><code id="FileAssociation-isPackage">isPackage</code> Boolean - <em>macOS-only</em> Whether the document is distributed as a bundle. If set to true, the bundle directory is treated as a file. Corresponds to <code>LSTypeIsPackage</code>.</li>
+<li><code id="PlatformSpecificBuildOptions-protocols">protocols</code> Array&lt;Protocol&gt; | Protocol<a name="Protocol"></a> - The URL protocol schemes.</li>
+<li><strong><code id="Protocol-name">name</code></strong> String - The name. e.g. <code>IRC server URL</code>.</li>
+<li><strong><code id="Protocol-schemes">schemes</code></strong> Array&lt;String&gt; - The schemes. e.g. <code>[&quot;irc&quot;, &quot;ircs&quot;]</code>.</li>
+<li><code id="Protocol-role">role</code> = <code>Editor</code> &ldquo;Editor&rdquo; | &ldquo;Viewer&rdquo; | &ldquo;Shell&rdquo; | &ldquo;None&rdquo; - <em>macOS-only</em> The app’s role with respect to the type.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li><code id="PlatformSpecificBuildOptions-forceCodeSigning">forceCodeSigning</code> Boolean</li>
+<li><code id="PlatformSpecificBuildOptions-publish">publish</code> The <a href="../publish/">publish</a> options.</li>
+<li><code id="PlatformSpecificBuildOptions-detectUpdateChannel">detectUpdateChannel</code> = <code>true</code> Boolean - Whether to infer update channel from application version pre-release components. e.g. if version <code>0.12.1-alpha.1</code>, channel will be set to <code>alpha</code>. Otherwise to <code>latest</code>.</li>
+<li><code id="PlatformSpecificBuildOptions-generateUpdatesFilesForAllChannels">generateUpdatesFilesForAllChannels</code> = <code>false</code> Boolean - Please see <a href="https://github.com/electron-userland/electron-builder/issues/1182#issuecomment-324947139">Building and Releasing using Channels</a>.</li>
+<li>
+<p><code id="PlatformSpecificBuildOptions-releaseInfo">releaseInfo</code><a name="ReleaseInfo"></a> - The release info. Intended for command line usage:</p>
+<p><code>-c.releaseInfo.releaseNotes=&quot;new features&quot;</code></p>
+<ul>
+<li><code id="ReleaseInfo-releaseName">releaseName</code> String - The release name.</li>
+<li><code id="ReleaseInfo-releaseNotes">releaseNotes</code> String - The release notes.</li>
+<li><code id="ReleaseInfo-releaseNotesFile">releaseNotesFile</code> String - The path to release notes file. Defaults to <code>release-notes-${platform}.md</code> (where <code>platform</code> it is current platform — <code>mac</code>, <code>linux</code> or <code>windows</code>) or <code>release-notes.md</code> in the <a href="#MetadataDirectories-buildResources">build resources</a>.</li>
+<li><code id="ReleaseInfo-releaseDate">releaseDate</code> String - The release date.</li>
+<li><code id="PlatformSpecificBuildOptions-target">target</code> String | [TargetConfiguration](/configuration/target.md#targetconfiguration</li>
+</ul>
+</li>
+</ul>
+<h2 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h2>
+<p>Some standard fields should be defined in the <code>package.json</code>.</p>
+<ul>
+<li><strong><code id="Metadata-name">name</code></strong> String - The application name.</li>
+<li><code id="Metadata-description">description</code> String - The application description.</li>
+<li>
+<p><code id="Metadata-homepage">homepage</code> String - The url to the project <a href="https://docs.npmjs.com/files/package.json#homepage">homepage</a> (NuGet Package <code>projectUrl</code> (optional) or Linux Package URL (required)).</p>
+<p>If not specified and your project repository is public on GitHub, it will be <code>https://github.com/${user}/${project}</code> by default.</p>
+</li>
+<li>
+<p><code id="Metadata-license">license</code> String - <em>linux-only.</em> The <a href="https://docs.npmjs.com/files/package.json#license">license</a> name.</p>
+</li>
+<li><code id="Metadata-author">author</code><a name="AuthorMetadata"></a><ul>
+<li><strong><code id="AuthorMetadata-name">name</code></strong> String</li>
+<li><code id="AuthorMetadata-email">email</code> String</li>
+</ul>
+</li>
+<li><code id="Metadata-repository">repository</code> String | RepositoryInfo<a name="RepositoryInfo"></a> - The <a href="https://docs.npmjs.com/files/package.json#repository">repository</a>.<ul>
+<li><strong><code id="RepositoryInfo-url">url</code></strong> String</li>
+</ul>
+</li>
+<li><code id="Metadata-build">build</code> <a href="#configuration">Configuration</a> - The electron-builder configuration</li>
+</ul>
+<h2 id="build-version-management">Build Version Management<a class="headerlink" href="#build-version-management" title="Permanent link">&para;</a></h2>
+<p><code>CFBundleVersion</code> (macOS) and <code>FileVersion</code> (Windows) will be set automatically to <code>version.build_number</code> on CI server (Travis, AppVeyor, CircleCI and Bamboo supported).</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../.." title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Introduction
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../contents/" title="Application Contents" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Application Contents
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.a59e2a89.js"></script>
+      
+      <script>app.initialize({version:"0.17.5",url:{base:"../.."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-105592680-1","www.electron.build"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

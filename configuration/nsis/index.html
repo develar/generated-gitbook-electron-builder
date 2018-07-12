@@ -1,0 +1,1165 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
+    
+    
+      
+        <title>NSIS - electron-builder</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.ba0fd1a6.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#32-bit-64-bit" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="electron-builder" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">build</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                electron-builder
+              </span>
+              <span class="md-header-nav__topic">
+                NSIS
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/electron-userland/electron-builder" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      electron-userland/electron-builder
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Introduction" class="md-tabs__link">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../configuration/" title="Configuration" class="md-tabs__link md-tabs__link--active">
+          Configuration
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tutorials/loading-app-dependencies-manually/" title="Tutorials" class="md-tabs__link">
+          Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../icons/" title="Guides" class="md-tabs__link">
+          Guides
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon">build</i>
+      
+    </span>
+    electron-builder
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/electron-userland/electron-builder" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      electron-userland/electron-builder
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Configuration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/" title="Common Configuration" class="md-nav__link">
+      Common Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../contents/" title="Application Contents" class="md-nav__link">
+      Application Contents
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-patterns/" title="File Patterns" class="md-nav__link">
+      File Patterns
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      macOS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        macOS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mac/" title="Any macOS Target" class="md-nav__link">
+      Any macOS Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dmg/" title="DMG" class="md-nav__link">
+      DMG
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mas/" title="MAS" class="md-nav__link">
+      MAS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pkg/" title="PKG" class="md-nav__link">
+      PKG
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" checked>
+    
+    <label class="md-nav__link" for="nav-2-5">
+      Windows
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        Windows
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../win/" title="Any Windows Target" class="md-nav__link">
+      Any Windows Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        NSIS
+      </label>
+    
+    <a href="./" title="NSIS" class="md-nav__link md-nav__link--active">
+      NSIS
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#32-bit-64-bit" title="32 bit + 64 bit" class="md-nav__link">
+    32 bit + 64 bit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-installer" title="Web Installer" class="md-nav__link">
+    Web Installer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-nsis-script" title="Custom NSIS script" class="md-nav__link">
+    Custom NSIS script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guid-vs-application-name" title="GUID vs Application Name" class="md-nav__link">
+    GUID vs Application Name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-questions" title="Common Questions" class="md-nav__link">
+    Common Questions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-change-the-default-installation-directory-to-custom" title="How do change the default installation directory to custom?" class="md-nav__link">
+    How do change the default installation directory to custom?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appx/" title="AppX" class="md-nav__link">
+      AppX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../squirrel-windows/" title="Squirrel.Windows" class="md-nav__link">
+      Squirrel.Windows
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux/" title="Any Linux Target" class="md-nav__link">
+      Any Linux Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appimage/" title="AppImage" class="md-nav__link">
+      AppImage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../snap/" title="Snap" class="md-nav__link">
+      Snap
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../target/" title="Target" class="md-nav__link">
+      Target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../publish/" title="Publish" class="md-nav__link">
+      Publish
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/loading-app-dependencies-manually/" title="Loading App Dependencies Manually" class="md-nav__link">
+      Loading App Dependencies Manually
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/two-package-structure/" title="Two package.json Structure" class="md-nav__link">
+      Two package.json Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/macos-kernel-extensions/" title="macOS Kernel Extensions" class="md-nav__link">
+      macOS Kernel Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/release-using-channels/" title="Release Using Channels" class="md-nav__link">
+      Release Using Channels
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../icons/" title="Icons" class="md-nav__link">
+      Icons
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../auto-update/" title="Auto Update" class="md-nav__link">
+      Auto Update
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../code-signing/" title="Code Signing" class="md-nav__link">
+      Code Signing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../multi-platform-build/" title="Multi Platform Build" class="md-nav__link">
+      Multi Platform Build
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../cli/" title="Command Line Interface (CLI)" class="md-nav__link">
+      Command Line Interface (CLI)
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../api/electron-builder/" title="Programmatic API" class="md-nav__link">
+      Programmatic API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../donate/" title="Donate" class="md-nav__link">
+      Donate
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#32-bit-64-bit" title="32 bit + 64 bit" class="md-nav__link">
+    32 bit + 64 bit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-installer" title="Web Installer" class="md-nav__link">
+    Web Installer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-nsis-script" title="Custom NSIS script" class="md-nav__link">
+    Custom NSIS script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guid-vs-application-name" title="GUID vs Application Name" class="md-nav__link">
+    GUID vs Application Name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-questions" title="Common Questions" class="md-nav__link">
+    Common Questions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-change-the-default-installation-directory-to-custom" title="How do change the default installation directory to custom?" class="md-nav__link">
+    How do change the default installation directory to custom?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>NSIS</h1>
+                
+                <p>The top-level <a href="../configuration/#Configuration-nsis">nsis</a> key contains set of options instructing electron-builder on how it should build NSIS target (default target for Windows).</p>
+<p>These options also applicable for <a href="#web-installer">Web installer</a>, use top-level <code>nsisWeb</code> key.</p>
+<!-- FILE IS AUTOGENERATED. Please edit S3Options class jsdoc in the packages/electron-builder/src/targets/nsis/nsisOptions.ts -->
+
+<!-- do not edit. start of generated block -->
+
+<ul>
+<li><code id="NsisOptions-oneClick">oneClick</code> = <code>true</code> Boolean - Whether to create one-click installer or assisted.</li>
+<li>
+<p><code id="NsisOptions-perMachine">perMachine</code> = <code>false</code> Boolean - If <code>oneClick</code> is <code>true</code> (default): Whether to install per all users (per-machine).</p>
+<p>If <code>oneClick</code> is <code>false</code>: no install mode installer page (choice per-machine or per-user), always install per-machine.</p>
+</li>
+<li>
+<p><code id="NsisOptions-allowElevation">allowElevation</code> = <code>true</code> Boolean - <em>assisted installer only.</em> Allow requesting for elevation. If false, user will have to restart installer with elevated permissions.</p>
+</li>
+<li><code id="NsisOptions-allowToChangeInstallationDirectory">allowToChangeInstallationDirectory</code> = <code>false</code> Boolean - <em>assisted installer only.</em> Whether to allow user to change installation directory.</li>
+</ul>
+<hr />
+<ul>
+<li><code id="NsisOptions-installerIcon">installerIcon</code> String - The path to installer icon, relative to the <a href="../configuration/#MetadataDirectories-buildResources">build resources</a> or to the project directory. Defaults to <code>build/installerIcon.ico</code> or application icon.</li>
+<li><code id="NsisOptions-uninstallerIcon">uninstallerIcon</code> String - The path to uninstaller icon, relative to the <a href="../configuration/#MetadataDirectories-buildResources">build resources</a> or to the project directory. Defaults to <code>build/uninstallerIcon.ico</code> or application icon.</li>
+<li><code id="NsisOptions-installerHeader">installerHeader</code> = <code>build/installerHeader.bmp</code> String - <em>assisted installer only.</em> <code>MUI_HEADERIMAGE</code>, relative to the <a href="../configuration/#MetadataDirectories-buildResources">build resources</a> or to the project directory.</li>
+<li><code id="NsisOptions-installerHeaderIcon">installerHeaderIcon</code> String - <em>one-click installer only.</em> The path to header icon (above the progress bar), relative to the <a href="../configuration/#MetadataDirectories-buildResources">build resources</a> or to the project directory. Defaults to <code>build/installerHeaderIcon.ico</code> or application icon.</li>
+<li><code id="NsisOptions-installerSidebar">installerSidebar</code> String - <em>assisted installer only.</em> <code>MUI_WELCOMEFINISHPAGE_BITMAP</code>, relative to the <a href="../configuration/#MetadataDirectories-buildResources">build resources</a> or to the project directory. Defaults to <code>build/installerSidebar.bmp</code> or <code>${NSISDIR}\\Contrib\\Graphics\\Wizard\\nsis3-metro.bmp</code>. Image size 164 × 314 pixels.</li>
+<li><code id="NsisOptions-uninstallerSidebar">uninstallerSidebar</code> String - <em>assisted installer only.</em> <code>MUI_UNWELCOMEFINISHPAGE_BITMAP</code>, relative to the <a href="../configuration/#MetadataDirectories-buildResources">build resources</a> or to the project directory. Defaults to <code>installerSidebar</code> option or <code>build/uninstallerSidebar.bmp</code> or <code>build/installerSidebar.bmp</code> or <code>${NSISDIR}\\Contrib\\Graphics\\Wizard\\nsis3-metro.bmp</code></li>
+<li><code id="NsisOptions-uninstallDisplayName">uninstallDisplayName</code> = <code>${productName} ${version}</code> String - The uninstaller display name in the control panel.</li>
+</ul>
+<hr />
+<ul>
+<li><code id="NsisOptions-include">include</code> String - The path to NSIS include script to customize installer. Defaults to <code>build/installer.nsh</code>. See <a href="#custom-nsis-script">Custom NSIS script</a>.</li>
+<li><code id="NsisOptions-script">script</code> String - The path to NSIS script to customize installer. Defaults to <code>build/installer.nsi</code>. See <a href="#custom-nsis-script">Custom NSIS script</a>.</li>
+<li>
+<p><code id="NsisOptions-license">license</code> String - The path to EULA license file. Defaults to <code>license.txt</code> or <code>eula.txt</code> (or uppercase variants). In addition to <code>txt,</code>rtf<code>and</code>html<code>supported (don't forget to use</code>target=&rdquo;_blank&rdquo;` for links).</p>
+<p>Multiple license files in different languages are supported — use lang postfix (e.g. <code>_de</code>, <code>_ru</code>)). For example, create files <code>license_de.txt</code> and <code>license_en.txt</code> in the build resources. If OS language is german, <code>license_de.txt</code> will be displayed. See map of <a href="https://github.com/meikidd/iso-639-1/blob/master/src/data.js">language code to name</a>.</p>
+<p>Appropriate license file will be selected by user OS language.</p>
+</li>
+<li>
+<p><code id="NsisOptions-artifactName">artifactName</code> String - The <a href="../configuration/#artifact-file-name-template">artifact file name template</a>. Defaults to <code>${productName} Setup ${version}.${ext}</code>.</p>
+</li>
+<li><code id="NsisOptions-deleteAppDataOnUninstall">deleteAppDataOnUninstall</code> = <code>false</code> Boolean - <em>one-click installer only.</em> Whether to delete app data on uninstall.</li>
+<li><code id="NsisOptions-differentialPackage">differentialPackage</code> Boolean - Defaults to <code>true</code> for web installer (<code>nsis-web</code>)</li>
+</ul>
+<hr />
+<ul>
+<li><code id="NsisOptions-displayLanguageSelector">displayLanguageSelector</code> = <code>false</code> Boolean - Whether to display a language selection dialog. Not recommended (by default will be detected using OS language).</li>
+<li><code id="NsisOptions-installerLanguages">installerLanguages</code> Array&lt;String&gt; | String - The installer languages (e.g. <code>en_US</code>, <code>de_DE</code>). Change only if you understand what do you do and for what.</li>
+<li><code id="NsisOptions-language">language</code> String - <a href="https://msdn.microsoft.com/en-au/goglobal/bb964664.aspx">LCID Dec</a>, defaults to <code>1033</code>(<code>English - United States</code>).</li>
+<li><code id="NsisOptions-multiLanguageInstaller">multiLanguageInstaller</code> Boolean - Whether to create multi-language installer. Defaults to <code>unicode</code> option value.</li>
+<li><code id="NsisOptions-packElevateHelper">packElevateHelper</code> = <code>true</code> Boolean - Whether to pack the elevate executable (required for electron-updater if per-machine installer used or can be used in the future). Ignored if <code>perMachine</code> is set to <code>true</code>.</li>
+<li><code id="NsisOptions-preCompressedFileExtensions">preCompressedFileExtensions</code> = <code>[&quot;.avi&quot;, &quot;.mov&quot;, &quot;.m4v&quot;, &quot;.mp4&quot;, &quot;.m4p&quot;, &quot;.qt&quot;, &quot;.mkv&quot;, &quot;.webm&quot;, &quot;.vmdk&quot;]</code> Array&lt;String&gt; | String - The file extension of files that will be not compressed. Applicable only for <code>extraResources</code> and <code>extraFiles</code> files.</li>
+<li><code id="NsisOptions-unicode">unicode</code> = <code>true</code> Boolean - Whether to create <a href="http://nsis.sourceforge.net/Docs/Chapter1.html#intro-unicode">Unicode installer</a>.</li>
+<li><code id="NsisOptions-guid">guid</code> String - See <a href="./#guid-vs-application-name">GUID vs Application Name</a>.</li>
+<li><code id="NsisOptions-warningsAsErrors">warningsAsErrors</code> = <code>true</code> Boolean - If <code>warningsAsErrors</code> is <code>true</code> (default): NSIS will treat warnings as errors. If <code>warningsAsErrors</code> is <code>false</code>: NSIS will allow warnings.</li>
+<li><code id="NsisOptions-runAfterFinish">runAfterFinish</code> = <code>true</code> Boolean - Whether to run the installed application after finish. For assisted installer corresponding checkbox will be removed.</li>
+</ul>
+<hr />
+<ul>
+<li><code id="NsisOptions-createDesktopShortcut">createDesktopShortcut</code> = <code>true</code> Boolean | &ldquo;always&rdquo; - Whether to create desktop shortcut. Set to <code>always</code> if to recreate also on reinstall (even if removed by user).</li>
+<li><code id="NsisOptions-createStartMenuShortcut">createStartMenuShortcut</code> = <code>true</code> Boolean - Whether to create start menu shortcut.</li>
+<li><code id="NsisOptions-menuCategory">menuCategory</code> = <code>false</code> Boolean | String - Whether to create submenu for start menu shortcut and program files directory. If <code>true</code>, company name will be used. Or string value.</li>
+<li><code id="NsisOptions-shortcutName">shortcutName</code> String - The name that will be used for all shortcuts. Defaults to the application name.
+&lt;!&ndash; end of generated block &ndash;</li>
+</ul>
+<hr />
+<p>Inherited from <code>TargetSpecificOptions</code>:</p>
+<ul>
+<li><code id="TargetSpecificOptions-artifactName">artifactName</code> String - The <a href="../configuration/#artifact-file-name-template">artifact file name template</a>.</li>
+<li><code id="TargetSpecificOptions-publish">publish</code> The <a href="../publish/">publish</a> options</li>
+</ul>
+<hr />
+<p>Unicode enabled by default. Large strings are supported (maximum string length of 8192 bytes instead of the default of 1024 bytes).</p>
+<h2 id="32-bit-64-bit">32 bit + 64 bit<a class="headerlink" href="#32-bit-64-bit" title="Permanent link">&para;</a></h2>
+<p>If you build both ia32 and x64 arch (<code>--x64 --ia32</code>), you in any case get one installer. Appropriate arch will be installed automatically.
+The same applied to web installer (<code>nsis-web</code> <a href="../win/#WindowsConfiguration-target">target</a>).</p>
+<h2 id="web-installer">Web Installer<a class="headerlink" href="#web-installer" title="Permanent link">&para;</a></h2>
+<p>To build web installer, set <a href="../win/#WindowsConfiguration-target">target</a> to <code>nsis-web</code>. Web Installer automatically detects OS architecture and downloads corresponding package file. So, user don&rsquo;t need to guess what installer to download and in the same time you don&rsquo;t bundle package files for all architectures in the one installer (as in case of default <code>nsis</code> target). It doesn&rsquo;t matter for common Electron application (due to superb LZMA compression, size difference is acceptable), but if your application is huge, Web Installer is a solution.</p>
+<p>To customize web installer, use the top-level <code>nsisWeb</code> key (not <code>nsis</code>).</p>
+<p>If for some reasons web installer cannot download (antivirus, offline):
+<em> Download package file into the same directory where installer located. It will be detected automatically and used instead of downloading from the Internet. Please note — only original package file is allowed (checksum is checked).
+</em> Specify any local package file using <code>--package-file=path_to_file</code>.</p>
+<h2 id="custom-nsis-script">Custom NSIS script<a class="headerlink" href="#custom-nsis-script" title="Permanent link">&para;</a></h2>
+<p>Two options are available — <a href="#NsisOptions-include">include</a> and <a href="#NsisOptions-script">script</a>. <code>script</code> allows you to provide completely different NSIS script. For most cases it is not required as you need only to customise some aspects, but still use well-tested and maintained default NSIS script. So, <code>include</code> is recommended.</p>
+<p>Keep in mind — if you customize NSIS script, you should always state about it in the issue reports. And don&rsquo;t expect that your issue will be resolved.</p>
+<ol>
+<li>Add file <code>build/installer.nsh</code>.</li>
+<li>
+<p>Define wanted macro to customise: <code>customHeader</code>, <code>preInit</code>, <code>customInit</code>, <code>customUnInit</code>, <code>customInstall</code>, <code>customUnInstall</code>, <code>customRemoveFiles</code>. Example:
+   <div class="highlight"><pre><span></span> <span class="cp">!macro</span> customHeader
+   <span class="cp">!system</span> <span class="s2">&quot;echo &#39;&#39; &gt; ${BUILD_RESOURCES_DIR}/customHeader</span><span class="s">&quot;</span>
+ <span class="cp">!macroend</span>
+
+ <span class="cp">!macro</span> preInit
+   <span class="c">; This macro is inserted at the beginning of the NSIS .OnInit callback</span>
+   <span class="cp">!system</span> <span class="s2">&quot;echo &#39;&#39; &gt; ${BUILD_RESOURCES_DIR}/preInit</span><span class="s">&quot;</span>
+ <span class="cp">!macroend</span>
+
+ <span class="cp">!macro</span> customInit
+   <span class="cp">!system</span> <span class="s2">&quot;echo &#39;&#39; &gt; ${BUILD_RESOURCES_DIR}/customInit</span><span class="s">&quot;</span>
+ <span class="cp">!macroend</span>
+
+ <span class="cp">!macro</span> customInstall
+   <span class="cp">!system</span> <span class="s2">&quot;echo &#39;&#39; &gt; ${BUILD_RESOURCES_DIR}/customInstall</span><span class="s">&quot;</span>
+ <span class="cp">!macroend</span>
+</pre></div></p>
+</li>
+<li>
+<p><code>BUILD_RESOURCES_DIR</code> and <code>PROJECT_DIR</code> are defined.</p>
+</li>
+<li><code>build</code> is added as <code>addincludedir</code> (i.e. you don&rsquo;t need to use <code>BUILD_RESOURCES_DIR</code> to include files).</li>
+<li><code>build/x86-unicode</code> and <code>build/x86-ansi</code> are added as <code>addplugindir</code>.</li>
+<li>File associations macro <code>registerFileAssociations</code> and <code>unregisterFileAssociations</code> are still defined.</li>
+<li>All other electron-builder specific flags (e.g. <code>ONE_CLICK</code>) are still defined.</li>
+</ol>
+<h2 id="guid-vs-application-name">GUID vs Application Name<a class="headerlink" href="#guid-vs-application-name" title="Permanent link">&para;</a></h2>
+<p>Windows requires to use registry keys (e.g. INSTALL/UNINSTALL info). Squirrel.Windows simply uses application name as key.
+But it is not robust — Google can use key Google Chrome SxS, because it is a Google.</p>
+<p>So, it is better to use <a href="http://stackoverflow.com/a/246935/1910191">GUID</a>.
+You are not forced to explicitly specify it — name-based <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_5_.28SHA-1_hash_.26_namespace.29">UUID v5</a> will be generated from your <a href="../configuration/#Configuration-appId">appId</a> or <a href="../configuration/#Metadata-name">name</a>.
+It means that you <strong>should not change appId</strong> once your application in use (or name if <code>appId</code> was not set). Application product name (title) or description can be safely changed.</p>
+<p>You can explicitly set guid using option <a href="#NsisOptions-guid">nsis.guid</a>, but it is not recommended — consider using <a href="../configuration/#Configuration-appId">appId</a>.</p>
+<p>It is also important to set the Application User Model ID (AUMID) to the <a href="../configuration/#Configuration-appId">appId</a> of the application, in order for notifications on Windows 8/8.1 to function and for Window 10 notifications to display the app icon within the notifications by default. The AUMID should be set within the Main process and before any BrowserWindows have been opened, it is normally the first piece of code executed: <code>app.setAppUserModelId(appId)</code></p>
+<hr />
+<h2 id="common-questions">Common Questions<a class="headerlink" href="#common-questions" title="Permanent link">&para;</a></h2>
+<h4 id="how-do-change-the-default-installation-directory-to-custom">How do change the default installation directory to custom?<a class="headerlink" href="#how-do-change-the-default-installation-directory-to-custom" title="Permanent link">&para;</a></h4>
+<p>It is very specific requirement. Do not do if you are not sure. Add <a href="#custom-nsis-script">custom macro</a>:</p>
+<div class="highlight"><pre><span></span><span class="cp">!macro</span> preInit
+    SetRegView 64
+    <span class="k">WriteRegExpandStr</span> <span class="no">HKLM</span> <span class="s2">&quot;${INSTALL_REGISTRY_KEY}</span><span class="s">&quot;</span> InstallLocation <span class="s2">&quot;C:\MyApp</span><span class="s">&quot;</span>
+    <span class="k">WriteRegExpandStr</span> <span class="no">HKCU</span> <span class="s2">&quot;${INSTALL_REGISTRY_KEY}</span><span class="s">&quot;</span> InstallLocation <span class="s2">&quot;C:\MyApp</span><span class="s">&quot;</span>
+    SetRegView 32
+    <span class="k">WriteRegExpandStr</span> <span class="no">HKLM</span> <span class="s2">&quot;${INSTALL_REGISTRY_KEY}</span><span class="s">&quot;</span> InstallLocation <span class="s2">&quot;C:\MyApp</span><span class="s">&quot;</span>
+    <span class="k">WriteRegExpandStr</span> <span class="no">HKCU</span> <span class="s2">&quot;${INSTALL_REGISTRY_KEY}</span><span class="s">&quot;</span> InstallLocation <span class="s2">&quot;C:\MyApp</span><span class="s">&quot;</span>
+<span class="cp">!macroend</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../win/" title="Any Windows Target" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Any Windows Target
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../appx/" title="AppX" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                AppX
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.a59e2a89.js"></script>
+      
+      <script>app.initialize({version:"0.17.5",url:{base:"../.."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-105592680-1","www.electron.build"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
