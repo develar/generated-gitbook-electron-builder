@@ -368,6 +368,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#debug" title="Debug" class="md-nav__link">
+    Debug
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#community" title="Community" class="md-nav__link">
     Community
   </a>
@@ -909,6 +916,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#debug" title="Debug" class="md-nav__link">
+    Debug
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#community" title="Community" class="md-nav__link">
     Community
   </a>
@@ -935,24 +949,32 @@
                 <h1 id="electron-builder">electron-builder <a href="https://yarn.pm/electron-builder"><img alt="npm version" src="https://img.shields.io/npm/v/electron-builder.svg?label=latest" /></a> <a href="https://yarn.pm/electron-builder"><img alt="downloads per month" src="https://img.shields.io/npm/dm/electron-builder.svg" /></a><a class="headerlink" href="#electron-builder" title="Permanent link">&para;</a></h1>
 <p>A complete solution to package and build a ready for distribution Electron app for macOS, Windows and Linux with “auto update” support out of the box.</p>
 <ul>
-<li>NPM packages management:</li>
+<li>NPM packages management:<ul>
 <li><a href="https://electron.atom.io/docs/tutorial/using-native-node-modules/">Native application dependencies</a> compilation (including <a href="http://yarnpkg.com/">Yarn</a> support).</li>
 <li>Development dependencies are never included. You don&rsquo;t need to ignore them explicitly.</li>
+<li><a href="tutorials/two-package-structure/">Two package.json structure</a> is supported, but you are not forced to use it even if you have native production dependencies.</li>
+</ul>
+</li>
 <li><a href="code-signing/">Code Signing</a> on a CI server or development machine.</li>
 <li><a href="auto-update/">Auto Update</a> ready application packaging.</li>
-<li>Numerous target formats:</li>
+<li>Numerous target formats:<ul>
 <li>All platforms: <code>7z</code>, <code>zip</code>, <code>tar.xz</code>, <code>tar.lz</code>, <code>tar.gz</code>, <code>tar.bz2</code>, <code>dir</code> (unpacked directory).</li>
 <li><a href="configuration/mac/#MacConfiguration-target">macOS</a>: <code>dmg</code>, <code>pkg</code>, <code>mas</code>, <code>mas-dev</code>.</li>
 <li><a href="configuration/linux/#LinuxConfiguration-target">Linux</a>: <a href="http://appimage.org">AppImage</a>, <a href="http://snapcraft.io">snap</a>, debian package (<code>deb</code>), <code>rpm</code>, <code>freebsd</code>, <code>pacman</code>, <code>p5p</code>, <code>apk</code>.</li>
 <li><a href="configuration/win/#WindowsConfiguration-target">Windows</a>: <code>nsis</code> (Installer), <code>nsis-web</code> (Web installer), <code>portable</code> (portable app without installation), AppX (Windows Store), Squirrel.Windows.</li>
-<li><a href="tutorials/two-package-structure/">Two package.json structure</a> is supported, but you are not forced to use it even if you have native production dependencies.  </li>
+</ul>
+</li>
 <li><a href="configuration/configuration/#build-version-management">Build version management</a>.</li>
 <li><a href="./configuration/publish">Publishing artifacts</a> to GitHub Releases, Amazon S3, DigitalOcean Spaces and Bintray.</li>
+<li>Advanced building:<ul>
 <li>Pack in a distributable format <a href="#pack-only-in-a-distributable-format">already packaged app</a>.</li>
 <li>Separate <a href="https://github.com/electron-userland/electron-builder/issues/1102#issuecomment-271845854">build steps</a>.</li>
 <li>Build and publish in parallel, using hard links on CI server to reduce IO and disk space usage.</li>
+</ul>
+</li>
 <li><a href="https://github.com/electron/electron-compile">electron-compile</a> support (compile for release-time on the fly on build).</li>
 <li><a href="./multi-platform-build#docker">Docker</a> images to build Electron app for Linux or Windows on any platform.</li>
+<li><a href="https://proton-native.js.org/">Proton Native</a> and <a href="https://github.com/brave/muon">Muon</a> support.</li>
 </ul>
 <table>
 <thead>
@@ -975,7 +997,7 @@
 <td><a href="https://github.com/electron-userland/electron-builder/issues/new">Open an issue</a></td>
 </tr>
 <tr>
-<td>“I want to donate”</td>
+<td>“I want to support development”</td>
 <td><a href="donate/">Donate</a></td>
 </tr>
 </tbody>
@@ -1025,9 +1047,6 @@
 <li>
 <p>If you have native addons of your own that are part of the application (not as a dependency), set <a href="./configuration/configuration#Configuration-nodeGypRebuild">nodeGypRebuild</a> to <code>true</code>.</p>
 </li>
-<li>
-<p>Install the <a href="multi-platform-build/">required system packages</a> if you are not on macOS 10.12+.</p>
-</li>
 </ol>
 <p>Please note that everything is packaged into an asar archive <a href="configuration/configuration/#Configuration-asar">by default</a>.</p>
 <p>For an app that will be shipped to production, you should sign your application. See <a href="code-signing/#where-to-buy-code-signing-certificate">Where to buy code signing certificates</a>.</p>
@@ -1042,7 +1061,7 @@
 <span class="nx">builder</span><span class="p">.</span><span class="nx">build</span><span class="p">({</span>
   <span class="nx">targets</span><span class="o">:</span> <span class="nx">Platform</span><span class="p">.</span><span class="nx">MAC</span><span class="p">.</span><span class="nx">createTarget</span><span class="p">(),</span>
   <span class="nx">config</span><span class="o">:</span> <span class="p">{</span>
-   <span class="s2">&quot;//&quot;</span><span class="o">:</span> <span class="s2">&quot;build options, see https://goo.gl/ZhRfla&quot;</span>
+   <span class="s2">&quot;//&quot;</span><span class="o">:</span> <span class="s2">&quot;build options, see https://goo.gl/QQXmcV&quot;</span>
   <span class="p">}</span>
 <span class="p">})</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -1060,6 +1079,22 @@ and other distributable formats.</p>
 </pre></div>
 
 <p><code>--projectDir</code> (the path to project directory) option also can be useful.</p>
+<h2 id="debug">Debug<a class="headerlink" href="#debug" title="Permanent link">&para;</a></h2>
+<p>Set the <code>DEBUG</code> environment variable to debug what electron-builder is doing:
+<div class="highlight"><pre><span></span><span class="nv">DEBUG</span><span class="o">=</span>electron-builder
+</pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">cmd</p>
+<p>On <a href="https://github.com/visionmedia/debug#windows-command-prompt-notes">Windows</a> the environment variable is set using the set command.
+<div class="highlight"><pre><span></span><span class="nb">set</span> <span class="nv">DEBUG</span><span class="o">=</span>electron-builder
+</pre></div></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">PowerShell</p>
+<p>PowerShell uses different syntax to set environment variables.
+<div class="highlight"><pre><span></span><span class="nv">$env</span>:DEBUG<span class="o">=</span>electron-builder
+</pre></div></p>
+</div>
 <h2 id="community">Community<a class="headerlink" href="#community" title="Permanent link">&para;</a></h2>
 <p><a href="https://slackin.electron.build">electron-builder</a> on Slack (please use <a href="https://get.slack.help/hc/articles/115000769927-Message-threads">threads</a>).
 Public <a href="http://electron-builder.slackarchive.io">archive</a> without registration.</p>
