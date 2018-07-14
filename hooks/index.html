@@ -36,7 +36,7 @@
     
     
       
-        <title>Icons - electron-builder</title>
+        <title>Hooks - electron-builder</title>
       
     
     
@@ -98,7 +98,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#macos" tabindex="1" class="md-skip">
+      <a href="#afterpack" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -124,7 +124,7 @@
                 electron-builder
               </span>
               <span class="md-header-nav__topic">
-                Icons
+                Hooks
               </span>
             
           
@@ -196,16 +196,14 @@
       
         
 
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href=".." title="Introduction" class="md-tabs__link">
+      <a href=".." title="Introduction" class="md-tabs__link md-tabs__link--active">
         Introduction
       </a>
     
@@ -251,7 +249,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" title="Guides" class="md-tabs__link md-tabs__link--active">
+        <a href="../icons/" title="Guides" class="md-tabs__link">
           Guides
         </a>
       
@@ -344,11 +342,59 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../hooks/" title="Hooks" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Hooks
+      </label>
+    
+    <a href="./" title="Hooks" class="md-nav__link md-nav__link--active">
       Hooks
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#afterpack" title="afterPack" class="md-nav__link">
+    afterPack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aftersign" title="afterSign" class="md-nav__link">
+    afterSign
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#afterpackcontext" title="AfterPackContext" class="md-nav__link">
+    AfterPackContext
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -728,12 +774,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
       Guides
@@ -749,66 +793,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Icons
-      </label>
-    
-    <a href="./" title="Icons" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../icons/" title="Icons" class="md-nav__link">
       Icons
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#macos" title="macOS" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows-nsis" title="Windows (NSIS)" class="md-nav__link">
-    Windows (NSIS)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" title="Linux" class="md-nav__link">
-    Linux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#appx" title="AppX" class="md-nav__link">
-    AppX
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -872,29 +861,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#macos" title="macOS" class="md-nav__link">
-    macOS
+  <a href="#afterpack" title="afterPack" class="md-nav__link">
+    afterPack
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#windows-nsis" title="Windows (NSIS)" class="md-nav__link">
-    Windows (NSIS)
+  <a href="#aftersign" title="afterSign" class="md-nav__link">
+    afterSign
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux" title="Linux" class="md-nav__link">
-    Linux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#appx" title="AppX" class="md-nav__link">
-    AppX
+  <a href="#afterpackcontext" title="AfterPackContext" class="md-nav__link">
+    AfterPackContext
   </a>
   
 </li>
@@ -916,28 +898,57 @@
               
                 
                 
-                  <h1>Icons</h1>
+                  <h1>Hooks</h1>
                 
-                <p>Recommended tools: <a href="http://www.tweaknow.com/appicongenerator.php">AppIcon Generator</a>, <a href="https://makeappicon.com/">MakeAppIcon</a>, <a href="https://iconverticons.com/online/">iConvert Icons</a>.</p>
-<h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
-<p>Files</p>
-<ul>
-<li><em>Optional</em> <code>icon.icns</code> (macOS app icon) or <code>icon.png</code>. Icon size should be at least 512x512.</li>
-<li><em>Optional</em> <code>background.png</code> (macOS DMG background).</li>
-<li><em>Optional</em> <code>background@2x.png</code> (macOS DMG Retina background).</li>
-</ul>
-<p>need to be placed in the <a href="../configuration/configuration/#MetadataDirectories-buildResources">build</a> directory. All files are optional — but it is important to provide <code>icon.icns</code> (or <code>icon.png</code>), otherwise default Electron icon will be used.</p>
-<h2 id="windows-nsis">Windows (NSIS)<a class="headerlink" href="#windows-nsis" title="Permanent link">&para;</a></h2>
-<ul>
-<li><em>Optional</em> <code>icon.ico</code> (Windows app icon) or <code>icon.png</code>. Icon size should be at least 256x256.</li>
-</ul>
-<p>need to be placed in the <a href="../configuration/configuration/#MetadataDirectories-buildResources">build</a> directory. It is important to provide <code>icon.ico</code> (or <code>icon.png</code>), otherwise default Electron icon will be used.</p>
-<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
-<p>Linux icon set will be generated automatically based on the macOS <code>icns</code> file or common <code>icon.png</code>.</p>
-<p>Or you can put them into the <code>build/icons</code> directory if you want to specify them yourself.
-The filename must contain the size (e.g. <code>32x32.png</code>) of the icon). Recommended sizes: 16, 24, 32, 48, 64, 96, 128, 256. (or just 512).</p>
-<h2 id="appx">AppX<a class="headerlink" href="#appx" title="Permanent link">&para;</a></h2>
-<p>See <a href="../configuration/appx#appx-assets">AppX Assets</a>.</p>
+                <div class="admonition note">
+<p class="admonition-title">Node.js 8</p>
+<p>All examples assumed that you use latest Node.js 8.11.x or higher.</p>
+</div>
+<h2 id="afterpack">afterPack<a class="headerlink" href="#afterpack" title="Permanent link">&para;</a></h2>
+<p>The function (or path to file or module id) to be run after pack (but before pack into distributable format and sign).</p>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nx">context</span>: <span class="kt">AfterPackContext</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kt">string</span> <span class="o">|</span> <span class="kc">null</span>
+</pre></div>
+
+<div class="admonition example">
+<p class="admonition-title">As function</p>
+<div class="highlight"><pre><span></span><span class="nx">afterPack</span><span class="o">:</span> <span class="nx">async</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// your code</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+<p>Because in a configuration file you cannot use JavaScript, can be specified as a path to file or module id. Function must be exported as default export.</p>
+<div class="highlight"><pre><span></span><span class="s2">&quot;build&quot;</span><span class="err">:</span> <span class="p">{</span>
+  <span class="nt">&quot;afterPack&quot;</span><span class="p">:</span> <span class="s2">&quot;./myAfterPackHook.js&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>File <code>myAfterPackHook.js</code> in the project root directory:</p>
+<div class="admonition example">
+<p class="admonition-title">myAfterPackHook.js</p>
+<div class="highlight"><pre><span></span><span class="nx">exports</span><span class="p">.</span><span class="k">default</span> <span class="o">=</span> <span class="nx">async</span> <span class="kd">function</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// your custom code</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+<h2 id="aftersign">afterSign<a class="headerlink" href="#aftersign" title="Permanent link">&para;</a></h2>
+<p>The function (or path to file or module id) to be run after pack and sign (but before pack into distributable format).</p>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nx">context</span>: <span class="kt">AfterPackContext</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kt">string</span> <span class="o">|</span> <span class="kc">null</span>
+</pre></div>
+
+<p>Configuration in the same way as <code>afterPack</code> (see above).</p>
+<hr />
+<h2 id="afterpackcontext">AfterPackContext<a class="headerlink" href="#afterpackcontext" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><span class="kr">interface</span> <span class="nx">AfterPackContext</span> <span class="p">{</span>
+  <span class="nx">outDir</span>: <span class="kt">string</span>
+  <span class="nx">appOutDir</span>: <span class="kt">string</span>
+  <span class="nx">packager</span>: <span class="kt">PlatformPackager</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span>
+  <span class="nx">electronPlatformName</span>: <span class="kt">string</span>
+  <span class="nx">arch</span>: <span class="kt">Arch</span>
+  <span class="nx">targets</span>: <span class="kt">Array</span><span class="o">&lt;</span><span class="nx">Target</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
@@ -958,7 +969,7 @@ The filename must contain the size (e.g. <code>32x32.png</code>) of the icon). R
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../tutorials/release-using-channels/" title="Release Using Channels" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../api/electron-builder/" title="Programmatic API" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -967,19 +978,19 @@ The filename must contain the size (e.g. <code>32x32.png</code>) of the icon). R
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Release Using Channels
+                Programmatic API
               </span>
             </div>
           </a>
         
         
-          <a href="../auto-update/" title="Auto Update" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../donate/" title="Donate" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Auto Update
+                Donate
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
